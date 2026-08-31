@@ -63,7 +63,7 @@ body { animation: page-enter .45s cubic-bezier(.22, .61, .36, 1) both; }
 }
 
 body {
-  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Inter", "Pretendard Variable", Pretendard, "Segoe UI", system-ui, -apple-system, sans-serif;
   color: var(--ink);
   background: var(--white);
   line-height: 1.6;
