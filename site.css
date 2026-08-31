@@ -454,6 +454,24 @@ body.modal-open { overflow: hidden; }
 .contact-block p { font-size: 14px; color: var(--body); margin-top: 10px; line-height: 1.7; }
 .contact-block a { color: var(--accent); font-weight: 600; }
 .contact-block a:hover { text-decoration: underline; }
+.map-links { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.map-link {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12.5px; font-weight: 700; border-radius: 99px;
+  padding: 5px 13px 5px 6px; transition: .15s;
+}
+.map-ic {
+  width: 22px; height: 22px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800;
+}
+.map-link.naver { background: #e9f9f0; color: #067d3e; }
+.map-link.naver .map-ic { background: #03c75a; color: #fff; }
+.map-link.naver:hover { background: #03c75a; color: #fff; }
+.map-link.kakao { background: #fdf6d0; color: #7a5f00; }
+.map-link.kakao .map-ic { background: #fee500; color: #3c1e1e; }
+.map-link.kakao:hover { background: #fee500; color: #3c1e1e; }
+
 .map-wrap {
   border: 1px solid var(--border); border-radius: var(--radius);
   overflow: hidden; margin-top: 32px;

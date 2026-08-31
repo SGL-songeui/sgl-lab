@@ -150,6 +150,8 @@ window.SGL_I18N = {
     en: "Omnibus Park Building A (Medical School Building)<br>8th Floor, Room 8108<br>222 Banpo-daero, Seocho-gu, Seoul, South Korea<br>Department of Microbiology",
     ko: "옴니버스파크 A동 (의과대학) 8층 8108호<br>서울 서초구 반포대로 222<br>미생물학교실"
   },
+  "contact.navermap": { en: "Naver Map", ko: "네이버 지도" },
+  "contact.kakaomap": { en: "KakaoMap", ko: "카카오맵" },
   "contact.office.title": { en: "🏢 Professor's Office", ko: "🏢 교수 연구실" },
   "contact.office.body": {
     en: "Omnibus Park Building A (Medical School Building)<br>8th Floor, Room 8103<br>222 Banpo-daero, Seocho-gu, Seoul, South Korea<br>Department of Microbiology",
