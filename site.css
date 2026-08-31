@@ -37,6 +37,11 @@ html { scroll-behavior: smooth; }
   to   { opacity: 1; transform: none; }
 }
 body { animation: page-enter .45s cubic-bezier(.22, .61, .36, 1) both; }
+/* browsers running the cross-document view transition skip the body entrance
+   animation so the two effects don't stack into a double fade */
+@supports (view-transition-name: root) {
+  body { animation: none; }
+}
 
 /* Scroll-reveal (elements get .reveal via site.js) */
 .reveal { opacity: 0; transform: translateY(18px); }

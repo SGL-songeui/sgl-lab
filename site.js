@@ -93,6 +93,8 @@
     var row = e.target.closest ? e.target.closest(".pub-row[data-doi]") : null;
     if (!row) return;
     if (e.target.closest("a")) return;
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString()) return; /* user is selecting citation text, not clicking through */
     window.open(row.getAttribute("data-doi"), "_blank", "noopener");
   });
 
