@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TEST DEPLOYMENT: remove the noindex line when this becomes the official site -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Publications from the Single-cell Genomics Lab at the Catholic University of Korea.">
+  <title>Publications | SGL</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body data-page="publications">
+
+  <section class="page-hero">
+    <div class="inner">
+      <div class="kicker">PUBLICATIONS</div>
+      <h1>Publications</h1>
+      <p class="sub">Peer-reviewed work from the lab and our collaborations, 2002 to present.</p>
+      <div class="pub-toolbar">
+        <input class="pub-search" id="pub-search" type="search"
+               placeholder="Search by title, author, journal, or year&hellip;" aria-label="Search publications">
+        <span class="pub-count" id="pub-count"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px;">
+    <div class="container" id="pub-container">
+      <p style="margin-top:32px;color:var(--muted);font-size:14px;">Loading publications&hellip;</p>
+    </div>
+  </section>
+
+</body>
+</html>
