@@ -12,6 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="site.css">
+  <script>
+    /* stamp .vt when a cross-document view transition drives this navigation,
+       so the CSS entrance animation yields to the transition (must run pre-render) */
+    addEventListener("pagereveal", function (e) {
+      if (e.viewTransition) document.documentElement.classList.add("vt");
+    });
+  </script>
   <script src="site.js" defer></script>
 </head>
 <body data-page="pi">

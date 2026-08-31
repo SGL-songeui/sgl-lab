@@ -162,6 +162,14 @@
     Array.prototype.forEach.call(targets, function (el, i) {
       el.classList.add("reveal");
       el.style.transitionDelay = (i % 4) * 60 + "ms";
+      /* one-shot: hand transitions back to the element's own rules afterwards,
+         so hover effects aren't stuck with the slow reveal transition */
+      el.addEventListener("transitionend", function done(e) {
+        if (e.target !== el || e.propertyName !== "opacity") return;
+        el.removeEventListener("transitionend", done);
+        el.classList.remove("reveal", "in");
+        el.style.transitionDelay = "";
+      });
       io.observe(el);
     });
   }
