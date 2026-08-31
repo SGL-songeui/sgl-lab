@@ -32,12 +32,13 @@
       var v = t(el.getAttribute("data-i18n-placeholder"));
       if (v !== null) el.setAttribute("placeholder", v.replace(/&hellip;/g, "…"));
     });
-    var btn = document.querySelector(".lang-toggle");
-    if (btn) btn.textContent = lang === "en" ? "KO" : "EN";
+    Array.prototype.forEach.call(document.querySelectorAll(".lang-opt"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+    });
     if (window.__sglRefreshPubCount) window.__sglRefreshPubCount();
   }
-  function toggleLang() {
-    try { localStorage.setItem("sgl-lang", getLang() === "en" ? "ko" : "en"); } catch (e) {}
+  function setLang(lang) {
+    try { localStorage.setItem("sgl-lang", lang === "ko" ? "ko" : "en"); } catch (e) {}
     applyLang();
   }
 
@@ -61,7 +62,10 @@
       '<a class="logo" href="index.html">SGL<span class="dot">.</span><span class="logo-full">Single-cell Genomics Lab</span></a>' +
       '<nav class="nav-links">' + links + "</nav>" +
       '<div class="header-actions">' +
-      '<button class="lang-toggle" aria-label="Switch language">KO</button>' +
+      '<div class="lang-switch" role="group" aria-label="Language">' +
+      '<button class="lang-opt" data-lang="ko">KO</button>' +
+      '<button class="lang-opt" data-lang="en">ENG</button>' +
+      "</div>" +
       '<button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>' +
       "</div>" +
       "</div>";
@@ -72,7 +76,9 @@
       var open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    el.querySelector(".lang-toggle").addEventListener("click", toggleLang);
+    Array.prototype.forEach.call(el.querySelectorAll(".lang-opt"), function (b) {
+      b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+    });
   }
 
   function buildFooter() {

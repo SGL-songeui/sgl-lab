@@ -92,14 +92,18 @@ img { max-width: 100%; display: block; }
 @media (max-width: 400px) { .logo-full { display: none; } }
 .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #3c4258; margin-left: auto; }
 .header-actions { display: flex; align-items: center; gap: 10px; margin-left: 18px; }
-.lang-toggle {
-  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .5px;
-  color: var(--accent); background: var(--accent-soft);
-  border: none; border-radius: 99px; padding: 6px 13px; cursor: pointer;
-  transition: .15s;
+.lang-switch {
+  display: flex; align-items: center; gap: 2px;
+  background: var(--accent-soft); border-radius: 99px; padding: 3px;
 }
-.lang-toggle:hover { background: var(--accent); color: #fff; }
-.lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.lang-opt {
+  font: inherit; font-size: 11.5px; font-weight: 700; letter-spacing: .5px;
+  color: var(--muted); background: none; border: none; border-radius: 99px;
+  padding: 4px 11px; cursor: pointer; transition: .15s;
+}
+.lang-opt:hover { color: var(--accent); }
+.lang-opt.active { background: var(--accent); color: #fff; }
+.lang-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a.active { color: var(--accent); font-weight: 700; }
 .nav-toggle {
