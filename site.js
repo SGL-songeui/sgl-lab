@@ -96,7 +96,7 @@
       '<p><a href="mailto:haeocklee@catholic.ac.kr">haeocklee@catholic.ac.kr</a><br>+82-2-3147-8365</p>' +
       "</div>" +
       '<div class="footer-univ">' +
-      '<a href="https://www.catholic.ac.kr" target="_blank" rel="noopener">' +
+      '<a href="https://songeui.catholic.ac.kr" target="_blank" rel="noopener">' +
       '<img class="footer-univ-logo" src="assets/cuk_logo_white.png" alt="The Catholic University of Korea"></a>' +
       '<p data-i18n="footer.campus">Songeui Campus</p>' +
       "</div>" +
