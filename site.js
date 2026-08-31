@@ -59,7 +59,15 @@
     el.className = "site-header";
     el.innerHTML =
       '<div class="inner">' +
-      '<a class="logo" href="index.html"><img class="logo-mark" src="assets/favicon.svg" alt="">SGL<span class="dot">.</span><span class="logo-full">Single-cell Genomics Lab</span></a>' +
+      '<a class="logo" href="index.html" aria-label="SGL home">' +
+      '<svg class="logo-svg" viewBox="0 0 84 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SGL">' +
+      '<text x="0" y="27" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="27" font-weight="800" letter-spacing="0.3" fill="currentColor">SGL</text>' +
+      '<circle cx="64" cy="24.5" r="3.2" fill="#2b53e0"/>' +
+      '<circle cx="72" cy="9" r="3" fill="#60a5fa"/>' +
+      '<circle cx="79" cy="15" r="2.4" fill="#a78bfa"/>' +
+      '<circle cx="74" cy="20.5" r="1.9" fill="#34d399"/>' +
+      "</svg>" +
+      '<span class="logo-full">Single-cell Genomics Lab</span></a>' +
       '<nav class="nav-links">' + links + "</nav>" +
       '<div class="header-actions">' +
       '<div class="lang-switch" role="group" aria-label="Language">' +
