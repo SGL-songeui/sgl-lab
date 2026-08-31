@@ -129,6 +129,9 @@
       .then(function (r) { return r.json(); })
       .then(function (pubs) {
         renderPubs(pubs, "");
+        /* reveal treatment only on the initial render — search re-renders
+           show rows instantly so filtering doesn't flicker */
+        revealize(host.querySelectorAll(".year-heading, .pub-row"));
         var input = document.getElementById("pub-search");
         if (input) input.addEventListener("input", function () { renderPubs(pubs, input.value); });
       })
@@ -150,30 +153,37 @@
   }
 
   /* ---------- scroll-reveal ---------- */
-  function initReveal() {
+  /* re-armed on exit so the entrance replays every time an element scrolls
+     back into view (either direction). Entering is judged against a slightly
+     shrunk viewport; re-arming only once the element is fully offscreen, so
+     a visible element never blinks out at the boundary. */
+  var revealObservers = null;
+  function revealize(targets) {
     if (!("IntersectionObserver" in window) ||
         window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var targets = document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip");
-    /* re-armed on exit so the entrance replays every time an element scrolls
-       back into view (either direction). Entering is judged against a slightly
-       shrunk viewport; re-arming only once the element is fully offscreen, so
-       a visible element never blinks out at the boundary. */
-    var ioIn = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) en.target.classList.add("in");
-      });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    var ioOut = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) en.target.classList.remove("in");
-      });
-    });
+    if (!revealObservers) {
+      revealObservers = {
+        ioIn: new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) en.target.classList.add("in");
+          });
+        }, { rootMargin: "0px 0px -8% 0px" }),
+        ioOut: new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) en.target.classList.remove("in");
+          });
+        })
+      };
+    }
     Array.prototype.forEach.call(targets, function (el, i) {
       el.classList.add("reveal");
       el.style.animationDelay = (i % 4) * 60 + "ms";
-      ioIn.observe(el);
-      ioOut.observe(el);
+      revealObservers.ioIn.observe(el);
+      revealObservers.ioOut.observe(el);
     });
+  }
+  function initReveal() {
+    revealize(document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
   }
 
   document.addEventListener("DOMContentLoaded", function () {
