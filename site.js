@@ -61,10 +61,21 @@
   }
 
   /* ---------- publications ---------- */
+  /* PI + current lab members, matched against the exact initial forms they
+     use in these papers. Surname-comma-initial forms shared with unrelated
+     collaborators (Lee, J. / Kim, M. / Kim, S.) are deliberately NOT listed —
+     every occurrence in the current data is a different person. */
+  var MEMBER_PATTERNS = [
+    /Lee, H\. O\./g,            /* Hae-Ock Lee (PI) */
+    /Kang, H\.(?! ?[A-Z]\.)/g,  /* Huiram Kang */
+    /Shin, G\. J\./g,           /* GyeongJin Shin */
+    /Kim, Y\.(?! ?[A-Z]\.)/g,   /* Yeji Kim */
+    /Lee HO(?![a-z])/g
+  ];
   function boldPI(authors) {
-    return esc(authors)
-      .replace(/Lee, H\. O\./g, "<b>Lee, H. O.</b>")
-      .replace(/Lee HO(?![a-z])/g, "<b>Lee HO</b>");
+    var s = esc(authors);
+    MEMBER_PATTERNS.forEach(function (p) { s = s.replace(p, "<b>$&</b>"); });
+    return s;
   }
 
   function pubRow(p) {
