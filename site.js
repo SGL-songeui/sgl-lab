@@ -27,7 +27,7 @@
     el.className = "site-header";
     el.innerHTML =
       '<div class="inner">' +
-      '<a class="logo" href="index.html">SGL<span class="dot">.</span></a>' +
+      '<a class="logo" href="index.html">SGL<span class="dot">.</span><span class="logo-full">Single-cell Genomics Lab</span></a>' +
       '<button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>' +
       '<nav class="nav-links">' + links + "</nav>" +
       "</div>";

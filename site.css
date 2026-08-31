@@ -81,8 +81,10 @@ img { max-width: 100%; display: block; }
   max-width: var(--maxw); margin: 0 auto; padding: 16px 24px;
   display: flex; justify-content: space-between; align-items: center;
 }
-.logo { font-weight: 800; font-size: 21px; letter-spacing: .3px; color: var(--ink); }
+.logo { font-weight: 800; font-size: 21px; letter-spacing: .3px; color: var(--ink); display: flex; align-items: baseline; }
 .logo .dot { color: var(--accent); }
+.logo-full { font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); margin-left: 9px; white-space: nowrap; }
+@media (max-width: 400px) { .logo-full { display: none; } }
 .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #3c4258; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a.active { color: var(--accent); font-weight: 700; }
