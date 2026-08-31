@@ -19,18 +19,19 @@
       if (e.viewTransition) document.documentElement.classList.add("vt");
     });
   </script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 <body data-page="publications">
 
   <section class="page-hero">
     <div class="inner">
-      <div class="kicker">PUBLICATIONS</div>
-      <h1>Publications</h1>
-      <p class="sub">Peer-reviewed work from the lab and our collaborations, 1996 to present.</p>
+      <div class="kicker" data-i18n="pub.kicker">PUBLICATIONS</div>
+      <h1 data-i18n="pub.title">Publications</h1>
+      <p class="sub" data-i18n="pub.sub">Peer-reviewed work from the lab and our collaborations, 1996 to present. Click any paper to open it via its DOI.</p>
       <div class="pub-toolbar">
         <input class="pub-search" id="pub-search" type="search"
-               placeholder="Search by title, author, journal, or year&hellip;" aria-label="Search publications">
+               placeholder="Search by title, author, journal, or year&hellip;" data-i18n-placeholder="pub.search.ph" aria-label="Search publications">
         <span class="pub-count" id="pub-count"></span>
       </div>
     </div>

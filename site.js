@@ -3,12 +3,43 @@
   "use strict";
 
   var NAV = [
-    { href: "index.html", label: "Home", key: "home" },
-    { href: "principal-investigator.html", label: "Principal Investigator", key: "pi" },
-    { href: "people.html", label: "People", key: "people" },
-    { href: "publications.html", label: "Publications", key: "publications" },
-    { href: "contact.html", label: "Contact", key: "contact" }
+    { href: "index.html", i18n: "nav.home", key: "home" },
+    { href: "index.html#research", i18n: "nav.research", key: "research" },
+    { href: "principal-investigator.html", i18n: "nav.pi", key: "pi" },
+    { href: "people.html", i18n: "nav.people", key: "people" },
+    { href: "publications.html", i18n: "nav.publications", key: "publications" },
+    { href: "contact.html", i18n: "nav.contact", key: "contact" }
   ];
+
+  /* ---------- i18n ---------- */
+  function getLang() {
+    try { return localStorage.getItem("sgl-lang") === "ko" ? "ko" : "en"; }
+    catch (e) { return "en"; }
+  }
+  function t(key) {
+    var entry = (window.SGL_I18N || {})[key];
+    if (!entry) return null;
+    return entry[getLang()] || entry.en;
+  }
+  function applyLang() {
+    var lang = getLang();
+    document.documentElement.lang = lang;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n]"), function (el) {
+      var v = t(el.getAttribute("data-i18n"));
+      if (v !== null) el.innerHTML = v;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-placeholder]"), function (el) {
+      var v = t(el.getAttribute("data-i18n-placeholder"));
+      if (v !== null) el.setAttribute("placeholder", v.replace(/&hellip;/g, "…"));
+    });
+    var btn = document.querySelector(".lang-toggle");
+    if (btn) btn.textContent = lang === "en" ? "KO" : "EN";
+    if (window.__sglRefreshPubCount) window.__sglRefreshPubCount();
+  }
+  function toggleLang() {
+    try { localStorage.setItem("sgl-lang", getLang() === "en" ? "ko" : "en"); } catch (e) {}
+    applyLang();
+  }
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -21,15 +52,18 @@
     var page = document.body.getAttribute("data-page") || "";
     var links = NAV.map(function (n) {
       var cls = n.key === page ? ' class="active"' : "";
-      return '<a href="' + n.href + '"' + cls + ">" + n.label + "</a>";
+      return '<a href="' + n.href + '" data-key="' + n.key + '" data-i18n="' + n.i18n + '"' + cls + ">" + (t(n.i18n) || "") + "</a>";
     }).join("");
     var el = document.createElement("header");
     el.className = "site-header";
     el.innerHTML =
       '<div class="inner">' +
       '<a class="logo" href="index.html">SGL<span class="dot">.</span><span class="logo-full">Single-cell Genomics Lab</span></a>' +
-      '<button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>' +
       '<nav class="nav-links">' + links + "</nav>" +
+      '<div class="header-actions">' +
+      '<button class="lang-toggle" aria-label="Switch language">KO</button>' +
+      '<button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>' +
+      "</div>" +
       "</div>";
     document.body.insertBefore(el, document.body.firstChild);
     var toggle = el.querySelector(".nav-toggle");
@@ -38,6 +72,7 @@
       var open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    el.querySelector(".lang-toggle").addEventListener("click", toggleLang);
   }
 
   function buildFooter() {
@@ -47,15 +82,15 @@
       '<div class="inner">' +
       "<div>" +
       '<div class="brand">SGL<span class="dot">.</span> Single-cell Genomics Lab</div>' +
-      "<p>Department of Microbiology, College of Medicine<br>The Catholic University of Korea<br>" +
+      '<p data-i18n="footer.address">Department of Microbiology, College of Medicine<br>The Catholic University of Korea<br>' +
       "Omnibus Park Bldg A, Rm 8108, 222 Banpo-daero, Seocho-gu, Seoul, South Korea</p>" +
       "</div>" +
       "<div>" +
-      '<div class="col-title">Contact</div>' +
+      '<div class="col-title" data-i18n="footer.contact">Contact</div>' +
       '<p><a href="mailto:haeocklee@catholic.ac.kr">haeocklee@catholic.ac.kr</a><br>+82-2-3147-8365</p>' +
       "</div>" +
       "</div>" +
-      '<div class="copyright">&copy; ' + new Date().getFullYear() +
+      '<div class="copyright" data-i18n="footer.copyright">&copy; ' + new Date().getFullYear() +
       " Single-cell Genomics Lab, The Catholic University of Korea</div>";
     document.body.appendChild(el);
   }
@@ -119,7 +154,11 @@
             .toLowerCase().indexOf(q) !== -1;
         })
       : pubs;
-    if (count) count.textContent = shown.length + " of " + pubs.length + " publications";
+    if (count) {
+      count.textContent = getLang() === "ko"
+        ? "전체 " + pubs.length + "편 중 " + shown.length + "편"
+        : shown.length + " of " + pubs.length + " publications";
+    }
     if (!shown.length) {
       host.innerHTML = '<p style="margin-top:32px;color:var(--muted);font-size:14px;">No publications match your search.</p>';
       return;
@@ -145,6 +184,7 @@
         revealize(host.querySelectorAll(".year-heading, .pub-row"));
         var input = document.getElementById("pub-search");
         if (input) input.addEventListener("input", function () { renderPubs(pubs, input.value); });
+        window.__sglRefreshPubCount = function () { renderPubs(pubs, input ? input.value : ""); };
       })
       .catch(function () {
         host.innerHTML = '<p style="margin-top:32px;color:var(--muted);">Could not load the publication list.</p>';
@@ -194,6 +234,9 @@
     });
   }
   function initReveal() {
+    /* .feature-row is NOT revealized: rows live inside the research overlay and
+       animate via CSS when it opens — an observer there can strand the last row
+       invisible depending on open/scroll timing */
     revealize(document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
   }
 
@@ -219,15 +262,72 @@
         if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
       }
     }
+    function setNavActive(key) {
+      var current = key || document.body.getAttribute("data-page");
+      Array.prototype.forEach.call(document.querySelectorAll(".nav-links a[data-key]"), function (a) {
+        a.classList.toggle("active", a.getAttribute("data-key") === current);
+      });
+    }
+    function openMega(id, trigger) {
+      var mega = document.getElementById(id);
+      if (!mega) return;
+      lastTrigger = trigger || null;
+      mega.hidden = false;
+      document.body.classList.add("research-open");
+      setNavActive("research");
+      window.scrollTo(0, 0);
+      var btn = mega.querySelector(".mega-close");
+      if (btn) btn.focus();
+    }
+    function closeMega() {
+      var any = false;
+      Array.prototype.forEach.call(document.querySelectorAll(".mega-overlay:not([hidden])"), function (o) {
+        o.hidden = true; any = true;
+      });
+      return any;
+    }
+    function dismissMega() {
+      if (closeMega()) {
+        document.body.classList.remove("research-open");
+        setNavActive(null);
+        window.scrollTo(0, 0);
+        if (location.hash === "#research") history.replaceState(null, "", location.pathname);
+        if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+      }
+    }
+    /* nav "Research": open in place on the home page; other pages navigate
+       to index.html#research and the takeover opens on load (hash check below) */
     document.addEventListener("click", function (e) {
+      var link = e.target.closest ? e.target.closest('a[href$="index.html#research"]') : null;
+      if (link && document.body.getAttribute("data-page") === "home") {
+        e.preventDefault();
+        history.replaceState(null, "", "#research");
+        openMega("research-overlay", link);
+      }
+    });
+    if (location.hash === "#research" && document.getElementById("research-overlay")) {
+      openMega("research-overlay", null);
+    }
+    document.addEventListener("click", function (e) {
+      var mega = e.target.closest ? e.target.closest("[data-mega]") : null;
+      if (mega) { openMega(mega.getAttribute("data-mega"), mega); return; }
       var card = e.target.closest ? e.target.closest("[data-paper]") : null;
       if (card) { open(card.getAttribute("data-paper"), card); return; }
       if (e.target.closest(".modal-close")) { closeAll(); return; }
+      if (e.target.closest(".mega-close")) { dismissMega(); return; }
       var overlay = e.target.classList && e.target.classList.contains("modal-overlay");
       if (overlay) closeAll();
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeAll();
+      if (e.key === "Escape") {
+        /* detail modal first, then the full-screen overlay */
+        if (document.querySelector(".modal-overlay:not([hidden])")) { closeAll(); return; }
+        if (closeMega()) {
+          document.body.classList.remove("modal-open");
+          if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+        }
+        return;
+      }
       if ((e.key === "Enter" || e.key === " ") && e.target.hasAttribute && e.target.hasAttribute("data-paper")) {
         e.preventDefault();
         open(e.target.getAttribute("data-paper"), e.target);
@@ -242,5 +342,6 @@
     initAvatars();
     initReveal();
     initPaperModals();
+    applyLang();
   });
 })();

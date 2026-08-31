@@ -19,15 +19,15 @@
       if (e.viewTransition) document.documentElement.classList.add("vt");
     });
   </script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 <body data-page="pi">
 
   <section class="page-hero">
     <div class="inner">
-      <div class="kicker">PRINCIPAL INVESTIGATOR</div>
-      <h1>Hae-Ock Lee, Ph.D.</h1>
-      <p class="sub">Professor of Microbiology leading single-cell genomics research on cancer and immunity.</p>
+      <div class="kicker" data-i18n="pi.kicker">PRINCIPAL INVESTIGATOR</div>
+      <h1 data-i18n="pi.name">Hae-Ock Lee, Ph.D.</h1>
     </div>
   </section>
 
@@ -37,73 +37,74 @@
 
         <aside class="pi-card">
           <img class="pi-avatar-photo" src="assets/hae-ock-lee.jpg" alt="Hae-Ock Lee, Ph.D.">
-          <h2>Hae-Ock Lee, Ph.D.</h2>
-          <div class="title">
-            Professor, Department of Microbiology,<br>College of Medicine,<br>The Catholic University of Korea
-          </div>
+          <h2 data-i18n="pi.name">Hae-Ock Lee, Ph.D.</h2>
+          <div class="title" data-i18n="pi.card.title">Professor, Department of Microbiology,<br>College of Medicine,<br>The Catholic University of Korea</div>
           <div class="contact">
-            <a href="mailto:haeocklee@catholic.ac.kr">haeocklee@catholic.ac.kr</a><br>
-            +82-2-3147-8365<br>
-            Omnibus Park Bldg A, Rm 8103
+            <a href="mailto:haeocklee@catholic.ac.kr">haeocklee@catholic.ac.kr</a>
+          </div>
+          <div class="pi-ids">
+            <a href="https://orcid.org/0000-0001-5123-0322" target="_blank" rel="noopener">ORCID</a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=56712212100" target="_blank" rel="noopener">Scopus</a>
+            <a href="https://cuk.elsevierpure.com/en/persons/hae-ock-lee/" target="_blank" rel="noopener">Research Profile</a>
           </div>
           <div class="pi-metrics">
-            <div><div class="num">68</div><div class="lbl">Publications</div></div>
+            <div><div class="num">68</div><div class="lbl" data-i18n="pi.metric.pubs">Publications</div></div>
             <div><div class="num">31</div><div class="lbl">h-index</div></div>
-            <div><div class="num">9,439</div><div class="lbl">Citations</div></div>
+            <div><div class="num">9,439</div><div class="lbl" data-i18n="pi.metric.cites">Citations</div></div>
           </div>
         </aside>
 
         <div>
-          <h2 class="subsection-title">Professional Experience</h2>
+          <h2 class="subsection-title" data-i18n="pi.exp">Professional Experience</h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="period">2020.03 &ndash; present</div>
-              <div class="what">Professor, Department of Microbiology</div>
-              <div class="where">College of Medicine, The Catholic University of Korea</div>
+              <div class="what" data-i18n="pi.e1.what">Professor, Department of Microbiology</div>
+              <div class="where" data-i18n="pi.e1.where">College of Medicine, The Catholic University of Korea</div>
             </div>
             <div class="timeline-item">
               <div class="period">2020.03 &ndash; present</div>
-              <div class="what">Professor, Department of Medical Sciences</div>
-              <div class="where">Graduate School, The Catholic University of Korea</div>
+              <div class="what" data-i18n="pi.e2.what">Professor, Department of Medical Sciences</div>
+              <div class="where" data-i18n="pi.e2.where">Graduate School, The Catholic University of Korea</div>
             </div>
             <div class="timeline-item">
               <div class="period">2013.10 &ndash; 2020.02</div>
-              <div class="what">Chief Researcher</div>
-              <div class="where">Samsung Medical Center</div>
+              <div class="what" data-i18n="pi.e3.what">Chief Researcher</div>
+              <div class="where" data-i18n="pi.e3.where">Samsung Medical Center</div>
             </div>
             <div class="timeline-item">
               <div class="period">2010.03 &ndash; 2013.02</div>
-              <div class="what">Research Instructor</div>
-              <div class="where">Korea University</div>
+              <div class="what" data-i18n="pi.e4.what">Research Instructor</div>
+              <div class="where" data-i18n="pi.e4.where">Korea University</div>
             </div>
             <div class="timeline-item">
               <div class="period">2004.05 &ndash; 2010.02</div>
-              <div class="what">Postdoctoral Fellow / Research Assistant Professor</div>
-              <div class="where">Seoul National University</div>
+              <div class="what" data-i18n="pi.e5.what">Postdoctoral Fellow / Research Assistant Professor</div>
+              <div class="where" data-i18n="pi.e5.where">Seoul National University</div>
             </div>
             <div class="timeline-item">
               <div class="period">2002.12 &ndash; 2004.04</div>
-              <div class="what">Postdoctoral Fellow</div>
-              <div class="where">National Cancer Center, Korea</div>
+              <div class="what" data-i18n="pi.e6.what">Postdoctoral Fellow</div>
+              <div class="where" data-i18n="pi.e6.where">National Cancer Center, Korea</div>
             </div>
             <div class="timeline-item">
               <div class="period">2000.05 &ndash; 2002.09</div>
-              <div class="what">Research Associate</div>
-              <div class="where">Washington University, MO, USA</div>
+              <div class="what" data-i18n="pi.e7.what">Research Associate</div>
+              <div class="where" data-i18n="pi.e7.where">Washington University, MO, USA</div>
             </div>
           </div>
 
-          <h2 class="subsection-title">Education</h2>
+          <h2 class="subsection-title" data-i18n="pi.edu">Education</h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="period">1993.09 &ndash; 1999.12</div>
-              <div class="what">Ph.D., Immunology and Microbial Pathogenesis</div>
-              <div class="where">Integrated Graduate Program in the Life Sciences, Northwestern University, IL, USA</div>
+              <div class="what" data-i18n="pi.d1.what">Ph.D., Immunology and Microbial Pathogenesis</div>
+              <div class="where" data-i18n="pi.d1.where">Integrated Graduate Program in the Life Sciences, Northwestern University, IL, USA</div>
             </div>
             <div class="timeline-item">
               <div class="period">1989.03 &ndash; 1993.02</div>
-              <div class="what">B.S., Microbiology</div>
-              <div class="where">Seoul National University, Korea</div>
+              <div class="what" data-i18n="pi.d2.what">B.S., Microbiology</div>
+              <div class="where" data-i18n="pi.d2.where">Seoul National University, Korea</div>
             </div>
           </div>
         </div>

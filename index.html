@@ -19,74 +19,104 @@
       if (e.viewTransition) document.documentElement.classList.add("vt");
     });
   </script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 <body data-page="home">
 
   <section class="hero">
     <div class="inner">
-      <svg class="hero-dots" viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="#60a5fa"><circle cx="72" cy="96" r="9"/><circle cx="108" cy="70" r="6"/><circle cx="120" cy="110" r="7"/><circle cx="88" cy="140" r="5"/><circle cx="140" cy="82" r="5"/></g>
-        <g fill="#818cf8"><circle cx="168" cy="120" r="8"/><circle cx="200" cy="95" r="6"/><circle cx="185" cy="155" r="6"/><circle cx="222" cy="130" r="9"/></g>
-        <g fill="#a78bfa"><circle cx="255" cy="80" r="7"/><circle cx="290" cy="105" r="9"/><circle cx="270" cy="140" r="5"/><circle cx="315" cy="82" r="5"/></g>
-        <g fill="#f472b6"><circle cx="230" cy="190" r="8"/><circle cx="268" cy="205" r="6"/><circle cx="295" cy="178" r="7"/><circle cx="250" cy="230" r="5"/></g>
-        <g fill="#34d399"><circle cx="150" cy="210" r="6"/><circle cx="182" cy="238" r="7"/><circle cx="120" cy="245" r="5"/><circle cx="205" cy="265" r="5"/></g>
-        <g fill="#fbbf24"><circle cx="310" cy="240" r="6"/><circle cx="340" cy="212" r="5"/><circle cx="330" cy="270" r="7"/></g>
-        <g fill="#38bdf8"><circle cx="350" cy="140" r="6"/><circle cx="368" cy="170" r="5"/></g>
-      </svg>
+      <img class="hero-umap" src="assets/hero_umap.webp" alt="" aria-hidden="true">
 
-      <div class="kicker">SINGLE-CELL GENOMICS LAB</div>
-      <h1>Decoding disease,<br>one cell at a time.</h1>
-      <p class="lede">
-        We dissect the tumor microenvironment and immune landscape with single-cell and
-        spatial genomics to understand cancer progression and response to immunotherapy.
-      </p>
+      <div class="kicker" data-i18n="home.kicker">SINGLE-CELL GENOMICS LAB</div>
+      <h1 data-i18n="home.title">Decoding disease,<br>one cell at a time.</h1>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#research">Our Research</a>
-        <a class="btn btn-ghost" href="contact.html">Join Us &rarr;</a>
+        <button class="btn btn-primary" data-mega="research-overlay" aria-haspopup="dialog" data-i18n="home.research">Our Research</button>
+        <a class="btn btn-ghost" href="contact.html" data-i18n="home.join">Join Us &rarr;</a>
       </div>
       <div class="hero-stats">
-        <div><div class="num">68</div><div class="lbl">Publications</div></div>
-        <div><div class="num">8</div><div class="lbl">Members</div></div>
-        <div><div class="num">2020</div><div class="lbl">Est. at CUK</div></div>
+        <div><div class="num">68</div><div class="lbl" data-i18n="home.stat.pubs">Publications</div></div>
+        <div><div class="num">8</div><div class="lbl" data-i18n="home.stat.members">Members</div></div>
+        <div><div class="num">2020</div><div class="lbl" data-i18n="home.stat.est">Est. at CUK</div></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="research">
-    <div class="container">
-      <div class="section-kicker">RESEARCH</div>
-      <h2 class="section-title">What we study</h2>
-      <div class="card-grid">
-        <div class="card card-clickable" data-paper="natcomm2020" role="button" tabindex="0"
-             aria-haspopup="dialog" aria-label="Tumor Microenvironment — open featured study">
-          <div class="card-icon" style="background:var(--accent-soft);">&#129516;</div>
-          <h3>Tumor Microenvironment</h3>
-          <p>Cellular ecosystems of lung and other cancers resolved at single-cell resolution &mdash; tumor cells, immune cells, and stroma in dialogue.</p>
-          <span class="card-more">Featured study &rarr;</span>
+  <!-- Full-screen research overlay: opened by the "Our Research" button -->
+  <div class="mega-overlay" id="research-overlay" hidden>
+    <button class="mega-close" aria-label="Close">&times;</button>
+    <div class="mega-inner" role="dialog" aria-modal="true" aria-labelledby="research-title">
+      <div class="section-kicker" data-i18n="res.kicker">RESEARCH</div>
+      <h2 class="mega-title" id="research-title" data-i18n="res.title">Our Research</h2>
+      <div class="mega-tags">
+        <span class="mega-tag">scRNA-seq</span>
+        <span class="mega-tag">Spatial transcriptomics</span>
+        <span class="mega-tag">WES</span>
+        <span class="mega-tag">Immune repertoire (TCR/BCR)</span>
+        <span class="mega-tag">Machine learning</span>
+        <span class="mega-tag">Multi-omics integration</span>
+      </div>
+
+      <div class="feature-rows">
+
+        <!-- Row 1: figure left / text right -->
+        <div class="feature-row">
+          <div class="feature-media">
+            <img src="assets/natcomm2020_fig1.jpg"
+                 alt="Single-cell landscape of metastatic lung adenocarcinoma (Kim et al., Nat Commun 2020, Fig. 1)">
+          </div>
+          <div class="feature-text">
+            <div class="feature-kicker" data-i18n="res.r1.kicker">TUMOR MICROENVIRONMENT</div>
+            <h3 data-i18n="res.r1.title">Cellular ecosystems of cancer, one stage at a time</h3>
+            <p data-i18n="res.r1.body">Cellular ecosystems of lung and other cancers resolved at single-cell resolution &mdash; how tumor, immune, and stromal cells are reprogrammed as disease progresses.</p>
+            <a class="feature-link" href="https://doi.org/10.1038/s41467-020-16164-1" target="_blank" rel="noopener">
+              Kim et al., <i>Nat Commun</i> 2020 &rarr;
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:var(--violet-soft);">&#128737;&#65039;</div>
-          <h3>Immuno-Oncology</h3>
-          <p>Tumor and immune signatures that shape response to immune checkpoint therapy in advanced cancers.</p>
+
+        <!-- Row 2: text left / figure right -->
+        <div class="feature-row flip">
+          <div class="feature-media">
+            <img src="assets/elife2024_fig1.jpg"
+                 alt="scRNA-seq and TCR/BCR profiling of advanced lung cancer patients on immune checkpoint therapy (Kim et al., eLife 2024, Fig. 1)">
+          </div>
+          <div class="feature-text">
+            <div class="feature-kicker" data-i18n="res.r2.kicker">IMMUNO-ONCOLOGY</div>
+            <h3 data-i18n="res.r2.title">Why immunotherapy works &mdash; and when it doesn't</h3>
+            <p data-i18n="res.r2.body">Tumor and immune signatures that shape response to immune checkpoint therapy &mdash; and markers that predict benefit before treatment.</p>
+            <a class="feature-link" href="https://doi.org/10.7554/eLife.98366" target="_blank" rel="noopener">
+              Kim et al., <i>eLife</i> 2024 &rarr;
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:var(--green-soft);">&#128300;</div>
-          <h3>Single-cell &amp; Spatial Technologies</h3>
-          <p>scRNA-seq, immune repertoire, and spatial methods for dissecting tissue biology in health and disease.</p>
+
+        <!-- Row 3: figure left / text right -->
+        <div class="feature-row">
+          <div class="feature-media">
+            <img src="assets/nsclc_spatial_fig4a.jpg"
+                 alt="Xenium spatial profiling of NSCLC: integrated cell-type UMAP and 14 tumor tissue sections">
+          </div>
+          <div class="feature-text">
+            <div class="feature-kicker" data-i18n="res.r3.kicker">SPATIAL MULTI-OMICS</div>
+            <h3 data-i18n="res.r3.title">Genomic determinants of immune architecture</h3>
+            <p data-i18n="res.r3.body">Genomics, single-cell RNA sequencing, and spatial profiling combined to reveal how tumor genotype shapes the immune niches of lung cancer.</p>
+            <span class="feature-link feature-link-static" data-i18n="res.r3.note">Lee, Kang, Lee et al. &mdash; under review</span>
+          </div>
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
 
   <section class="section alt">
     <div class="container">
       <div class="section-head-row">
         <div>
-          <div class="section-kicker">PUBLICATIONS</div>
-          <h2 class="section-title">Recent work</h2>
+          <div class="section-kicker" data-i18n="home.pub.kicker">PUBLICATIONS</div>
+          <h2 class="section-title" data-i18n="home.pub.title">Recent work</h2>
         </div>
-        <a class="link-more" href="publications.html">View all 68 &rarr;</a>
+        <a class="link-more" href="publications.html" data-i18n="home.pub.viewall">View all 68 &rarr;</a>
       </div>
       <div class="pub-list">
         <div class="pub-row" data-doi="https://doi.org/10.1172/JCI182571">
@@ -114,26 +144,6 @@
     </div>
   </section>
 
-  <!-- Featured-study modal: Kim et al., Nat Commun 2020 -->
-  <div class="modal-overlay" id="modal-natcomm2020" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="natcomm2020-title">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <span class="pub-badge">2020 &middot; Nature Communications</span>
-      <h2 class="modal-title" id="natcomm2020-title">Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma</h2>
-      <p class="modal-authors">Kim, N., Kim, H. K., Lee, K., Hong, Y., Cho, J. H., et al., Ahn, M. J. &amp; <b>Lee, H. O.</b></p>
-      <img class="modal-figure" src="assets/natcomm2020_fig1.jpg" loading="lazy"
-           alt="Figure 1 of the paper: study design and single-cell transcriptome landscape of 208,506 cells from normal lung, early and metastatic lung adenocarcinoma">
-      <p class="modal-caption">Fig. 1 &mdash; study design and the single-cell landscape across normal lung, early-stage and metastatic disease. From Kim et al., <i>Nat Commun</i> 11:2285 (2020), <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
-      <div class="modal-body">
-        <p>Profiling <b>208,506 single cells</b> from <b>44 patients</b> &mdash; spanning normal lung, early-stage tumors, lymph-node and brain metastases, and pleural effusions &mdash; this study maps how lung adenocarcinoma is reprogrammed as it spreads.</p>
-        <p>A cancer-cell subtype that deviates from the normal differentiation trajectory comes to dominate the metastatic stage. In parallel, the microenvironment turns pro-tumoral and immunosuppressive: normal resident myeloid populations are gradually replaced by monocyte-derived macrophages and dendritic cells, accompanied by T-cell exhaustion &mdash; exposing candidate diagnostic and therapeutic targets in cancer&ndash;microenvironment interactions.</p>
-      </div>
-      <div class="modal-actions">
-        <a class="btn btn-primary" href="https://doi.org/10.1038/s41467-020-16164-1" target="_blank" rel="noopener">Read the paper &rarr;</a>
-        <a class="btn btn-ghost" href="https://pubmed.ncbi.nlm.nih.gov/32385277/" target="_blank" rel="noopener">PubMed</a>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>

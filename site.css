@@ -90,7 +90,16 @@ img { max-width: 100%; display: block; }
 .logo .dot { color: var(--accent); }
 .logo-full { font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); margin-left: 9px; white-space: nowrap; }
 @media (max-width: 400px) { .logo-full { display: none; } }
-.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #3c4258; }
+.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #3c4258; margin-left: auto; }
+.header-actions { display: flex; align-items: center; gap: 10px; margin-left: 18px; }
+.lang-toggle {
+  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .5px;
+  color: var(--accent); background: var(--accent-soft);
+  border: none; border-radius: 99px; padding: 6px 13px; cursor: pointer;
+  transition: .15s;
+}
+.lang-toggle:hover { background: var(--accent); color: #fff; }
+.lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a.active { color: var(--accent); font-weight: 700; }
 .nav-toggle {
@@ -107,9 +116,10 @@ img { max-width: 100%; display: block; }
   max-width: var(--maxw); margin: 0 auto;
   padding: 92px 24px 72px; position: relative;
 }
-.hero-dots {
-  position: absolute; right: -10px; top: 30px; width: 420px; height: 340px;
-  opacity: .55; pointer-events: none;
+.hero-umap {
+  position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+  width: 460px; max-width: 42%; pointer-events: none; user-select: none;
+  mix-blend-mode: multiply; /* melts the white plot background into the hero gradient */
 }
 .kicker {
   font-size: 12px; font-weight: 800; letter-spacing: 3px;
@@ -123,7 +133,8 @@ img { max-width: 100%; display: block; }
   font-size: 17px; color: var(--body); margin-top: 18px;
   line-height: 1.65; max-width: 540px;
 }
-.hero-actions { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-actions .btn { font-size: 17px; padding: 16px 34px; border-radius: 12px; }
 .btn {
   display: inline-block; font-size: 14.5px; font-weight: 600;
   padding: 12px 24px; border-radius: var(--radius-sm); transition: .15s;
@@ -168,6 +179,96 @@ img { max-width: 100%; display: block; }
 .card-more {
   display: inline-block; margin-top: 12px;
   font-size: 12.5px; font-weight: 700; color: var(--accent);
+}
+
+/* ---------- Research takeover ----------
+   Not a floating layer: when open, the rest of the page is hidden and this
+   section becomes the page content, so normal page scrolling applies. */
+.mega-overlay {
+  background: var(--white);
+  animation: mega-in .35s cubic-bezier(.22, .61, .36, 1);
+}
+.mega-overlay[hidden] { display: none; }
+body.research-open .hero,
+body.research-open .section,
+body.research-open .site-footer { display: none; }
+@keyframes mega-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.mega-inner { max-width: 1080px; margin: 0 auto; padding: 44px 24px 90px; }
+.mega-title { font-size: clamp(32px, 4.5vw, 46px); font-weight: 800; letter-spacing: -.5px; margin-top: 10px; }
+.mega-sub { font-size: 16px; color: var(--body); margin-top: 12px; max-width: 560px; }
+.mega-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.mega-tag {
+  font-size: 12.5px; font-weight: 600; color: var(--accent);
+  background: var(--accent-soft); border-radius: 99px; padding: 6px 14px;
+}
+.mega-close {
+  position: fixed; top: 76px; right: 26px; z-index: 95;
+  width: 44px; height: 44px; border-radius: 50%;
+  font: inherit; font-size: 26px; line-height: 1;
+  color: var(--ink); background: var(--bg-section);
+  border: 1px solid var(--border); cursor: pointer;
+  transition: .15s;
+}
+.mega-close:hover { background: var(--accent-soft); color: var(--accent); }
+.mega-close:focus-visible { outline: 2px solid var(--accent); }
+/* rows animate in once each time the overlay opens (display:none restarts the
+   animation); they always end fully visible — no observer involved */
+.mega-overlay .feature-row { animation: reveal-in .6s cubic-bezier(.22, .61, .36, 1) backwards; }
+.mega-overlay .feature-row:nth-child(2) { animation-delay: .12s; }
+.mega-overlay .feature-row:nth-child(3) { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  .mega-overlay { animation: none; }
+  .mega-overlay .feature-row { animation: none; }
+}
+
+/* ---------- Research feature rows (alternating figure/text) ---------- */
+.feature-rows { display: flex; flex-direction: column; gap: 56px; margin-top: 40px; }
+.feature-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center;
+}
+.feature-row.flip .feature-media { order: 2; }
+.feature-row.flip .feature-text { order: 1; }
+.feature-media {
+  position: relative; border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; background: var(--bg-soft);
+  transition: box-shadow .18s, transform .18s;
+}
+.feature-media img { display: block; width: 100%; }
+.feature-media[data-paper] { cursor: zoom-in; }
+.feature-media[data-paper]:hover { box-shadow: 0 10px 30px rgba(16, 25, 54, .12); transform: translateY(-2px); }
+.feature-media[data-paper]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.feature-media-hint {
+  position: absolute; right: 10px; bottom: 10px;
+  font-size: 11px; font-weight: 600; color: #fff;
+  background: rgba(16, 25, 54, .55); padding: 4px 10px; border-radius: 99px;
+  pointer-events: none;
+}
+.placeholder-media {
+  aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center;
+}
+.placeholder-media svg { width: 70%; height: auto; opacity: .8; }
+.feature-kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; color: var(--accent); }
+.feature-text h3 {
+  font-size: 22px; font-weight: 800; line-height: 1.3; margin-top: 10px;
+  letter-spacing: -.2px; text-wrap: balance;
+}
+.feature-text p { font-size: 14.5px; color: var(--body); line-height: 1.75; margin-top: 12px; }
+.feature-link {
+  display: inline-block; margin-top: 14px;
+  font-size: 13.5px; font-weight: 700; color: var(--accent);
+}
+.feature-link:hover { text-decoration: underline; }
+.feature-link-static { color: var(--muted); cursor: default; }
+.feature-link-static:hover { text-decoration: none; }
+
+@media (max-width: 900px) {
+  .feature-row { grid-template-columns: 1fr; gap: 20px; }
+  .feature-row.flip .feature-media { order: 1; }
+  .feature-row.flip .feature-text { order: 2; }
+  .feature-rows { gap: 44px; }
 }
 
 /* ---------- Featured-study modal ---------- */
@@ -312,6 +413,13 @@ body.modal-open { overflow: hidden; }
 .pi-card .contact { font-size: 12.5px; color: var(--muted); margin-top: 14px; line-height: 1.8; }
 .pi-card .contact a { color: var(--accent); font-weight: 600; }
 
+.pi-ids { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.pi-ids a {
+  font-size: 11.5px; font-weight: 700; color: var(--accent);
+  background: var(--accent-soft); border-radius: 99px; padding: 5px 12px;
+  transition: .15s;
+}
+.pi-ids a:hover { background: var(--accent); color: #fff; }
 .pi-metrics {
   display: flex; justify-content: center; gap: 22px;
   margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
@@ -370,11 +478,12 @@ body.modal-open { overflow: hidden; }
   .people-grid { grid-template-columns: repeat(3, 1fr); }
   .pi-layout { grid-template-columns: 1fr; }
   .pi-card { position: static; }
-  .hero-dots { display: none; }
+  .hero-umap { display: none; }
 }
 @media (max-width: 640px) {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
+    margin-left: 0;
     flex-direction: column; gap: 0; background: #fff;
     border-bottom: 1px solid var(--border); padding: 8px 24px 16px;
   }
