@@ -14,6 +14,7 @@ window.SGL_I18N = {
     ko: "가톨릭대학교 의과대학 미생물학교실<br>서울 서초구 반포대로 222<br>옴니버스파크 A동 8108호"
   },
   "footer.contact": { en: "Contact", ko: "연락처" },
+  "footer.campus": { en: "Songeui Campus, Seoul", ko: "성의교정 (서울)" },
   "footer.copyright": {
     en: "© 2026 Single-cell Genomics Lab, The Catholic University of Korea",
     ko: "© 2026 가톨릭대학교 단일세포유전체연구실"

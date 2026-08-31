@@ -471,6 +471,10 @@ body.modal-open { overflow: hidden; }
 .site-footer p { font-size: 12.5px; margin-top: 10px; line-height: 1.75; }
 .site-footer .col-title { color: #fff; font-weight: 600; font-size: 13px; }
 .site-footer a:hover { color: #fff; }
+.footer-univ { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.footer-univ-logo { height: 36px; width: auto; opacity: .92; transition: opacity .15s; }
+.footer-univ a:hover .footer-univ-logo { opacity: 1; }
+.footer-univ p { font-size: 12px; margin-top: 6px; }
 .site-footer .copyright {
   max-width: var(--maxw); margin: 0 auto; padding: 0 24px 28px;
   font-size: 11.5px; color: #6b7494;
