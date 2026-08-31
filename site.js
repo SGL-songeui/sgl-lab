@@ -197,11 +197,50 @@
     revealize(document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
   }
 
+  /* ---------- featured-study modal ---------- */
+  function initPaperModals() {
+    var lastTrigger = null;
+    function open(id, trigger) {
+      var overlay = document.getElementById("modal-" + id);
+      if (!overlay) return;
+      lastTrigger = trigger || null;
+      overlay.hidden = false;
+      document.body.classList.add("modal-open");
+      var btn = overlay.querySelector(".modal-close");
+      if (btn) btn.focus();
+    }
+    function closeAll() {
+      var any = false;
+      Array.prototype.forEach.call(document.querySelectorAll(".modal-overlay:not([hidden])"), function (o) {
+        o.hidden = true; any = true;
+      });
+      if (any) {
+        document.body.classList.remove("modal-open");
+        if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+      }
+    }
+    document.addEventListener("click", function (e) {
+      var card = e.target.closest ? e.target.closest("[data-paper]") : null;
+      if (card) { open(card.getAttribute("data-paper"), card); return; }
+      if (e.target.closest(".modal-close")) { closeAll(); return; }
+      var overlay = e.target.classList && e.target.classList.contains("modal-overlay");
+      if (overlay) closeAll();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeAll();
+      if ((e.key === "Enter" || e.key === " ") && e.target.hasAttribute && e.target.hasAttribute("data-paper")) {
+        e.preventDefault();
+        open(e.target.getAttribute("data-paper"), e.target);
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     buildHeader();
     buildFooter();
     initPublications();
     initAvatars();
     initReveal();
+    initPaperModals();
   });
 })();

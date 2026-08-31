@@ -58,10 +58,12 @@
       <div class="section-kicker">RESEARCH</div>
       <h2 class="section-title">What we study</h2>
       <div class="card-grid">
-        <div class="card">
+        <div class="card card-clickable" data-paper="natcomm2020" role="button" tabindex="0"
+             aria-haspopup="dialog" aria-label="Tumor Microenvironment — open featured study">
           <div class="card-icon" style="background:var(--accent-soft);">&#129516;</div>
           <h3>Tumor Microenvironment</h3>
           <p>Cellular ecosystems of lung and other cancers resolved at single-cell resolution &mdash; tumor cells, immune cells, and stroma in dialogue.</p>
+          <span class="card-more">Featured study &rarr;</span>
         </div>
         <div class="card">
           <div class="card-icon" style="background:var(--violet-soft);">&#128737;&#65039;</div>
@@ -111,6 +113,27 @@
       </div>
     </div>
   </section>
+
+  <!-- Featured-study modal: Kim et al., Nat Commun 2020 -->
+  <div class="modal-overlay" id="modal-natcomm2020" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="natcomm2020-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <span class="pub-badge">2020 &middot; Nature Communications</span>
+      <h2 class="modal-title" id="natcomm2020-title">Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma</h2>
+      <p class="modal-authors">Kim, N., Kim, H. K., Lee, K., Hong, Y., Cho, J. H., et al., Ahn, M. J. &amp; <b>Lee, H. O.</b></p>
+      <img class="modal-figure" src="assets/natcomm2020_fig1.jpg" loading="lazy"
+           alt="Figure 1 of the paper: study design and single-cell transcriptome landscape of 208,506 cells from normal lung, early and metastatic lung adenocarcinoma">
+      <p class="modal-caption">Fig. 1 &mdash; study design and the single-cell landscape across normal lung, early-stage and metastatic disease. From Kim et al., <i>Nat Commun</i> 11:2285 (2020), <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+      <div class="modal-body">
+        <p>Profiling <b>208,506 single cells</b> from <b>44 patients</b> &mdash; spanning normal lung, early-stage tumors, lymph-node and brain metastases, and pleural effusions &mdash; this study maps how lung adenocarcinoma is reprogrammed as it spreads.</p>
+        <p>A cancer-cell subtype that deviates from the normal differentiation trajectory comes to dominate the metastatic stage. In parallel, the microenvironment turns pro-tumoral and immunosuppressive: normal resident myeloid populations are gradually replaced by monocyte-derived macrophages and dendritic cells, accompanied by T-cell exhaustion &mdash; exposing candidate diagnostic and therapeutic targets in cancer&ndash;microenvironment interactions.</p>
+      </div>
+      <div class="modal-actions">
+        <a class="btn btn-primary" href="https://doi.org/10.1038/s41467-020-16164-1" target="_blank" rel="noopener">Read the paper &rarr;</a>
+        <a class="btn btn-ghost" href="https://pubmed.ncbi.nlm.nih.gov/32385277/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
