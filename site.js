@@ -59,7 +59,7 @@
     el.className = "site-header";
     el.innerHTML =
       '<div class="inner">' +
-      '<a class="logo" href="index.html">SGL<span class="dot">.</span></a>' +
+      '<a class="logo" href="index.html"><img class="logo-mark" src="assets/favicon.svg" alt="">SGL<span class="dot">.</span><span class="logo-full">Single-cell Genomics Lab</span></a>' +
       '<nav class="nav-links">' + links + "</nav>" +
       '<div class="header-actions">' +
       '<div class="lang-switch" role="group" aria-label="Language">' +
