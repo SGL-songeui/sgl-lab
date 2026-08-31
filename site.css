@@ -25,6 +25,34 @@
 
 html { scroll-behavior: smooth; }
 
+/* ---------- Page transitions ---------- */
+/* Cross-document view transitions (Chrome 126+ / Safari 18+); others fall back
+   to the entrance animation below. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: .22s; }
+::view-transition-new(root) { animation-duration: .22s; }
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+body { animation: page-enter .45s cubic-bezier(.22, .61, .36, 1) both; }
+
+/* Scroll-reveal (elements get .reveal via site.js) */
+.reveal { opacity: 0; transform: translateY(18px); }
+.reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity .55s cubic-bezier(.22, .61, .36, 1),
+              transform .55s cubic-bezier(.22, .61, .36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body { animation: none; }
+  .reveal { opacity: 1; transform: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+
 body {
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   color: var(--ink);
@@ -131,6 +159,17 @@ img { max-width: 100%; display: block; }
   background: var(--white); border: 1px solid var(--border);
   border-radius: 12px; padding: 18px 20px;
   display: flex; gap: 16px; align-items: flex-start;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+}
+.pub-row[data-doi] { cursor: pointer; }
+.pub-row[data-doi]:hover {
+  border-color: #b9c6ef; box-shadow: 0 6px 20px rgba(43, 83, 224, .08);
+  transform: translateY(-1px);
+}
+.pub-type {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .3px;
+  background: #eef1f7; color: #5a6178; padding: 3px 9px; border-radius: 99px;
+  margin-left: 8px; vertical-align: 1px; white-space: nowrap;
 }
 .pub-badge {
   font-size: 11px; font-weight: 700; background: var(--accent-soft);
@@ -208,6 +247,13 @@ img { max-width: 100%; display: block; }
 .pi-card .title { font-size: 13px; color: var(--body); margin-top: 6px; line-height: 1.55; }
 .pi-card .contact { font-size: 12.5px; color: var(--muted); margin-top: 14px; line-height: 1.8; }
 .pi-card .contact a { color: var(--accent); font-weight: 600; }
+
+.pi-metrics {
+  display: flex; justify-content: center; gap: 22px;
+  margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
+}
+.pi-metrics .num { font-size: 18px; font-weight: 800; color: var(--ink); }
+.pi-metrics .lbl { font-size: 10.5px; color: var(--muted); }
 
 .timeline { margin-top: 18px; border-left: 2px solid var(--accent-soft); padding-left: 24px; }
 .timeline-item { position: relative; padding-bottom: 22px; }

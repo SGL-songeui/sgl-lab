@@ -1,578 +1,682 @@
 [
  {
   "title": "Selective inhibition of long isoforms of phosphodiesterase 4D mitigates liver fibrosis in mouse models",
-  "authors": "Kim J, Yoon H, Joe SC, Smith A, Park J, Hong G, Ha JM, Kim EB, Seki E, Kim MK, Lee HO, Kim HS, Chung JH.",
-  "journal": "J Clin Invest",
-  "year": 2025,
-  "citation": "J Clin Invest. 2025 Nov 6:e182571. doi: 10.1172/JCI182571. Epub ahead of print. PMID: 41196648.",
+  "authors": "Kim, J., Yoon, H., Joe, S. C., Smith, A., Park, J., Hong, G., Ha, J. M., Kim, E. B., Seki, E., Kim, M. K., Lee, H. O., Kim, H. S., Chung, J. H.",
+  "journal": "Journal of Clinical Investigation",
+  "year": 2026,
   "doi": "10.1172/JCI182571",
-  "pmid": "41196648"
+  "pmid": "41196648",
+  "type": "Article",
+  "date": "2 Jan 2026"
  },
  {
-  "title": "Unveiling the influence of tumor and immune signatures on immune checkpoint therapy in advanced lung cancer",
-  "authors": "Kim N, Park S, Jo A, Eum HH, Kim HK, Lee K, Cho JH, Ku BM, Jung HA, Sun JM, Lee SH, Ahn JS, Lee JI, Choi JW, Jeong D, Na M, Kang H, Kim JY, Choi JK, Lee HO, Ahn MJ.",
-  "journal": "Elife",
-  "year": 2024,
-  "citation": "Elife. 2024 Nov 8;13:RP98366. doi:10.7554/eLife.98366. PMID: 39514276; PMCID: PMC11548875.",
-  "doi": "10.7554/eLife.98366",
-  "pmid": "39514276"
- },
- {
-  "title": "Single-cell RNA sequencing of nc886, a non-coding RNA transcribed by RNA polymerase III, with a primer spike-in strategy",
-  "authors": "Shin GJ, Choi BH, Eum HH, Jo A, Kim N, Kang H, Hong D, Jang JJ, Lee HH, Lee YS, Lee YS, Lee HO.",
-  "journal": "PLoS One",
-  "year": 2024,
-  "citation": "PLoS One. 2024 Aug 27;19(8):e0301562. doi: 10.1371/journal.pone.0301562. PMID: 39190696; PMCID: PMC11349216.",
-  "doi": "10.1371/journal.pone.0301562",
-  "pmid": "39190696"
- },
- {
-  "title": "Characterization of an orthotopic mouse transplant model reveals early changes in the tumor microenvironment of lung cancer",
-  "authors": "Na M, Kang H, Kim N, Jo A, Lee HO.",
-  "journal": "BMB Rep",
-  "year": 2024,
-  "citation": "BMB Rep. 2024 Nov;57(11):484-489. doi: 10.5483/BMBRep.2024-0015. PMID:39044458; PMCID: PMC11608852.",
-  "doi": "10.5483/BMBRep.2024-0015",
-  "pmid": "39044458"
+  "title": "Single-nucleus multi-omics delineates distinct epigenetic programs associated with tumor progression in lung adenocarcinoma",
+  "authors": "Kim, Y., Kang, H., Hwang, Y., Kim, K. S., Moon, S. W., Kim, J., Kim, S. J., Lee, H. O.",
+  "journal": "Clinical Epigenetics",
+  "year": 2026,
+  "doi": "10.1186/s13148-026-02078-0",
+  "pmid": null,
+  "type": "Article",
+  "date": "Dec 2026"
  },
  {
   "title": "Single-cell RNA sequencing revealed the role of the Th17 pathway in the development of anti-human leukocyte antigen antibodies in a highly sensitized mouse model",
-  "authors": "Lee H, Shin YJ, Fang X, Cui S, Lim SW, Lee SY, Eum SH, Min JW, Hong CW, Lee HO, Cho ML, Oh EJ, Yang CW, Chung BH.",
-  "journal": "Kidney Res Clin Pract",
+  "authors": "Lee, H., Shin, Y. J., Fang, X., Cui, S., Lim, S. W., Lee, S. Y., Eum, S. H., Min, J. W., Hong, C. W., Lee, H. O., Cho, M. L., Oh, E. J., Yang, C. W., Chung, B. H.",
+  "journal": "Kidney Research and Clinical Practice",
   "year": 2025,
-  "citation": "Kidney Res Clin Pract. 2025 Nov;44(6):960-973. doi: 10.23876/j.krcp.23.317. Epub 2024 Jun 13. PMID:38934039; PMCID: PMC12611625.",
   "doi": "10.23876/j.krcp.23.317",
-  "pmid": "38934039"
- },
- {
-  "title": "Single-cell RNA sequencing reveals myeloid and T cell co-stimulation mediated by IL-7 anti-cancer immunotherapy",
-  "authors": "Eum HH, Jeong D, Kim N, Jo A, Na M, Kang H, Hong Y, Kong JS, Jeong GH, Yoo SA, Lee HO.",
-  "journal": "Br J Cancer",
-  "year": 2024,
-  "citation": "Br J Cancer. 2024 May;130(8):1388-1401. doi: 10.1038/s41416-024-02617-7. Epub 2024 Feb 29. PMID:38424167; PMCID: PMC11014989.",
-  "doi": "10.1038/s41416-024-02617-7",
-  "pmid": "38424167"
+  "pmid": "38934039",
+  "type": "Article",
+  "date": "Nov 2025"
  },
  {
   "title": "Altered tumor signature and T-cell profile after chemotherapy reveal new therapeutic opportunities in high-grade serous ovarian carcinoma",
-  "authors": "Kang H, Hwang S, Kang H, Jo A, Lee JM, Choi JK, An HJ, Lee HO.",
-  "journal": "Cancer Sci",
+  "authors": "Kang, H., Hwang, S., Kang, H., Jo, A., Lee, J. M., Choi, J. K., An, H. J., Lee, H. O.",
+  "journal": "Cancer Science",
   "year": 2024,
-  "citation": "Cancer Sci. 2024 Mar;115(3):989-1000. doi: 10.1111/cas.16074. Epub 2024 Jan 16. PMID: 38226451; PMCID: PMC10921005.",
   "doi": "10.1111/cas.16074",
-  "pmid": "38226451"
+  "pmid": "38226451",
+  "type": "Article",
+  "date": "Mar 2024"
+ },
+ {
+  "title": "Characterization of an orthotopic mouse transplant model reveals early changes in the tumor microenvironment of lung cancer",
+  "authors": "Na, M., Kang, H., Kim, N., Jo, A., Lee, H. O.",
+  "journal": "BMB Reports",
+  "year": 2024,
+  "doi": "10.5483/BMBRep.2024-0015",
+  "pmid": "39044458",
+  "type": "Article",
+  "date": "2024"
  },
  {
   "title": "Comprehensive profiling of DNA methylation in Korean patients with colorectal cancer",
-  "authors": "Shim H, Jang K, Bang YH, Chu HBK, Kang J, Lee JY, Cho S, Lee HS, Jeon J, Hwang T, Joe S, Lim J, Choi JH, Joo EH, Park K, Moon JH, Han KY, Hong Y, Lee WY, Kim HC, Yun SH, Cho YB, Park YA, Huh JW, Shin JK, Pyo DH, Hong H, Lee HO, Park WY, Yang JO, Kim YJ.",
-  "journal": "BMB Rep",
+  "authors": "Shim, H., Jang, K., Bang, Y. H., Chu, H. B. K., Kang, J., Lee, J. Y., Cho, S., Lee, H. S., Jeon, J., Hwang, T., Joe, S., Lim, J., Choi, J. H., Joo, E. H., Park, K., Moon, J. H., Han, K. Y., Hong, Y., Lee, W. Y., Kim, H. C., Yun, S. H., Cho, Y. B., Park, Y. A., Huh, J. W., Shin, J. K., Pyo, D. H., Hong, H., Lee, H. O., Park, W. Y., Yang, J. O., Kim, Y. J.",
+  "journal": "BMB Reports",
   "year": 2024,
-  "citation": "BMB Rep. 2024 Feb;57(2):110-115. doi:10.5483/BMBRep.2023-0093. PMID: 37605617; PMCID: PMC10910091.",
   "doi": "10.5483/BMBRep.2023-0093",
-  "pmid": "37605617"
+  "pmid": "37605617",
+  "type": "Article",
+  "date": "2024"
  },
  {
-  "title": "Single-cell mapping of combinatorial target antigens for CAR switches using logic gates",
-  "authors": "Kwon J, Kang J, Jo A, Seo K, An D, Baykan MY, Lee JH, Kim N, Eum HH, Hwang S, Lee JM, Park WY, An HJ, Lee HO, Park JE, Choi JK.",
-  "journal": "Nat Biotechnol",
-  "year": 2023,
-  "citation": "Nat Biotechnol. 2023 Nov;41(11):1593-1605. doi: 10.1038/s41587-023-01686-y. Epub 2023 Feb 16. PMID: 36797491.",
-  "doi": "10.1038/s41587-023-01686-y",
-  "pmid": "36797491"
+  "title": "Single-cell RNA sequencing of nc886, a noncoding RNA transcribed by RNA polymerase III, with a primer spike-in strategy",
+  "authors": "Shin, G. J., Choi, B. H., Eum, H. H., Jo, A., Kim, N., Kang, H., Hong, D., Jang, J. J., Lee, H. H., Lee, Y. S., Lee, Y. S., Lee, H. O.",
+  "journal": "PLoS ONE",
+  "year": 2024,
+  "doi": "10.1371/journal.pone.0301562",
+  "pmid": "39190696",
+  "type": "Article",
+  "date": "1 Aug 2024"
+ },
+ {
+  "title": "Single-cell RNA sequencing reveals myeloid and T cell co-stimulation mediated by IL-7 anti-cancer immunotherapy",
+  "authors": "Eum, H. H., Jeong, D., Kim, N., Jo, A., Na, M., Kang, H., Hong, Y., Kong, J. S., Jeong, G. H., Yoo, S. A., Lee, H. O.",
+  "journal": "British Journal of Cancer",
+  "year": 2024,
+  "doi": "10.1038/s41416-024-02617-7",
+  "pmid": "38424167",
+  "type": "Article",
+  "date": "3 May 2024"
+ },
+ {
+  "title": "Unveiling the influence of tumor and immune signatures on immune checkpoint therapy in advanced lung cancer",
+  "authors": "Kim, N., Park, S., Jo, A., Eum, H. H., Kim, H. K., Lee, K., Cho, J. H., Ku, B. M., Jung, H. A., Sun, J. M., Lee, S. H., Ahn, J. S., Lee, J. I., Choi, J. W., Jeong, D., Na, M., Kang, H., Kim, J. Y., Choi, J. K., Lee, H. O., Ahn, M. J.",
+  "journal": "eLife",
+  "year": 2024,
+  "doi": "10.7554/eLife.98366",
+  "pmid": "39514276",
+  "type": "Article",
+  "date": "8 Nov 2024"
  },
  {
   "title": "CTLA-4 inhibition facilitates follicular T and B cell interaction and the production of tumor-specific antibodies",
-  "authors": "Jo A, Jeong D, Eum HH, Kim N, Na M, Kang H, Lee HO.",
-  "journal": "Int J Cancer",
+  "authors": "Jo, A., Jeong, D., Eum, H. H., Kim, N., Na, M., Kang, H., Lee, H. O.",
+  "journal": "International Journal of Cancer",
   "year": 2023,
-  "citation": "Int J Cancer. 2023 May 1;152(9):1964-1976. doi:10.1002/ijc.34438. Epub 2023 Jan 27. PMID: 36650700.",
   "doi": "10.1002/ijc.34438",
-  "pmid": "36650700"
+  "pmid": "36650700",
+  "type": "Article",
+  "date": "1 May 2023"
  },
  {
   "title": "Perspectives on single-nucleus RNA sequencing in different cell types and tissues",
-  "authors": "Kim N, Kang H, Jo A, Yoo SA, Lee HO.",
-  "journal": "J Pathol Transl Med",
+  "authors": "Kim, N., Kang, H., Jo, A., Yoo, S. A., Lee, H. O.",
+  "journal": "Journal of Pathology and Translational Medicine",
   "year": 2023,
-  "citation": "J Pathol Transl Med. 2023 Jan;57(1):52-59. doi: 10.4132/jptm.2022.12.19. Epub 2023 Jan 10. PMID: 36623812; PMCID: PMC9846005.",
   "doi": "10.4132/jptm.2022.12.19",
-  "pmid": "36623812"
+  "pmid": "36623812",
+  "type": "Article",
+  "date": "Jan 2023"
  },
  {
-  "title": "Prescreening of tumor samples for tumor-centric transcriptome analyses of lung adenocarcinoma",
-  "authors": "Kim N, Jeong D, Jo A, Eum HH, Lee HO.",
-  "journal": "BMC Cancer",
-  "year": 2022,
-  "citation": "BMC Cancer. 2022 Nov 17;22(1):1186. doi: 10.1186/s12885-022-10317-9. PMID: 36397035; PMCID: PMC9673386.",
-  "doi": "10.1186/s12885-022-10317-9",
-  "pmid": "36397035"
+  "title": "Single-cell mapping of combinatorial target antigens for CAR switches using logic gates",
+  "authors": "Kwon, J., Kang, J., Jo, A., Seo, K., An, D., Baykan, M. Y., Lee, J. H., Kim, N., Eum, H. H., Hwang, S., Lee, J. M., Park, W. Y., An, H. J., Lee, H. O., Park, J. E., Choi, J. K.",
+  "journal": "Nature Biotechnology",
+  "year": 2023,
+  "doi": "10.1038/s41587-023-01686-y",
+  "pmid": "36797491",
+  "type": "Article",
+  "date": "Nov 2023"
  },
  {
-  "title": "2'-5' oligoadenylate synthetase‑like 1 (OASL1) protects against atherosclerosis by maintaining endothelial nitric oxide synthase mRNA stability",
-  "authors": "Kim TK, Jeon S, Park S, Sonn SK, Seo S, Suh J, Jin J, Kweon HY, Kim S, Moon SH, Kweon O, Koo BH, Kim N, Lee HO, Kim YM, Kim YJ, Park SH, Oh GT.",
-  "journal": "Nat Commun",
+  "title": "2′–5′ oligoadenylate synthetase‑like 1 (OASL1) protects against atherosclerosis by maintaining endothelial nitric oxide synthase mRNA stability",
+  "authors": "Kim, T. K., Jeon, S., Park, S., Sonn, S. K., Seo, S., Suh, J., Jin, J., Kweon, H. Y., Kim, S., Moon, S. H., Kweon, O., Koo, B. H., Kim, N., Lee, H. O., Kim, Y. M., Kim, Y. J., Park, S. H., Oh, G. T.",
+  "journal": "Nature Communications",
   "year": 2022,
-  "citation": "Nat Commun. 2022 Nov 4;13(1):6647. doi: 10.1038/s41467-022-34433-z. PMID: 36333342; PMCID: PMC9636244.",
   "doi": "10.1038/s41467-022-34433-z",
-  "pmid": "36333342"
- },
- {
-  "title": "Single-cell transcriptomics reveal cellular diversity of aortic valve and the immunomodulation by PPARγ during hyperlipidemia",
-  "authors": "Lee SH, Kim N, Kim M, Woo SH, Han I, Park J, Kim K, Park KS, Kim K, Shim D, Park SE, Zhang JY, Go DM, Kim DY, Yoon WK, Lee SP, Chung J, Kim KW, Park JH, Lee SH, Lee S, Ann SJ, Lee SH, Ahn HS, Jeong SC, Kim TK, Oh GT, Park WY, Lee HO, Choi JH.",
-  "journal": "Nat Commun",
-  "year": 2022,
-  "citation": "Nat Commun. 2022 Sep 17;13(1):5461. doi: 10.1038/s41467-022-33202-2. PMID: 36115863; PMCID: PMC9482653.",
-  "doi": "10.1038/s41467-022-33202-2",
-  "pmid": "36115863"
- },
- {
-  "title": "The regulation of insulin receptor/insulin-like growth factor 1 receptor ratio, an important factor for breast cancer prognosis, by TRIP-Br1",
-  "authors": "Nguyen TNQ, Jung S, Nguyen HA, Lee B, Vu SH, Myagmarjav D, Eum HH, Lee HO, Jo T, Choi Y, Lee MS.",
-  "journal": "J Hematol Oncol",
-  "year": 2022,
-  "citation": "J Hematol Oncol. 2022 Jun 16;15(1):82. doi: 10.1186/s13045-022-01303-6. PMID: 35710446; PMCID: PMC9204904.",
-  "doi": "10.1186/s13045-022-01303-6",
-  "pmid": "35710446"
+  "pmid": "36333342",
+  "type": "Article",
+  "date": "Dec 2022"
  },
  {
   "title": "Granulocyte Macrophage-Colony Stimulating Factor Produces a Splenic Subset of Monocyte-Derived Dendritic Cells That Efficiently Polarize T Helper Type 2 Cells in Response to Blood-Borne Antigen",
-  "authors": "Ryu SH, Shin HS, Eum HH, Park JS, Choi W, Na HY, In H, Kim TG, Park S, Hwang S, Sohn M, Kim ED, Seo KY, Lee HO, Lee MG, Chu MK, Park CG.",
-  "journal": "Front Immunol",
+  "authors": "Ryu, S. H., Shin, H. S., Eum, H. H., Park, J. S., Choi, W., Na, H. Y., In, H., Kim, T. G., Park, S., Hwang, S., Sohn, M., Kim, E. D., Seo, K. Y., Lee, H. O., Lee, M. G., Chu, M. K., Park, C. G.",
+  "journal": "Frontiers in Immunology",
   "year": 2022,
-  "citation": "Front Immunol. 2022 Jan 3;12:767037. doi: 10.3389/fimmu.2021.767037. PMID: 35069539; PMCID: PMC8778578.",
   "doi": "10.3389/fimmu.2021.767037",
-  "pmid": "35069539"
+  "pmid": "35069539",
+  "type": "Article",
+  "date": "3 Jan 2022"
  },
  {
-  "title": "Clinical Perspectives of Single-Cell RNA Sequencing",
-  "authors": "Kim N, Eum HH, Lee HO.",
-  "journal": "Biomolecules",
-  "year": 2021,
-  "citation": "Biomolecules. 2021 Aug 6;11(8):1161. doi: 10.3390/biom11081161. PMID: 34439827; PMCID: PMC8394304.",
-  "doi": "10.3390/biom11081161",
-  "pmid": "34439827"
+  "title": "Prescreening of tumor samples for tumor-centric transcriptome analyses of lung adenocarcinoma",
+  "authors": "Kim, N., Jeong, D., Jo, A., Eum, H. H., Lee, H. O.",
+  "journal": "BMC Cancer",
+  "year": 2022,
+  "doi": "10.1186/s12885-022-10317-9",
+  "pmid": "36397035",
+  "type": "Article",
+  "date": "Dec 2022"
+ },
+ {
+  "title": "Single-cell transcriptomics reveal cellular diversity of aortic valve and the immunomodulation by PPARγ during hyperlipidemia",
+  "authors": "Lee, S. H., Kim, N., Kim, M., Woo, S. H., Han, I., Park, J., Kim, K., Park, K. S., Kim, K., Shim, D., Park, S. E., Zhang, J. Y., Go, D. M., Kim, D. Y., Yoon, W. K., Lee, S. P., Chung, J., Kim, K. W., Park, J. H., Lee, S. H., Lee, S., Ann, S. J., Lee, S. H., Ahn, H. S., Jeong, S. C., Kim, T. K., Oh, G. T., Park, W. Y., Lee, H. O., Choi, J. H.",
+  "journal": "Nature Communications",
+  "year": 2022,
+  "doi": "10.1038/s41467-022-33202-2",
+  "pmid": "36115863",
+  "type": "Article",
+  "date": "Dec 2022"
+ },
+ {
+  "title": "The regulation of insulin receptor/insulin-like growth factor 1 receptor ratio, an important factor for breast cancer prognosis, by TRIP-Br1",
+  "authors": "Nguyen, T. N. Q., Jung, S., Nguyen, H. A., Lee, B. S., Vu, S. H., Myagmarjav, D., Eum, H. H., Lee, H. O., Jo, T., Choi, Y., Lee, M. S.",
+  "journal": "Journal of Hematology and Oncology",
+  "year": 2022,
+  "doi": "10.1186/s13045-022-01303-6",
+  "pmid": "35710446",
+  "type": "Letter",
+  "date": "Dec 2022"
  },
  {
   "title": "Chronic lung diseases are associated with gene expression programs favoring SARS-CoV-2 entry and severity",
-  "authors": "Bui LT, Winters NI, Chung MI, Joseph C, Gutierrez AJ, Habermann AC, Adams TS, Schupp JC, Poli S, Peter LM, Taylor CJ, Blackburn JB, Richmond BW, Nicholson AG, Rassl D, Wallace WA, Rosas IO, Jenkins RG, Kaminski N, Kropski JA, Banovich NE; Human Cell Atlas Lung Biological Network.",
-  "journal": "Nat Commun",
+  "authors": "Human Cell Atlas Lung Biological Network",
+  "journal": "Nature Communications",
   "year": 2021,
-  "citation": "Nat Commun. 2021 Jul 14;12(1):4314. doi: 10.1038/s41467-021-24467-0. PMID: 34262047; PMCID: PMC8280215.",
   "doi": "10.1038/s41467-021-24467-0",
-  "pmid": "34262047"
+  "pmid": "33106805",
+  "type": "Article",
+  "date": "Dec 2021"
+ },
+ {
+  "title": "Clinical perspectives of single-cell rna sequencing",
+  "authors": "Kim, N., Eum, H. H., Lee, H. O.",
+  "journal": "Biomolecules",
+  "year": 2021,
+  "doi": "10.3390/biom11081161",
+  "pmid": "34439827",
+  "type": "Review article",
+  "date": "Aug 2021"
  },
  {
   "title": "Single Cell Genomics for Tumor Heterogeneity",
-  "authors": "Lee HO, Park WY.",
-  "journal": "Adv Exp Med Biol",
+  "authors": "Lee, H. O., Park, W. Y.",
+  "journal": "Advances in Experimental Medicine and Biology",
   "year": 2021,
-  "citation": "Adv Exp Med Biol. 2021;1187:205-214. doi: 10.1007/978-981-32-9620-6_10. PMID: 33983580.",
   "doi": "10.1007/978-981-32-9620-6_10",
-  "pmid": "33983580"
+  "pmid": "33983580",
+  "type": "Chapter",
+  "date": null
  },
  {
   "title": "Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics",
-  "authors": "Muus C, Luecken MD, Eraslan G, Sikkema L, Waghray A, Heimberg G, Kobayashi Y, Vaishnav ED, Subramanian A, Smillie C, Jagadeesh KA, Duong ET, Fiskin E, Torlai Triglia E, Ansari M, Cai P, Lin B, Buchanan J, Chen S, Shu J, Haber AL, Chung H, Montoro DT, Adams T, Aliee H, Allon SJ, Andrusivova Z, Angelidis I, Ashenberg O, Bassler K, Bécavin C, Benhar I, Bergenstråhle J, Bergenstråhle L, Bolt L, Braun E, Bui LT, Callori S, Chaffin M, Chichelnitskiy E, Chiou J, Conlon TM, Cuoco MS, Cuomo ASE, Deprez M, Duclos G, Fine D, Fischer DS, Ghazanfar S, Gillich A, Giotti B, Gould J, Guo M, Gutierrez AJ, Habermann AC, Harvey T, He P, Hou X, Hu L, Hu Y, Jaiswal A, Ji L, Jiang P, Kapellos TS, Kuo CS, Larsson L, Leney-Greene MA, Lim K, Litviňuková M, Ludwig LS, Lukassen S, Luo W, Maatz H, Madissoon E, Mamanova L, Manakongtreecheep K, Leroy S, Mayr CH, Mbano IM, McAdams AM, Nabhan AN, Nyquist SK, Penland L, Poirion OB, Poli S, Qi C, Queen R, Reichart D, Rosas I, Schupp JC, Shea CV, Shi X, Sinha R, Sit RV, Slowikowski K, Slyper M, Smith NP, Sountoulidis A, Strunz M, Sullivan TB, Sun D, Talavera-López C, Tan P, Tantivit J, Travaglini KJ, Tucker NR, Vernon KA, Wadsworth MH, Waldman J, Wang X, Xu K, Yan W, Zhao W, Ziegler CGK; NHLBI LungMap Consortium; Human Cell Atlas Lung Biological Network.",
-  "journal": "Nat Med",
+  "authors": "The NHLBI LungMap Consortium, The Human Cell Atlas Lung Biological Network",
+  "journal": "Nature Medicine",
   "year": 2021,
-  "citation": "Nat Med. 2021 Mar;27(3):546-559. doi: 10.1038/s41591-020-01227-z. Epub 2021 Mar 2. PMID: 33654293; PMCID: PMC9469728.",
   "doi": "10.1038/s41591-020-01227-z",
-  "pmid": "33654293"
+  "pmid": "33654293",
+  "type": "Article",
+  "date": "Mar 2021"
  },
  {
-  "title": "Tumor-promoting macrophages prevail in malignant ascites of advanced gastric cancer",
-  "authors": "Eum HH, Kwon M, Ryu D, Jo A, Chung W, Kim N, Hong Y, Son DS, Kim ST, Lee J, Lee HO, Park WY.",
-  "journal": "Exp Mol Med",
+  "title": "Alterations in the transcriptional programs of myeloma cells and the microenvironment during extramedullary progression affect proliferation and immune evasion",
+  "authors": "Ryu, D., Kim, S. J., Hong, Y., Jo, A., Kim, N., Kim, H. J., Lee, H. O., Kim, K., Park, W. Y.",
+  "journal": "Clinical Cancer Research",
   "year": 2020,
-  "citation": "Exp Mol Med. 2020 Dec;52(12):1976-1988. doi: 10.1038/s12276-020-00538-y. Epub 2020 Dec 4. PMID: 33277616; PMCID: PMC8080575.",
-  "doi": "10.1038/s12276-020-00538-y",
-  "pmid": "33277616"
- },
- {
-  "title": "Chronic lung diseases are associated with gene expression programs favoring SARS-CoV-2 entry and severity",
-  "authors": "Bui LT, Winters NI, Chung MI, Joseph C, Gutierrez AJ, Habermann AC, Adams TS, Schupp JC, Poli S, Peter LM, Taylor CJ, Blackburn JB, Richmond BW, Nicholson AG, Rassl D, Wallace WA, Rosas IO, Jenkins RG, Kaminski N, Kropski JA, Banovich NE; Human Cell Atlas Lung Biological Network.",
-  "journal": "Nat Commun",
-  "year": 2021,
-  "citation": "Nat Commun. 2021 Jul 14;12(1):4314. doi: 10.1038/s41467-021-24467-0. PMID: 33106805; PMCID: PMC7587778.",
-  "doi": "10.1038/s41467-021-24467-0",
-  "pmid": "33106805"
- },
- {
-  "title": "Correction: Alterations in the Transcriptional Programs of Myeloma Cells and the Microenvironment during Extramedullary Progression Affect Proliferation and Immune Evasion",
-  "authors": "Ryu D, Kim SJ, Hong Y, Jo A, Kim N, Kim HJ, Lee HO, Kim K, Park WY.",
-  "journal": "Clin Cancer Res",
-  "year": 2020,
-  "citation": "Clin Cancer Res. 2020 Sep 15;26(18):5049. doi: 10.1158/1078-0432.CCR-20-3174. Erratum for: Clin Cancer Res. 2020 Feb 15;26(4):935-944. doi: 10.1158/1078-0432.CCR-19-0694. PMID: 32934030.",
-  "doi": "10.1158/1078-0432.CCR-20-3174",
-  "pmid": "32934030"
+  "doi": "10.1158/1078-0432.CCR-19-0694",
+  "pmid": "31558476",
+  "type": "Article",
+  "date": "15 Feb 2020"
  },
  {
   "title": "Anti-Inflammatory Actions of Soluble Ninjurin-1 Ameliorate Atherosclerosis",
-  "authors": "Jeon S, Kim TK, Jeong SJ, Jung IH, Kim N, Lee MN, Sonn SK, Seo S, Jin J, Kweon HY, Kim S, Shim D, Park YM, Lee SH, Kim KW, Cybulsky MI, Shim H, Roh TY, Park WY, Lee HO, Choi JH, Park SH, Oh GT.",
+  "authors": "Jeon, S., Kim, T. K., Jeong, S. J., Jung, I. H., Kim, N., Lee, M. N., Sonn, S. K., Seo, S., Jin, J., Kweon, H. Y., Kim, S., Shim, D., Park, Y. M., Lee, S. H., Kim, K. W., Cybulsky, M. I., Shim, H., Roh, T. Y., Park, W. Y., Lee, H. O., Choi, J. H., Park, S. H., Oh, G. T.",
   "journal": "Circulation",
   "year": 2020,
-  "citation": "Circulation. 2020 Nov 3;142(18):1736-1751. doi: 10.1161/CIRCULATIONAHA.120.046907. Epub 2020 Sep 4. PMID: 32883094.",
   "doi": "10.1161/CIRCULATIONAHA.120.046907",
-  "pmid": "32883094"
- },
- {
-  "title": "Myocyte-Specific Upregulation of ACE2 in Cardiovascular Disease: Implications for SARS-CoV-2-Mediated Myocarditis",
-  "authors": "Tucker NR, Chaffin M, Bedi KC Jr, Papangeli I, Akkad AD, Arduini A, Hayat S, Eraslan G, Muus C, Bhattacharyya RP, Stegmann CM; Human Cell Atlas Lung Biological Network; Margulies KB, Ellinor PT; Human Cell Atlas Lung Biological Network Consortium Members.",
-  "journal": "Circulation",
-  "year": 2020,
-  "citation": "Circulation. 2020 Aug 18;142(7):708-710. doi: 10.1161/CIRCULATIONAHA.120.047911. Epub 2020 Jun 22. PMID: 32795091; PMCID: PMC7424896.",
-  "doi": "10.1161/CIRCULATIONAHA.120.047911",
-  "pmid": "32795091"
+  "pmid": "32883094",
+  "type": "Article",
+  "date": "3 Nov 2020"
  },
  {
   "title": "Cancer cells undergoing epigenetic transition show short-term resistance and are transformed into cells with medium-term resistance by drug treatment",
-  "authors": "Poojan S, Bae SH, Min JW, Lee EY, Song Y, Kim HY, Sim HW, Kang EK, Kim YH, Lee HO, Hong Y, Park WY, Jang H, Hong KM.",
-  "journal": "Exp Mol Med",
+  "authors": "Poojan, S., Bae, S. H., Min, J. W., Lee, E. Y., Song, Y., Kim, H. Y., Sim, H. W., Kang, E. K., Kim, Y. H., Lee, H. O., Hong, Y., Park, W. Y., Jang, H., Hong, K. M.",
+  "journal": "Experimental and Molecular Medicine",
   "year": 2020,
-  "citation": "Exp Mol Med. 2020 Jul;52(7):1102-1115. doi: 10.1038/s12276-020-0464-3. Epub 2020 Jul 13. PMID: 32661348; PMCID: PMC8080688.",
   "doi": "10.1038/s12276-020-0464-3",
-  "pmid": "32661348"
+  "pmid": "32661348",
+  "type": "Article",
+  "date": "1 Jul 2020"
  },
  {
-  "title": "Single-cell RNA sequencing reveals the tumor microenvironment and facilitates strategic choices to circumvent treatment failure in a chemorefractory bladder cancer patient",
-  "authors": "Lee HW, Chung W, Lee HO, Jeong DE, Jo A, Lim JE, Hong JH, Nam DH, Jeong BC, Park SH, Joo KM, Park WY.",
-  "journal": "Genome Med",
+  "title": "Erratum: Alterations in the transcriptional programs of myeloma cells and the microenvironment during extramedullary progression affect proliferation and immune evasion (Clinical Cancer Research (2020) 26 (935-944) DOI: 10.1158/1078-0432.CCR-19-0694)",
+  "authors": "Ryu, D., Kim, S. J., Hong, Y., Jo, A., Kim, N., Kim, H. J., Lee, H. O., Kim, K., Park, W. Y.",
+  "journal": "Clinical Cancer Research",
   "year": 2020,
-  "citation": "Genome Med. 2020 May 27;12(1):47. doi: 10.1186/s13073-020-00741-6. PMID: 32460812; PMCID: PMC7251908.",
-  "doi": "10.1186/s13073-020-00741-6",
-  "pmid": "32460812"
+  "doi": "10.1158/1078-0432.CCR-20-3174",
+  "pmid": "32934030",
+  "type": "Comment/debate",
+  "date": "15 Sep 2020"
  },
  {
   "title": "Lineage-dependent gene expression programs influence the immune landscape of colorectal cancer",
-  "authors": "Lee HO, Hong Y, Etlioglu HE, Cho YB, Pomella V, Van den Bosch B, Vanhecke J, Verbandt S, Hong H, Min JW, Kim N, Eum HH, Qian J, Boeckx B, Lambrechts D, Tsantoulis P, De Hertogh G, Chung W, Lee T, An M, Shin HT, Joung JG, Jung MH, Ko G, Wirapati P, Kim SH, Kim HC, Yun SH, Tan IBH, Ranjan B, Lee WY, Kim TY, Choi JK, Kim YJ, Prabhakar S, Tejpar S, Park WY.",
-  "journal": "Nat Genet",
+  "authors": "Lee, H. O., Hong, Y., Etlioglu, H. E., Cho, Y. B., Pomella, V., Van den Bosch, B., Vanhecke, J., Verbandt, S., Hong, H., Min, J. W., Kim, N., Eum, H. H., Qian, J., Boeckx, B., Lambrechts, D., Tsantoulis, P., De Hertogh, G., Chung, W., Lee, T., An, M., Shin, H. T., Joung, J. G., Jung, M. H., Ko, G., Wirapati, P., Kim, S. H., Kim, H. C., Yun, S. H., Tan, I. B. H., Ranjan, B., Lee, W. Y., Kim, T. Y., Choi, J. K., Kim, Y. J., Prabhakar, S., Tejpar, S., Park, W. Y.",
+  "journal": "Nature Genetics",
   "year": 2020,
-  "citation": "Nat Genet. 2020 Jun;52(6):594-603. doi: 10.1038/s41588-020-0636-z. Epub 2020 May 25. PMID: 32451460.",
   "doi": "10.1038/s41588-020-0636-z",
-  "pmid": "32451460"
+  "pmid": "32451460",
+  "type": "Article",
+  "date": "1 Jun 2020"
+ },
+ {
+  "title": "Myocyte-Specific Upregulation of ACE2 in Cardiovascular Disease: Implications for SARS-CoV-2-Mediated Myocarditis",
+  "authors": "Tucker, N. R., Chaffin, M., Bedi, K. C., Papangeli, I., Akkad, A. D., Arduini, A., Hayat, S., Eraslan, G., Muus, C., Bhattacharyya, R. P., Stegmann, C. M., Human Cell Atlas Lung Biological Network, Margulies, K. B., Ellinor, P. T.",
+  "journal": "Circulation",
+  "year": 2020,
+  "doi": "10.1161/CIRCULATIONAHA.120.047911",
+  "pmid": "32795091",
+  "type": "Letter",
+  "date": "18 Aug 2020"
  },
  {
   "title": "SARS-CoV-2 Receptor ACE2 Is an Interferon-Stimulated Gene in Human Airway Epithelial Cells and Is Detected in Specific Cell Subsets across Tissues",
-  "authors": "Ziegler CGK, Allon SJ, Nyquist SK, Mbano IM, Miao VN, Tzouanas CN, Cao Y, Yousif AS, Bals J, Hauser BM, Feldman J, Muus C, Wadsworth MH 2nd, Kazer SW, Hughes TK, Doran B, Gatter GJ, Vukovic M, Taliaferro F, Mead BE, Guo Z, Wang JP, Gras D, Plaisant M, Ansari M, Angelidis I, Adler H, Sucre JMS, Taylor CJ, Lin B, Waghray A, Mitsialis V, Dwyer DF, Buchheit KM, Boyce JA, Barrett NA, Laidlaw TM, Carroll SL, Colonna L, Tkachev V, Peterson CW, Yu A, Zheng HB, Gideon HP, Winchell CG, Lin PL, Bingle CD, Snapper SB, Kropski JA, Theis FJ, Schiller HB, Zaragosi LE, Barbry P, Leslie A, Kiem HP, Flynn JL, Fortune SM, Berger B, Finberg RW, Kean LS, Garber M, Schmidt AG, Lingwood D, Shalek AK, Ordovas-Montanes J; HCA Lung Biological Network. Electronic address: lung-network@humancellatlas.org; HCA Lung Biological Network.",
+  "authors": "HCA Lung Biological Network",
   "journal": "Cell",
   "year": 2020,
-  "citation": "Cell. 2020 May 28;181(5):1016-1035.e19. doi: 10.1016/j.cell.2020.04.035. Epub 2020 Apr 27. PMID: 32413319; PMCID: PMC7252096.",
   "doi": "10.1016/j.cell.2020.04.035",
-  "pmid": "32413319"
- },
- {
-  "title": "Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma",
-  "authors": "Kim N, Kim HK, Lee K, Hong Y, Cho JH, Choi JW, Lee JI, Suh YL, Ku BM, Eum HH, Choi S, Choi YL, Joung JG, Park WY, Jung HA, Sun JM, Lee SH, Ahn JS, Park K, Ahn MJ, Lee HO.",
-  "journal": "Nat Commun",
-  "year": 2020,
-  "citation": "Nat Commun. 2020 May 8;11(1):2285. doi: 10.1038/s41467-020-16164-1. PMID: 32385277; PMCID: PMC7210975.",
-  "doi": "10.1038/s41467-020-16164-1",
-  "pmid": "32385277"
+  "pmid": "32413319",
+  "type": "Article",
+  "date": "28 May 2020"
  },
  {
   "title": "SARS-CoV-2 entry factors are highly expressed in nasal epithelial cells together with innate immune genes",
-  "authors": "Sungnak W, Huang N, Bécavin C, Berg M, Queen R, Litvinukova M, Talavera-López C, Maatz H, Reichart D, Sampaziotis F, Worlock KB, Yoshida M, Barnes JL; HCA Lung Biological Network.",
-  "journal": "Nat Med",
+  "authors": "HCA Lung Biological Network",
+  "journal": "Nature Medicine",
   "year": 2020,
-  "citation": "Nat Med. 2020 May;26(5):681-687. doi: 10.1038/s41591-020-0868-6. Epub 2020 Apr 23. PMID: 32327758; PMCID: PMC8637938.",
   "doi": "10.1038/s41591-020-0868-6",
-  "pmid": "32327758"
+  "pmid": "32327758",
+  "type": "Article",
+  "date": "1 May 2020"
  },
  {
-  "title": "Alterations in the Transcriptional Programs of Myeloma Cells and the Microenvironment during Extramedullary Progression Affect Proliferation and Immune Evasion",
-  "authors": "Ryu D, Kim SJ, Hong Y, Jo A, Kim N, Kim HJ, Lee HO, Kim K, Park WY.",
-  "journal": "Clin Cancer Res",
+  "title": "Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma",
+  "authors": "Kim, N., Kim, H. K., Lee, K., Hong, Y., Cho, J. H., Choi, J. W., Lee, J. I., Suh, Y. L., Ku, B. M., Eum, H. H., Choi, S., Choi, Y. L., Joung, J. G., Park, W. Y., Jung, H. A., Sun, J. M., Lee, S. H., Ahn, J. S., Park, K., Ahn, M. J., Lee, H. O.",
+  "journal": "Nature Communications",
   "year": 2020,
-  "citation": "Clin Cancer Res. 2020 Feb 15;26(4):935-944. doi: 10.1158/1078-0432.CCR-19-0694. Epub 2019 Sep 26. Erratum in: Clin Cancer Res. 2020 Sep 15;26(18):5049. doi: 10.1158/1078-0432.CCR-20-3174. PMID: 31558476.",
-  "doi": "10.1158/1078-0432.CCR-19-0694",
-  "pmid": "31558476"
+  "doi": "10.1038/s41467-020-16164-1",
+  "pmid": "32385277",
+  "type": "Article",
+  "date": "1 Dec 2020"
+ },
+ {
+  "title": "Single-cell RNA sequencing reveals the tumor microenvironment and facilitates strategic choices to circumvent treatment failure in a chemorefractory bladder cancer patient",
+  "authors": "Lee, H. W., Chung, W., Lee, H. O., Jeong, D. E., Jo, A., Lim, J. E., Hong, J. H., Nam, D. H., Jeong, B. C., Park, S. H., Joo, K. M., Park, W. Y.",
+  "journal": "Genome Medicine",
+  "year": 2020,
+  "doi": "10.1186/s13073-020-00741-6",
+  "pmid": "32460812",
+  "type": "Article",
+  "date": "27 May 2020"
+ },
+ {
+  "title": "Tumor-promoting macrophages prevail in malignant ascites of advanced gastric cancer",
+  "authors": "Eum, H. H., Kwon, M., Ryu, D., Jo, A., Chung, W., Kim, N., Hong, Y., Son, D. S., Kim, S. T., Lee, J., Lee, H. O., Park, W. Y.",
+  "journal": "Experimental and Molecular Medicine",
+  "year": 2020,
+  "doi": "10.1038/s12276-020-00538-y",
+  "pmid": "33277616",
+  "type": "Article",
+  "date": "Dec 2020"
  },
  {
   "title": "Alternative polyadenylation of single cells delineates cell types and serves as a prognostic marker in early stage breast cancer",
-  "authors": "Kim N, Chung W, Eum HH, Lee HO, Park WY.",
-  "journal": "PLoS One",
+  "authors": "Kim, N., Chung, W., Eum, H. H., Lee, H. O., Park, W. Y.",
+  "journal": "PLoS ONE",
   "year": 2019,
-  "citation": "PLoS One. 2019 May 17;14(5):e0217196. doi: 10.1371/journal.pone.0217196. PMID: 31100099; PMCID: PMC6524824.",
   "doi": "10.1371/journal.pone.0217196",
-  "pmid": "31100099"
+  "pmid": "31100099",
+  "type": "Article",
+  "date": "May 2019"
  },
  {
   "title": "Linking transcriptional and genetic tumor heterogeneity through allele analysis of single-cell RNA-seq data",
-  "authors": "Fan J, Lee HO, Lee S, Ryu DE, Lee S, Xue C, Kim SJ, Kim K, Barkas N, Park PJ, Park WY, Kharchenko PV.",
-  "journal": "Genome Res",
+  "authors": "Fan, J., Lee, H. O., Lee, S., Ryu, D. E., Lee, S., Xue, C., Kim, S. J., Kim, K., Barkas, N., Park, P. J., Park, W. Y., Kharchenko, P. V.",
+  "journal": "Genome Research",
   "year": 2018,
-  "citation": "Genome Res. 2018 Aug;28(8):1217-1227. doi: 10.1101/gr.228080.117. Epub 2018 Jun 13. PMID: 29898899; PMCID: PMC6071640.",
   "doi": "10.1101/gr.228080.117",
-  "pmid": "29898899"
+  "pmid": "29898899",
+  "type": "Article",
+  "date": "Aug 2018"
  },
  {
   "title": "SIDR: simultaneous isolation and parallel sequencing of genomic DNA and total RNA from single cells",
-  "authors": "Han KY, Kim KT, Joung JG, Son DS, Kim YJ, Jo A, Jeon HJ, Moon HS, Yoo CE, Chung W, Eum HH, Kim S, Kim HK, Lee JE, Ahn MJ, Lee HO, Park D, Park WY.",
-  "journal": "Genome Res",
+  "authors": "Han, K. Y., Kim, K. T., Joung, J. G., Son, D. S., Kim, Y. J., Jo, A., Jeon, H. J., Moon, H. S., Yoo, C. E., Chung, W., Eum, H. H., Kim, S., Kim, H. K., Lee, J. E., Ahn, M. J., Lee, H. O., Park, D., Park, W. Y.",
+  "journal": "Genome Research",
   "year": 2018,
-  "citation": "Genome Res. 2018 Jan;28(1):75-87. doi: 10.1101/gr.223263.117. Epub 2017 Dec 5. PMID: 29208629; PMCID: PMC5749184.",
   "doi": "10.1101/gr.223263.117",
-  "pmid": "29208629"
+  "pmid": "29208629",
+  "type": "Article",
+  "date": "Jan 2018"
  },
  {
   "title": "HDAC2/3 binding and deacetylation of BubR1 initiates spindle assembly checkpoint silencing",
-  "authors": "Park I, Kwon MS, Paik S, Kim H, Lee HO, Choi E, Lee H.",
-  "journal": "FEBS J",
+  "authors": "Park, I., Kwon, M. S., Paik, S., Kim, H., Lee, H. O., Choi, E., Lee, H.",
+  "journal": "FEBS Journal",
   "year": 2017,
-  "citation": "FEBS J. 2017 Dec;284(23):4035-4050. doi: 10.1111/febs.14286. Epub 2017 Nov 1. PMID: 28985013.",
   "doi": "10.1111/febs.14286",
-  "pmid": "28985013"
- },
- {
-  "title": "Tumor Heterogeneity Predicts Metastatic Potential in Colorectal Cancer",
-  "authors": "Joung JG, Oh BY, Hong HK, Al-Khalidi H, Al-Alem F, Lee HO, Bae JS, Kim J, Cha HU, Alotaibi M, Cho YB, Hassanain M, Park WY, Lee WY.",
-  "journal": "Clin Cancer Res",
-  "year": 2017,
-  "citation": "Clin Cancer Res. 2017 Dec 1;23(23):7209-7216. doi: 10.1158/1078-0432.CCR-17-0306. Epub 2017 Sep 22. PMID: 28939741.",
-  "doi": "10.1158/1078-0432.CCR-17-0306",
-  "pmid": "28939741"
- },
- {
-  "title": "Single-cell RNA-Seq unveils tumor microenvironment",
-  "authors": "Lee HO, Park WY.",
-  "journal": "BMB Rep",
-  "year": 2017,
-  "citation": "BMB Rep. 2017 Jun;50(6):283-284. doi: 10.5483/bmbrep.2017.50.6.086. PMID: 28539161; PMCID: PMC5498138.",
-  "doi": "10.5483/bmbrep.2017.50.6.086",
-  "pmid": "28539161"
- },
- {
-  "title": "Single-cell RNA-seq enables comprehensive tumour and immune cell profiling in primary breast cancer",
-  "authors": "Chung W, Eum HH, Lee HO, Lee KM, Lee HB, Kim KT, Ryu HS, Kim S, Lee JE, Park YH, Kan Z, Han W, Park WY.",
-  "journal": "Nat Commun",
-  "year": 2017,
-  "citation": "Nat Commun. 2017 May 5;8:15081. doi: 10.1038/ncomms15081. PMID: 28474673; PMCID: PMC5424158.",
-  "doi": "10.1038/ncomms15081",
-  "pmid": "28474673"
- },
- {
-  "title": "Spatiotemporal genomic architecture informs precision oncology in glioblastoma",
-  "authors": "Lee JK, Wang J, Sa JK, Ladewig E, Lee HO, Lee IH, Kang HJ, Rosenbloom DS, Camara PG, Liu Z, van Nieuwenhuizen P, Jung SW, Choi SW, Kim J, Chen A, Kim KT, Shin S, Seo YJ, Oh JM, Shin YJ, Park CK, Kong DS, Seol HJ, Blumberg A, Lee JI, Iavarone A, Park WY, Rabadan R, Nam DH.",
-  "journal": "Nat Genet",
-  "year": 2017,
-  "citation": "Nat Genet. 2017 Apr;49(4):594-599. doi: 10.1038/ng.3806. Epub 2017 Mar 6. PMID: 28263318; PMCID: PMC5627771.",
-  "doi": "10.1038/ng.3806",
-  "pmid": "28263318"
- },
- {
-  "title": "Recurrent mutations of MAPK pathway genes in multiple myeloma but not in amyloid light-chain amyloidosis",
-  "authors": "Kim SJ, Shin HT, Lee HO, Kim NK, Yun JW, Hwang JH, Kim K, Park WY.",
-  "journal": "Oncotarget",
-  "year": 2016,
-  "citation": "Oncotarget. 2016 Oct 18;7(42):68350-68359. doi: 10.18632/oncotarget.12029. PMID: 27634910; PMCID: PMC5356560.",
-  "doi": "10.18632/oncotarget.12029",
-  "pmid": "27634910"
+  "pmid": "28985013",
+  "type": "Article",
+  "date": "Dec 2017"
  },
  {
   "title": "Nonlinear tumor evolution from dysplastic nodules to hepatocellular carcinoma",
-  "authors": "Joung JG, Ha SY, Bae JS, Nam JY, Gwak GY, Lee HO, Son DS, Park CK, Park WY.",
+  "authors": "Joung, J. G., Ha, S. Y., Bae, J. S., Nam, J. Y., Gwak, G. Y., Lee, H. O., Son, D. S., Park, C. K., Park, W. Y.",
   "journal": "Oncotarget",
   "year": 2017,
-  "citation": "Oncotarget. 2017 Jan 10;8(2):2076-2082. doi: 10.18632/oncotarget.10502. PMID: 27409339; PMCID: PMC5356781.",
   "doi": "10.18632/oncotarget.10502",
-  "pmid": "27409339"
+  "pmid": "27409339",
+  "type": "Article",
+  "date": "2017"
  },
  {
-  "title": "Comprehensive genomic profiling of IgM multiple myeloma identifies IRF4 as a prognostic marker",
-  "authors": "Ryu D, Kim HJ, Joung JG, Lee HO, Bae JS, Kim SJ, Kim H, Park WY, Kim K.",
-  "journal": "Oncotarget",
-  "year": 2016,
-  "citation": "Oncotarget. 2016 Jul 26;7(30):47127-47133. doi: 10.18632/oncotarget.9478. PMID: 27223072; PMCID: PMC5216929.",
-  "doi": "10.18632/oncotarget.9478",
-  "pmid": "27223072"
+  "title": "Single-cell RNA-Seq unveils tumor microenvironment",
+  "authors": "Lee, H. O., Park, W. Y.",
+  "journal": "BMB Reports",
+  "year": 2017,
+  "doi": "10.5483/BMBRep.2017.50.6.086",
+  "pmid": "28539161",
+  "type": "Article",
+  "date": "2017"
+ },
+ {
+  "title": "Single-cell RNA-seq enables comprehensive tumour and immune cell profiling in primary breast cancer",
+  "authors": "Chung, W., Eum, H. H., Lee, H. O., Lee, K. M., Lee, H. B., Kim, K. T., Ryu, H. S., Kim, S., Lee, J. E., Park, Y. H., Kan, Z., Han, W., Park, W. Y.",
+  "journal": "Nature Communications",
+  "year": 2017,
+  "doi": "10.1038/ncomms15081",
+  "pmid": "28474673",
+  "type": "Article",
+  "date": "5 May 2017"
+ },
+ {
+  "title": "Spatiotemporal genomic architecture informs precision oncology in glioblastoma",
+  "authors": "Lee, J. K., Wang, J., Sa, J. K., Ladewig, E., Lee, H. O., Lee, I. H., Kang, H. J., Rosenbloom, D. S., Camara, P. G., Liu, Z., Van Nieuwenhuizen, P., Jung, S. W., Choi, S. W., Kim, J., Chen, A., Kim, K. T., Shin, S., Seo, Y. J., Oh, J. M., Shin, Y. J., Park, C. K., Kong, D. S., Seol, H. J., Blumberg, A., Lee, J. I., Iavarone, A., Park, W. Y., Rabadan, R., Nam, D. H.",
+  "journal": "Nature Genetics",
+  "year": 2017,
+  "doi": "10.1038/ng.3806",
+  "pmid": "28263318",
+  "type": "Article",
+  "date": "30 Mar 2017"
+ },
+ {
+  "title": "Tumor heterogeneity predicts metastatic potential in colorectal cancer",
+  "authors": "Joung, J. G., Oh, B. Y., Hong, H. K., Al-Khalidi, H., Al-Alem, F., Lee, H. O., Bae, J. S., Kim, J., Cha, H. U., Alotaibi, M., Cho, Y. B., Hassanain, M., Park, W. Y., Lee, W. Y.",
+  "journal": "Clinical Cancer Research",
+  "year": 2017,
+  "doi": "10.1158/1078-0432.CCR-17-0306",
+  "pmid": "28939741",
+  "type": "Article",
+  "date": "1 Dec 2017"
  },
  {
   "title": "Application of single-cell RNA sequencing in optimizing a combinatorial therapeutic strategy in metastatic renal cell carcinoma",
-  "authors": "Kim KT, Lee HW, Lee HO, Song HJ, Jeong da E, Shin S, Kim H, Shin Y, Nam DH, Jeong BC, Kirsch DG, Joo KM, Park WY.",
-  "journal": "Genome Biol",
+  "authors": "Kim, K. T., Lee, H. W., Lee, H. O., Song, H. J., Jeong, D. E., Shin, S., Kim, H., Shin, Y., Nam, D. H., Jeong, B. C., Kirsch, D. G., Joo, K. M., Park, W. Y.",
+  "journal": "Genome Biology",
   "year": 2016,
-  "citation": "Genome Biol. 2016 Apr 29;17:80. doi: 10.1186/s13059-016-0945-9. PMID: 27139883; PMCID: PMC4852434.",
   "doi": "10.1186/s13059-016-0945-9",
-  "pmid": "27139883"
+  "pmid": "27139883",
+  "type": "Article",
+  "date": "29 Apr 2016"
  },
  {
-  "title": "Identification of Distinct Tumor Subpopulations in Lung Adenocarcinoma via Single-Cell RNA-seq",
-  "authors": "Min JW, Kim WJ, Han JA, Jung YJ, Kim KT, Park WY, Lee HO, Choi SS.",
-  "journal": "PLoS One",
-  "year": 2015,
-  "citation": "PLoS One. 2015 Aug 25;10(8):e0135817. doi: 10.1371/journal.pone.0135817. PMID: 26305796; PMCID: PMC4549254.",
-  "doi": "10.1371/journal.pone.0135817",
-  "pmid": "26305796"
+  "title": "Comprehensive genomic profiling of IgM multiple myeloma identifies IRF4 as a prognostic marker",
+  "authors": "Ryu, D., Kim, H. J., Joung, J. G., Lee, H. O., Bae, J. S., Kim, S. J., Kim, H., Park, W. Y., Kim, K.",
+  "journal": "Oncotarget",
+  "year": 2016,
+  "doi": "10.18632/oncotarget.9478",
+  "pmid": "27223072",
+  "type": "Article",
+  "date": "2016"
  },
  {
-  "title": "The use of FNA samples for whole-exome sequencing and detection of somatic mutations in breast cancer surgical specimens",
-  "authors": "Lee HB, Joung JG, Kim J, Lee KM, Ryu HS, Lee HO, Moon HG, Park WY, Noh DY, Han W.",
-  "journal": "Cancer Cytopathol",
-  "year": 2015,
-  "citation": "Cancer Cytopathol. 2015 Nov;123(11):669-77. doi: 10.1002/cncy.21599. Epub 2015 Aug 11. PMID: 26265110.",
-  "doi": "10.1002/cncy.21599",
-  "pmid": "26265110"
- },
- {
-  "title": "The diagnostic application of targeted re-sequencing in Korean patients with retinitis pigmentosa",
-  "authors": "Yoon CK, Kim NK, Joung JG, Shin JY, Park JH, Eum HH, Lee HO, Park WY, Yu HG.",
-  "journal": "BMC Genomics",
-  "year": 2015,
-  "citation": "BMC Genomics. 2015 Jul 9;16(1):515. doi: 10.1186/s12864-015-1723-x. PMID: 26155838; PMCID: PMC4496857.",
-  "doi": "10.1186/s12864-015-1723-x",
-  "pmid": "26155838"
- },
- {
-  "title": "Single-cell mRNA sequencing identifies subclonal heterogeneity in anti-cancer drug responses of lung adenocarcinoma cells",
-  "authors": "Kim KT, Lee HW, Lee HO, Kim SC, Seo YJ, Chung W, Eum HH, Nam DH, Kim J, Joo KM, Park WY.",
-  "journal": "Genome Biol",
-  "year": 2015,
-  "citation": "Genome Biol. 2015 Jun 19;16(1):127. doi: 10.1186/s13059-015-0692-3. PMID: 26084335; PMCID: PMC4506401.",
-  "doi": "10.1186/s13059-015-0692-3",
-  "pmid": "26084335"
- },
- {
-  "title": "Deregulation of Retinaldehyde Dehydrogenase 2 Leads to Defective Angiogenic Function of Endothelial Colony-Forming Cells in Pediatric Moyamoya Disease",
-  "authors": "Lee JY, Moon YJ, Lee HO, Park AK, Choi SA, Wang KC, Han JW, Joung JG, Kang HS, Kim JE, Phi JH, Park WY, Kim SK.",
-  "journal": "Arterioscler Thromb Vasc Biol",
-  "year": 2015,
-  "citation": "Arterioscler Thromb Vasc Biol. 2015 Jul;35(7):1670-7. doi: 10.1161/ATVBAHA.115.305363. Epub 2015 May 28. PMID: 26023078.",
-  "doi": "10.1161/ATVBAHA.115.305363",
-  "pmid": "26023078"
+  "title": "Recurrent mutations of MAPK pathway genes in multiple myeloma but not in amyloid light-chain amyloidosis",
+  "authors": "Kim, S. J., Shin, H. T., Lee, H. O., Kim, N. K. D., Yun, J. W., Hwang, J. H., Kim, K., Park, W. Y.",
+  "journal": "Oncotarget",
+  "year": 2016,
+  "doi": "10.18632/ONCOTARGET.12029",
+  "pmid": "27634910",
+  "type": "Article",
+  "date": "2016"
  },
  {
   "title": "Brca2 deficiency leads to T cell loss and immune dysfunction",
-  "authors": "Jeong JH, Jo A, Park P, Lee H, Lee HO.",
-  "journal": "Mol Cells",
+  "authors": "Jeong, J. H., Jo, A., Park, P., Lee, H., Lee, H. O.",
+  "journal": "Molecules and Cells",
   "year": 2015,
-  "citation": "Mol Cells. 2015 Mar;38(3):251-8. doi: 10.14348/molcells.2015.2302. Epub 2015 Feb 4. PMID: 25666348; PMCID: PMC4363725.",
   "doi": "10.14348/molcells.2015.2302",
-  "pmid": "25666348"
+  "pmid": "25666348",
+  "type": "Article",
+  "date": "4 Feb 2015"
+ },
+ {
+  "title": "Deregulation of retinaldehyde dehydrogenase 2 leads to defective angiogenic function of endothelial colony-forming cells in pediatric moyamoya disease",
+  "authors": "Lee, J. Y., Moon, Y. J., Lee, H. O., Park, A. K., Choi, S. A., Wang, K. C., Han, J. W., Joung, J. G., Kang, H. S., Kim, J. E., Phi, J. H., Park, W. Y., Kim, S. K.",
+  "journal": "Arteriosclerosis, Thrombosis, and Vascular Biology",
+  "year": 2015,
+  "doi": "10.1161/ATVBAHA.115.305363",
+  "pmid": "26023078",
+  "type": "Article",
+  "date": "27 Jul 2015"
+ },
+ {
+  "title": "Identification of distinct tumor subpopulations in lung adenocarcinoma via single-cell RNA-seq",
+  "authors": "Min, J. W., Kim, W. J., Han, J. A., Jung, Y. J., Kim, K. T., Park, W. Y., Lee, H. O., Choi, S. S.",
+  "journal": "PLoS ONE",
+  "year": 2015,
+  "doi": "10.1371/journal.pone.0135817",
+  "pmid": "26305796",
+  "type": "Article",
+  "date": "25 Aug 2015"
+ },
+ {
+  "title": "Single-cell mRNA sequencing identifies subclonal heterogeneity in anti-cancer drug responses of lung adenocarcinoma cells",
+  "authors": "Kim, K. T., Lee, H. W., Lee, H. O., Kim, S. C., Seo, Y. J., Chung, W., Eum, H. H., Nam, D. H., Kim, J., Joo, K. M., Park, W. Y.",
+  "journal": "Genome Biology",
+  "year": 2015,
+  "doi": "10.1186/s13059-015-0692-3",
+  "pmid": "26084335",
+  "type": "Article",
+  "date": "19 Jun 2015"
  },
  {
   "title": "Standard immunohistochemistry efficiently screens for anaplastic lymphoma kinase rearrangements in differentiated thyroid cancer",
-  "authors": "Park G, Kim TH, Lee HO, Lim JA, Won JK, Min HS, Lee KE, Park DJ, Park YJ, Park WY.",
-  "journal": "Endocr Relat Cancer",
+  "authors": "Park, G., Kim, T. H., Lee, H. O., Lim, J. A., Won, J. K., Min, H. S., Lee, K. E., Park, D. J., Park, Y. J., Park, W. Y.",
+  "journal": "Endocrine-Related Cancer",
   "year": 2015,
-  "citation": "Endocr Relat Cancer. 2015 Feb;22(1):55-63. doi: 10.1530/ERC-14-0467. PMID: 25527510.",
   "doi": "10.1530/ERC-14-0467",
-  "pmid": "25527510"
+  "pmid": "25527510",
+  "type": "Article",
+  "date": "1 Feb 2015"
+ },
+ {
+  "title": "The diagnostic application of targeted re-sequencing in Korean patients with retinitis pigmentosa",
+  "authors": "Yoon, C. K., Kim, N. K. D., Joung, J. G., Shin, J. Y., Park, J. H., Eum, H. H., Lee, H. O., Park, W. Y., Yu, H. G.",
+  "journal": "BMC Genomics",
+  "year": 2015,
+  "doi": "10.1186/s12864-015-1723-x",
+  "pmid": "26155838",
+  "type": "Article",
+  "date": "9 Jul 2015"
+ },
+ {
+  "title": "The use of FNA samples for whole-exome sequencing and detection of somatic mutations in breast cancer surgical specimens",
+  "authors": "Lee, H. B., Joung, J. G., Kim, J., Lee, K. M., Ryu, H. S., Lee, H. O., Moon, H. G., Park, W. Y., Noh, D. Y., Han, W.",
+  "journal": "Cancer cytopathology",
+  "year": 2015,
+  "doi": "10.1002/cncy.21599",
+  "pmid": "26265110",
+  "type": "Article",
+  "date": "1 Nov 2015"
  },
  {
   "title": "Loss of BubR1 acetylation causes defects in spindle assembly checkpoint signaling and promotes tumor formation",
-  "authors": "Park I, Lee HO, Choi E, Lee YK, Kwon MS, Min J, Park PG, Lee S, Kong YY, Gong G, Lee H.",
-  "journal": "J Cell Biol",
+  "authors": "Park, I., Lee, H. O., Choi, E., Lee, Y. K., Kwon, M. S., Min, J., Park, P. G., Lee, S., Kong, Y. Y., Gong, G., Lee, H.",
+  "journal": "Journal of Cell Biology",
   "year": 2013,
-  "citation": "J Cell Biol. 2013 Jul 22;202(2):295-309. doi: 10.1083/jcb.201210099. PMID: 23878276; PMCID: PMC3718975.",
   "doi": "10.1083/jcb.201210099",
-  "pmid": "23878276"
+  "pmid": "23878276",
+  "type": "Article",
+  "date": "Jul 2013"
  },
  {
-  "title": "Cell density-dependent acetylation of ΔNp63α is associated with p53-dependent cell cycle arrest",
-  "authors": "Chae YS, Kim H, Kim D, Lee H, Lee HO.",
-  "journal": "FEBS Lett",
+  "title": "BRCA2 Fine-Tunes the Spindle Assembly Checkpoint through Reinforcement of BubR1 Acetylation",
+  "authors": "Choi, E., Park, P. G., Lee, H. O., Lee, Y. K., Kang, G. H., Lee, J. W., Han, W., Lee, H. C., Noh, D. Y., Lekomtsev, S., Lee, H.",
+  "journal": "Developmental Cell",
   "year": 2012,
-  "citation": "FEBS Lett. 2012 Apr 24;586(8):1128-34. doi: 10.1016/j.febslet.2012.03.021. Epub 2012 Mar 23. PMID: 22575646.",
-  "doi": "10.1016/j.febslet.2012.03.021",
-  "pmid": "22575646"
- },
- {
-  "title": "BRCA2 fine-tunes the spindle assembly checkpoint through reinforcement of BubR1 acetylation",
-  "authors": "Choi E, Park PG, Lee HO, Lee YK, Kang GH, Lee JW, Han W, Lee HC, Noh DY, Lekomtsev S, Lee H.",
-  "journal": "Dev Cell",
-  "year": 2012,
-  "citation": "Dev Cell. 2012 Feb 14;22(2):295-308. doi: 10.1016/j.devcel.2012.01.009. PMID: 22340495.",
   "doi": "10.1016/j.devcel.2012.01.009",
-  "pmid": "22340495"
+  "pmid": "22340495",
+  "type": "Article",
+  "date": "14 Feb 2012"
+ },
+ {
+  "title": "Cell density-dependent acetylation of Δnp63α is associated with p53-dependent cell cycle arrest",
+  "authors": "Chae, Y. S., Kim, H., Kim, D., Lee, H., Lee, H. O.",
+  "journal": "FEBS Letters",
+  "year": 2012,
+  "doi": "10.1016/j.febslet.2012.03.021",
+  "pmid": "22575646",
+  "type": "Article",
+  "date": "24 Apr 2012"
+ },
+ {
+  "title": "Fgfbp1 Is Essential for the Cellular Survival during Zebrafish Embryogenesis",
+  "authors": "Lee, H. O., Choe, H., Seo, K., Lee, H., Lee, J., Kim, J.",
+  "journal": "Molecules and Cells",
+  "year": 2010,
+  "doi": "10.1007/s10059-010-0062-7",
+  "pmid": "20396962",
+  "type": "Article",
+  "date": "May 2010"
  },
  {
   "title": "Inhibition of Plk1 induces mitotic infidelity and embryonic growth defects in developing zebrafish embryos",
-  "authors": "Jeong K, Jeong JY, Lee HO, Choi E, Lee H.",
-  "journal": "Dev Biol",
+  "authors": "Jeong, K. H., Jeong, J. Y., Lee, H. O., Choi, E., Lee, H.",
+  "journal": "Developmental Biology",
   "year": 2010,
-  "citation": "Dev Biol. 2010 Sep 1;345(1):34-48. doi: 10.1016/j.ydbio.2010.06.004. Epub 2010 Jun 8. PMID: 20553902.",
   "doi": "10.1016/j.ydbio.2010.06.004",
-  "pmid": "20553902"
- },
- {
-  "title": "Fgfbp1 is essential for the cellular survival during zebrafish embryogenesis",
-  "authors": "Lee HO, Choe H, Seo K, Lee H, Lee J, Kim J.",
-  "journal": "Mol Cells",
-  "year": 2010,
-  "citation": "Mol Cells. 2010 May;29(5):501-7. doi: 10.1007/s10059-010-0062-7. Epub 2010 Apr 12. PMID: 20396962.",
-  "doi": "10.1007/s10059-010-0062-7",
-  "pmid": "20396962"
+  "pmid": "20553902",
+  "type": "Article",
+  "date": "Sep 2010"
  },
  {
   "title": "Control of rapsyn stability by the CUL-3-containing E3 ligase complex",
-  "authors": "Nam S, Min K, Hwang H, Lee HO, Lee JH, Yoon J, Lee H, Park S, Lee J.",
-  "journal": "J Biol Chem",
+  "authors": "Nam, S., Min, K., Hwang, H., Lee, H. O., Lee, J. H., Yoon, J., Lee, H., Park, S., Lee, J.",
+  "journal": "Journal of Biological Chemistry",
   "year": 2009,
-  "citation": "J Biol Chem. 2009 Mar 20;284(12):8195-206. doi: 10.1074/jbc.M808230200. Epub 2009 Jan 20. PMID: 19158078; PMCID: PMC3282941.",
   "doi": "10.1074/jbc.M808230200",
-  "pmid": "19158078"
+  "pmid": "19158078",
+  "type": "Article",
+  "date": "20 Mar 2009"
  },
  {
-  "title": "Regulation of DeltaNp63alpha by tumor necrosis factor-alpha in epithelial homeostasis",
-  "authors": "Lee HO, Lee JH, Kim TY, Lee H.",
-  "journal": "FEBS J",
+  "title": "Regulation of Δnp63α by tumor necrosis factor-α in epithelial homeostasis",
+  "authors": "Lee, H. O., Lee, J. H., Kim, T. Y., Lee, H.",
+  "journal": "FEBS Journal",
   "year": 2007,
-  "citation": "FEBS J. 2007 Dec;274(24):6511-22. doi: 10.1111/j.1742-4658.2007.06168.x. Epub 2007 Nov 20. PMID: 18028447.",
   "doi": "10.1111/j.1742-4658.2007.06168.x",
-  "pmid": "18028447"
+  "pmid": "18028447",
+  "type": "Article",
+  "date": "Dec 2007"
  },
  {
-  "title": "SuPr-1-mediated desumoylation regulates the repressor activity of DeltaNp63alpha",
-  "authors": "Lee HO, Cho M, Lee JH, Kim HS, Yun Y, Lee H.",
-  "journal": "FEBS Lett",
+  "title": "SuPr-1-mediated desumoylation regulates the repressor activity of ΔNp63α",
+  "authors": "Lee, H. O., Cho, M., Lee, J. H., Kim, H. S., Yun, Y., Lee, H.",
+  "journal": "FEBS Letters",
   "year": 2007,
-  "citation": "FEBS Lett. 2007 Dec 11;581(29):5640-4. doi: 10.1016/j.febslet.2007.11.013. Epub 2007 Nov 20. PMID: 18023281.",
   "doi": "10.1016/j.febslet.2007.11.013",
-  "pmid": "18023281"
+  "pmid": "18023281",
+  "type": "Article",
+  "date": "11 Dec 2007"
  },
  {
   "title": "A dominant negative form of p63 inhibits apoptosis in a p53-independent manner",
-  "authors": "Lee HO, Lee JH, Choi E, Seol JY, Yun Y, Lee H.",
-  "journal": "Biochem Biophys Res Commun",
+  "authors": "Lee, H. O., Lee, J. H., Choi, E., Seol, J. Y., Yun, Y., Lee, H.",
+  "journal": "Biochemical and Biophysical Research Communications",
   "year": 2006,
-  "citation": "Biochem Biophys Res Commun. 2006 May 26;344(1):166-72. doi: 10.1016/j.bbrc.2006.03.128. Epub 2006 Apr 17. PMID: 16616891.",
   "doi": "10.1016/j.bbrc.2006.03.128",
-  "pmid": "16616891"
- },
- {
-  "title": "P-selectin and P-selectin glycoprotein ligand 1 are major determinants for Th1 cell recruitment to nonlymphoid effector sites in the intestinal lamina propria",
-  "authors": "Haddad W, Cooper CJ, Zhang Z, Brown JB, Zhu Y, Issekutz A, Fuss I, Lee HO, Kansas GS, Barrett TA.",
-  "journal": "J Exp Med",
-  "year": 2003,
-  "citation": "J Exp Med. 2003 Aug 4;198(3):369-77. doi: 10.1084/jem.20020691. Epub 2003 Jul 28. PMID: 12885868; PMCID: PMC2194084.",
-  "doi": "10.1084/jem.20020691",
-  "pmid": "12885868"
+  "pmid": "16616891",
+  "type": "Article",
+  "date": "26 May 2006"
  },
  {
   "title": "Biology of FasL",
-  "authors": "Lee HO, Ferguson TA.",
-  "journal": "Cytokine Growth Factor Rev",
+  "authors": "Lee, H. O., Ferguson, T. A.",
+  "journal": "Cytokine and Growth Factor Reviews",
   "year": 2003,
-  "citation": "Cytokine Growth Factor Rev. 2003 Jun-Aug;14(3-4):325-35. doi: 10.1016/s1359-6101(03)00028-5. PMID: 12787569.",
-  "doi": "10.1016/s1359-6101(03)00028-5",
-  "pmid": "12787569"
+  "doi": "10.1016/S1359-6101(03)00028-5",
+  "pmid": "12787569",
+  "type": "Review article",
+  "date": "2003"
  },
  {
-  "title": "TRAIL: a mechanism of tumor surveillance in an immune privileged site",
-  "authors": "Lee HO, Herndon JM, Barreiro R, Griffith TS, Ferguson TA.",
-  "journal": "J Immunol",
+  "title": "P-selectin and P-selectin glycoprotein ligand 1 are major determinants for Th1 cell recruitment to nonlymphoid effector sites in the intestinal lamina propria",
+  "authors": "Haddad, W., Cooper, C. J., Zhang, Z., Brown, J. B., Zhu, Y., Issekutz, A., Fuss, I., Lee, H. O., Kansas, G. S., Barrett, T. A.",
+  "journal": "Journal of Experimental Medicine",
+  "year": 2003,
+  "doi": "10.1084/jem.20020691",
+  "pmid": "12885868",
+  "type": "Article",
+  "date": "4 Aug 2003"
+ },
+ {
+  "title": "TRAIL: A mechanism of tumor surveillance in an immune privileged site1",
+  "authors": "Lee, H. O., Herndon, J. M., Barreiro, R., Griffith, T. S., Ferguson, T. A.",
+  "journal": "Journal of Immunology",
   "year": 2002,
-  "citation": "J Immunol. 2002 Nov 1;169(9):4739-44. doi: 10.4049/jimmunol.169.9.4739. PMID: 12391182.",
   "doi": "10.4049/jimmunol.169.9.4739",
-  "pmid": "12391182"
+  "pmid": "12391182",
+  "type": "Article",
+  "date": "1 Nov 2002"
  },
  {
   "title": "The state of CD4+ T cell activation is a major factor for determining the kinetics and location of T cell responses to oral antigen",
-  "authors": "Lee HO, Cooper CJ, Choi JH, Alnadjim Z, Barrett TA.",
-  "journal": "J Immunol",
+  "authors": "Lee, H. O., Cooper, C. J., Choi, J. H., Alnadjim, Z., Barrett, T. A.",
+  "journal": "Journal of Immunology",
   "year": 2002,
-  "citation": "J Immunol. 2002 Apr 15;168(8):3833-8. doi: 10.4049/jimmunol.168.8.3833. PMID: 11937536.",
   "doi": "10.4049/jimmunol.168.8.3833",
-  "pmid": "11937536"
+  "pmid": "11937536",
+  "type": "Article",
+  "date": "15 Apr 2002"
+ },
+ {
+  "title": "Divergent roles for p55 and p75 tumor necrosis factor receptors in the pathogenesis of MOG35-55-induced experimental autoimmune encephalomyelitis",
+  "authors": "Suvannavejh, G. C., Lee, H. O., Padilla, J., Dal Canto, M. C., Barrett, T. A., Miller, S. D.",
+  "journal": "Cellular Immunology",
+  "year": 2000,
+  "doi": "10.1006/cimm.2000.1706",
+  "pmid": null,
+  "type": "Article",
+  "date": "10 Oct 2000"
+ },
+ {
+  "title": "Interferon gamma induction during oral tolerance reduces T-cell migration to sites of inflammation",
+  "authors": "Lee, H. O., Miller, S. D., Hurst, S. D., Tan, L. J., Cooper, C. J., Barrett, T. A.",
+  "journal": "Gastroenterology",
+  "year": 2000,
+  "doi": "10.1053/gast.2000.8542",
+  "pmid": null,
+  "type": "Article",
+  "date": "Jul 2000"
+ },
+ {
+  "title": "Oral tolerance therapy in an experimental model of colitis",
+  "authors": "Lee, H., Barrett, T. A.",
+  "journal": "American Journal of Gastroenterology",
+  "year": 2000,
+  "doi": "10.1016/S0002-9270(00)00715-2",
+  "pmid": null,
+  "type": "Editorial",
+  "date": "2000"
+ },
+ {
+  "title": "Effects of oral antigen in T-cell receptor transgenic mice",
+  "authors": "Hurst, S. D., Lee, H. O., Smith, M. P., Rosenberg, J. G., Barrett, T. A.",
+  "journal": "Annals of the New York Academy of Sciences",
+  "year": 1996,
+  "doi": "10.1111/j.1749-6632.1996.tb21125.x",
+  "pmid": null,
+  "type": "Article",
+  "date": "1996"
  }
 ]

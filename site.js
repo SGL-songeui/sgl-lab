@@ -62,18 +62,23 @@
 
   /* ---------- publications ---------- */
   function boldPI(authors) {
-    return esc(authors).replace(/Lee HO(?![a-z])/g, "<b>Lee HO</b>");
+    return esc(authors)
+      .replace(/Lee, H\. O\./g, "<b>Lee, H. O.</b>")
+      .replace(/Lee HO(?![a-z])/g, "<b>Lee HO</b>");
   }
 
   function pubRow(p) {
+    var doiUrl = p.doi ? "https://doi.org/" + encodeURI(p.doi) : null;
     var links = [];
-    if (p.doi) links.push('<a href="https://doi.org/' + encodeURI(p.doi) + '" target="_blank" rel="noopener">DOI</a>');
+    if (doiUrl) links.push('<a href="' + doiUrl + '" target="_blank" rel="noopener">DOI</a>');
     if (p.pmid) links.push('<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.pmid) + '/" target="_blank" rel="noopener">PubMed</a>');
-    var titleInner = p.doi
-      ? '<a href="https://doi.org/' + encodeURI(p.doi) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
-      : esc(p.title);
+    var typeBadge = p.type && p.type !== "Article"
+      ? '<span class="pub-type">' + esc(p.type) + "</span>" : "";
+    var titleInner = doiUrl
+      ? '<a href="' + doiUrl + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>" + typeBadge
+      : esc(p.title) + typeBadge;
     return (
-      '<div class="pub-row">' +
+      '<div class="pub-row"' + (doiUrl ? ' data-doi="' + doiUrl + '"' : "") + ">" +
       '<span class="pub-badge">' + esc(p.year) + " &middot; " + esc(p.journal) + "</span>" +
       "<div>" +
       '<div class="pub-title">' + titleInner + "</div>" +
@@ -82,6 +87,14 @@
       "</div></div>"
     );
   }
+
+  /* whole publication row opens the paper via its DOI; inner links keep their own behavior */
+  document.addEventListener("click", function (e) {
+    var row = e.target.closest ? e.target.closest(".pub-row[data-doi]") : null;
+    if (!row) return;
+    if (e.target.closest("a")) return;
+    window.open(row.getAttribute("data-doi"), "_blank", "noopener");
+  });
 
   function renderPubs(pubs, query) {
     var host = document.getElementById("pub-container");
@@ -134,10 +147,28 @@
     });
   }
 
+  /* ---------- scroll-reveal ---------- */
+  function initReveal() {
+    if (!("IntersectionObserver" in window) ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var targets = document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(targets, function (el, i) {
+      el.classList.add("reveal");
+      el.style.transitionDelay = (i % 4) * 60 + "ms";
+      io.observe(el);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     buildHeader();
     buildFooter();
     initPublications();
     initAvatars();
+    initReveal();
   });
 })();
