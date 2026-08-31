@@ -154,23 +154,25 @@
     if (!("IntersectionObserver" in window) ||
         window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     var targets = document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip");
-    var io = new IntersectionObserver(function (entries) {
+    /* re-armed on exit so the entrance replays every time an element scrolls
+       back into view (either direction). Entering is judged against a slightly
+       shrunk viewport; re-arming only once the element is fully offscreen, so
+       a visible element never blinks out at the boundary. */
+    var ioIn = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+        if (en.isIntersecting) en.target.classList.add("in");
       });
     }, { rootMargin: "0px 0px -8% 0px" });
+    var ioOut = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) en.target.classList.remove("in");
+      });
+    });
     Array.prototype.forEach.call(targets, function (el, i) {
       el.classList.add("reveal");
-      el.style.transitionDelay = (i % 4) * 60 + "ms";
-      /* one-shot: hand transitions back to the element's own rules afterwards,
-         so hover effects aren't stuck with the slow reveal transition */
-      el.addEventListener("transitionend", function done(e) {
-        if (e.target !== el || e.propertyName !== "opacity") return;
-        el.removeEventListener("transitionend", done);
-        el.classList.remove("reveal", "in");
-        el.style.transitionDelay = "";
-      });
-      io.observe(el);
+      el.style.animationDelay = (i % 4) * 60 + "ms";
+      ioIn.observe(el);
+      ioOut.observe(el);
     });
   }
 
