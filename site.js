@@ -270,7 +270,6 @@
 
   /* rolls the number up from 0 to its final value (ease-out) */
   function countUp(el, target) {
-    el.classList.add("stat-in");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
         !window.requestAnimationFrame) {
       el.textContent = fmtNum(target);
@@ -309,39 +308,47 @@
 
   function initLiveStats() {
     var pubEls = document.querySelectorAll('[data-stat="pubs"]');
-    if (pubEls.length) {
-      Array.prototype.forEach.call(pubEls, skeletonize);
-      fetch("data/publications.json")
-        .then(function (r) { return r.json(); })
-        .then(function (pubs) {
-          window.__pubCount = pubs.length;
-          Array.prototype.forEach.call(pubEls, function (el) { settle(el, pubs.length); });
-          applyLang(); /* refresh strings that embed the count */
-        })
-        .catch(function () {
-          Array.prototype.forEach.call(pubEls, function (el) { settle(el, null); });
-        });
-    }
     var h = document.querySelector('[data-stat="hindex"]');
     var c = document.querySelector('[data-stat="citations"]');
-    if (!h && !c) return;
-    /* skeleton while loading, so the fallback number never flashes first */
+    if (!pubEls.length && !h && !c) return;
+
+    /* skeletons while loading, so no fallback number flashes first */
+    Array.prototype.forEach.call(pubEls, skeletonize);
     [h, c].forEach(function (el) { if (el) skeletonize(el); });
-    var ctrl = "AbortController" in window ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
-    fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID,
-          ctrl ? { signal: ctrl.signal } : {})
-      .then(function (r) { return r.json(); })
-      .then(function (a) {
-        clearTimeout(timer);
-        settle(h, a.summary_stats && a.summary_stats.h_index ? a.summary_stats.h_index : null);
-        settle(c, a.cited_by_count ? Number(a.cited_by_count) : null);
-      })
-      .catch(function () {
-        clearTimeout(timer);
-        settle(h, null);
-        settle(c, null);
-      });
+
+    var pubsP = pubEls.length
+      ? fetch("data/publications.json")
+          .then(function (r) { return r.json(); })
+          .then(function (pubs) { window.__pubCount = pubs.length; return pubs.length; })
+          .catch(function () { return null; })
+      : Promise.resolve(null);
+
+    var oaP = (h || c)
+      ? (function () {
+          var ctrl = "AbortController" in window ? new AbortController() : null;
+          var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
+          return fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID,
+                       ctrl ? { signal: ctrl.signal } : {})
+            .then(function (r) { return r.json(); })
+            .then(function (a) {
+              clearTimeout(timer);
+              return {
+                h: a.summary_stats && a.summary_stats.h_index ? a.summary_stats.h_index : null,
+                c: a.cited_by_count ? Number(a.cited_by_count) : null
+              };
+            })
+            .catch(function () { clearTimeout(timer); return { h: null, c: null }; });
+        })()
+      : Promise.resolve({ h: null, c: null });
+
+    /* wait for BOTH sources, then roll all numbers up together */
+    Promise.all([pubsP, oaP]).then(function (res) {
+      var pubCount = res[0], oa = res[1];
+      Array.prototype.forEach.call(pubEls, function (el) { settle(el, pubCount); });
+      if (pubCount) applyLang(); /* refresh strings that embed the count */
+      settle(h, oa.h);
+      settle(c, oa.c);
+    });
   }
 
   /* ---------- featured-study modal ---------- */

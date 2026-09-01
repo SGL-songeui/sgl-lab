@@ -436,11 +436,8 @@ body.modal-open { overflow: hidden; }
   vertical-align: baseline;
 }
 @keyframes stat-skel { from { background-position: 200% 0; } to { background-position: -200% 0; } }
-.stat-in { animation: stat-fade .35s ease-out; }
-@keyframes stat-fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .stat-skel { animation: none; }
-  .stat-in { animation: none; }
 }
 .pi-metrics .lbl { font-size: 10.5px; color: var(--muted); }
 
