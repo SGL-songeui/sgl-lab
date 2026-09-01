@@ -19,7 +19,8 @@
   function t(key) {
     var entry = (window.SGL_I18N || {})[key];
     if (!entry) return null;
-    return entry[getLang()] || entry.en;
+    var v = entry[getLang()] || entry.en;
+    return v.replace(/\{n\}/g, window.__pubCount || 68);
   }
   function applyLang() {
     var lang = getLang();
@@ -259,6 +260,37 @@
     revealize(document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
   }
 
+  /* ---------- live metrics ----------
+     publications: counted from our own data/publications.json;
+     h-index / citations: OpenAlex by the PI's ORCID (CORS-open, keyless).
+     The numbers baked into the HTML stay as fallbacks if a fetch fails. */
+  var PI_ORCID = "0000-0001-5123-0322";
+  function initLiveStats() {
+    if (document.querySelector('[data-stat="pubs"]')) {
+      fetch("data/publications.json")
+        .then(function (r) { return r.json(); })
+        .then(function (pubs) {
+          window.__pubCount = pubs.length;
+          Array.prototype.forEach.call(document.querySelectorAll('[data-stat="pubs"]'), function (el) {
+            el.textContent = pubs.length;
+          });
+          applyLang(); /* refresh strings that embed the count */
+        })
+        .catch(function () {});
+    }
+    var h = document.querySelector('[data-stat="hindex"]');
+    var c = document.querySelector('[data-stat="citations"]');
+    if (h || c) {
+      fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID)
+        .then(function (r) { return r.json(); })
+        .then(function (a) {
+          if (h && a.summary_stats && a.summary_stats.h_index) h.textContent = a.summary_stats.h_index;
+          if (c && a.cited_by_count) c.textContent = Number(a.cited_by_count).toLocaleString("en-US");
+        })
+        .catch(function () {});
+    }
+  }
+
   /* ---------- featured-study modal ---------- */
   function initPaperModals() {
     var lastTrigger = null;
@@ -361,6 +393,7 @@
     initAvatars();
     initReveal();
     initPaperModals();
+    initLiveStats();
     applyLang();
   });
 })();

@@ -32,7 +32,7 @@ window.SGL_I18N = {
   /* home recent work */
   "home.pub.kicker": { en: "PUBLICATIONS", ko: "논문" },
   "home.pub.title": { en: "Recent work", ko: "최근 연구" },
-  "home.pub.viewall": { en: "View all 68 &rarr;", ko: "전체 68편 보기 &rarr;" },
+  "home.pub.viewall": { en: "View all {n} &rarr;", ko: "전체 {n}편 보기 &rarr;" },
 
   /* research takeover */
   "res.kicker": { en: "RESEARCH", ko: "연구" },
