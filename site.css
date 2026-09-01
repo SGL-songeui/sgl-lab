@@ -429,6 +429,19 @@ body.modal-open { overflow: hidden; }
   margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
 }
 .pi-metrics .num { font-size: 18px; font-weight: 800; color: var(--ink); }
+.stat-skel {
+  display: inline-block; width: 2.4em; height: .85em; border-radius: 6px;
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg-soft) 50%, var(--border) 75%);
+  background-size: 200% 100%; animation: stat-skel 1.2s ease-in-out infinite;
+  vertical-align: baseline;
+}
+@keyframes stat-skel { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.stat-in { animation: stat-fade .35s ease-out; }
+@keyframes stat-fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .stat-skel { animation: none; }
+  .stat-in { animation: none; }
+}
 .pi-metrics .lbl { font-size: 10.5px; color: var(--muted); }
 
 .timeline { margin-top: 18px; border-left: 2px solid var(--accent-soft); padding-left: 24px; }

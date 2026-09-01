@@ -280,15 +280,33 @@
     }
     var h = document.querySelector('[data-stat="hindex"]');
     var c = document.querySelector('[data-stat="citations"]');
-    if (h || c) {
-      fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID)
-        .then(function (r) { return r.json(); })
-        .then(function (a) {
-          if (h && a.summary_stats && a.summary_stats.h_index) h.textContent = a.summary_stats.h_index;
-          if (c && a.cited_by_count) c.textContent = Number(a.cited_by_count).toLocaleString("en-US");
-        })
-        .catch(function () {});
+    if (!h && !c) return;
+    /* skeleton while loading, so the fallback number never flashes first */
+    [h, c].forEach(function (el) {
+      if (!el) return;
+      el.setAttribute("data-fallback", el.textContent);
+      el.innerHTML = '<span class="stat-skel" aria-hidden="true"></span>';
+    });
+    function settle(el, value) {
+      if (!el) return;
+      el.textContent = value !== null ? value : el.getAttribute("data-fallback");
+      el.classList.add("stat-in");
     }
+    var ctrl = "AbortController" in window ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
+    fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID,
+          ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.json(); })
+      .then(function (a) {
+        clearTimeout(timer);
+        settle(h, a.summary_stats && a.summary_stats.h_index ? a.summary_stats.h_index : null);
+        settle(c, a.cited_by_count ? Number(a.cited_by_count).toLocaleString("en-US") : null);
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        settle(h, null);
+        settle(c, null);
+      });
   }
 
   /* ---------- featured-study modal ---------- */
