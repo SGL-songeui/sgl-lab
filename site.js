@@ -265,33 +265,68 @@
      h-index / citations: OpenAlex by the PI's ORCID (CORS-open, keyless).
      The numbers baked into the HTML stay as fallbacks if a fetch fails. */
   var PI_ORCID = "0000-0001-5123-0322";
+
+  function fmtNum(n) { return Number(n).toLocaleString("en-US"); }
+
+  /* rolls the number up from 0 to its final value (ease-out) */
+  function countUp(el, target) {
+    el.classList.add("stat-in");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        !window.requestAnimationFrame) {
+      el.textContent = fmtNum(target);
+      return;
+    }
+    var dur = 900, t0 = null, done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      el.textContent = fmtNum(target);
+    }
+    function tick(now) {
+      if (done) return;
+      if (t0 === null) t0 = now;
+      var p = Math.min(1, (now - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      if (p >= 1) { finish(); return; }
+      el.textContent = fmtNum(Math.round(target * eased));
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    /* rAF pauses in background/throttled tabs — make sure we always land */
+    setTimeout(finish, dur + 500);
+  }
+
+  function skeletonize(el) {
+    el.setAttribute("data-fallback", el.textContent);
+    el.innerHTML = '<span class="stat-skel" aria-hidden="true"></span>';
+  }
+  function settle(el, value) {
+    if (!el) return;
+    if (value !== null) { countUp(el, value); return; }
+    var fb = parseInt((el.getAttribute("data-fallback") || "").replace(/[^0-9]/g, ""), 10);
+    if (fb) countUp(el, fb); else el.textContent = el.getAttribute("data-fallback");
+  }
+
   function initLiveStats() {
-    if (document.querySelector('[data-stat="pubs"]')) {
+    var pubEls = document.querySelectorAll('[data-stat="pubs"]');
+    if (pubEls.length) {
+      Array.prototype.forEach.call(pubEls, skeletonize);
       fetch("data/publications.json")
         .then(function (r) { return r.json(); })
         .then(function (pubs) {
           window.__pubCount = pubs.length;
-          Array.prototype.forEach.call(document.querySelectorAll('[data-stat="pubs"]'), function (el) {
-            el.textContent = pubs.length;
-          });
+          Array.prototype.forEach.call(pubEls, function (el) { settle(el, pubs.length); });
           applyLang(); /* refresh strings that embed the count */
         })
-        .catch(function () {});
+        .catch(function () {
+          Array.prototype.forEach.call(pubEls, function (el) { settle(el, null); });
+        });
     }
     var h = document.querySelector('[data-stat="hindex"]');
     var c = document.querySelector('[data-stat="citations"]');
     if (!h && !c) return;
     /* skeleton while loading, so the fallback number never flashes first */
-    [h, c].forEach(function (el) {
-      if (!el) return;
-      el.setAttribute("data-fallback", el.textContent);
-      el.innerHTML = '<span class="stat-skel" aria-hidden="true"></span>';
-    });
-    function settle(el, value) {
-      if (!el) return;
-      el.textContent = value !== null ? value : el.getAttribute("data-fallback");
-      el.classList.add("stat-in");
-    }
+    [h, c].forEach(function (el) { if (el) skeletonize(el); });
     var ctrl = "AbortController" in window ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
     fetch("https://api.openalex.org/authors/https://orcid.org/" + PI_ORCID,
@@ -300,7 +335,7 @@
       .then(function (a) {
         clearTimeout(timer);
         settle(h, a.summary_stats && a.summary_stats.h_index ? a.summary_stats.h_index : null);
-        settle(c, a.cited_by_count ? Number(a.cited_by_count).toLocaleString("en-US") : null);
+        settle(c, a.cited_by_count ? Number(a.cited_by_count) : null);
       })
       .catch(function () {
         clearTimeout(timer);
