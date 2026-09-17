@@ -660,6 +660,7 @@
         d.el.classList.add("is-dragging");
         d.moved = false;
         d.fx = d.x; d.fy = d.y;
+        d.sx = event.x; d.sy = event.y;
         d.px = event.x; d.py = event.y; d.pt = performance.now();
         d.tvx = 0; d.tvy = 0;
         if (d.isPI) {
@@ -678,7 +679,9 @@
       .on("drag", function (event, d) {
         var now = performance.now(), dt = Math.max(1, now - d.pt);
         var dx = event.x - d.px, dy = event.y - d.py;
-        if (Math.abs(dx) + Math.abs(dy) > 0) d.moved = true;
+        /* a jittery click is still a click: only a real displacement counts as a drag */
+        if (!d.moved && Math.hypot(event.x - d.sx, event.y - d.sy) > 4) d.moved = true;
+        if (!d.moved) return;
         /* smoothed pointer velocity, px per frame (~16ms) */
         d.tvx = d.tvx * 0.5 + (dx / dt * 16) * 0.5;
         d.tvy = d.tvy * 0.5 + (dy / dt * 16) * 0.5;

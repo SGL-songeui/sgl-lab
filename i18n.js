@@ -85,7 +85,7 @@ window.SGL_I18N = {
   "pi.d2.where": { en: "Seoul National University, Korea", ko: "서울대학교" },
 
   /* people page */
-  "people.title": { en: "Lab Members", ko: "연구실 구성원" },
+  "people.title": { en: "Lab members", ko: "연구실 구성원" },
   "people.modal.pubs": { en: "Publications", ko: "논문" },
   "role.ra": { en: "Research Assistant", ko: "연구조교" },
   "name.haeock": { en: "Hae-Ock Lee", ko: "이혜옥" },
@@ -107,7 +107,7 @@ window.SGL_I18N = {
   "role.ms.prev": { en: "M.S.", ko: "석사" },
   "role.ms": { en: "M.S. Student", ko: "석사과정" },
   "people.alumni.kicker": { en: "ALUMNI", ko: "동문" },
-  "people.alumni.title": { en: "Former Lab Members", ko: "이전 구성원" },
+  "people.alumni.title": { en: "Former lab members", ko: "이전 구성원" },
   "chip.postdoc": { en: "&middot; Postdoctoral Fellow", ko: "· 박사후연구원" },
   "chip.researcher": { en: "&middot; Researcher", ko: "· 연구원" },
   "chip.ms": { en: "&middot; M.S. Student", ko: "· 석사과정" },
