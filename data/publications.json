@@ -7,7 +7,10 @@
   "doi": "10.1172/JCI182571",
   "pmid": "41196648",
   "type": "Article",
-  "date": "2 Jan 2026"
+  "date": "2 Jan 2026",
+  "members": {
+   "lee-ho": 10
+  }
  },
  {
   "title": "Single-nucleus multi-omics delineates distinct epigenetic programs associated with tumor progression in lung adenocarcinoma",
@@ -15,9 +18,14 @@
   "journal": "Clinical Epigenetics",
   "year": 2026,
   "doi": "10.1186/s13148-026-02078-0",
-  "pmid": null,
+  "pmid": "41673764",
   "type": "Article",
-  "date": "Dec 2026"
+  "date": "Dec 2026",
+  "members": {
+   "lee-ho": 7,
+   "kang-hr": 1,
+   "kim-y": 0
+  }
  },
  {
   "title": "Single-cell RNA sequencing revealed the role of the Th17 pathway in the development of anti-human leukocyte antigen antibodies in a highly sensitized mouse model",
@@ -27,7 +35,10 @@
   "doi": "10.23876/j.krcp.23.317",
   "pmid": "38934039",
   "type": "Article",
-  "date": "Nov 2025"
+  "date": "Nov 2025",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Altered tumor signature and T-cell profile after chemotherapy reveal new therapeutic opportunities in high-grade serous ovarian carcinoma",
@@ -37,7 +48,11 @@
   "doi": "10.1111/cas.16074",
   "pmid": "38226451",
   "type": "Article",
-  "date": "Mar 2024"
+  "date": "Mar 2024",
+  "members": {
+   "lee-ho": 7,
+   "kang-hr": 0
+  }
  },
  {
   "title": "Characterization of an orthotopic mouse transplant model reveals early changes in the tumor microenvironment of lung cancer",
@@ -47,7 +62,11 @@
   "doi": "10.5483/BMBRep.2024-0015",
   "pmid": "39044458",
   "type": "Article",
-  "date": "2024"
+  "date": "2024",
+  "members": {
+   "lee-ho": 4,
+   "kang-hr": 1
+  }
  },
  {
   "title": "Comprehensive profiling of DNA methylation in Korean patients with colorectal cancer",
@@ -57,7 +76,10 @@
   "doi": "10.5483/BMBRep.2023-0093",
   "pmid": "37605617",
   "type": "Article",
-  "date": "2024"
+  "date": "2024",
+  "members": {
+   "lee-ho": 27
+  }
  },
  {
   "title": "Single-cell RNA sequencing of nc886, a noncoding RNA transcribed by RNA polymerase III, with a primer spike-in strategy",
@@ -67,7 +89,12 @@
   "doi": "10.1371/journal.pone.0301562",
   "pmid": "39190696",
   "type": "Article",
-  "date": "1 Aug 2024"
+  "date": "1 Aug 2024",
+  "members": {
+   "lee-ho": 11,
+   "kang-hr": 5,
+   "shin-gj": 0
+  }
  },
  {
   "title": "Single-cell RNA sequencing reveals myeloid and T cell co-stimulation mediated by IL-7 anti-cancer immunotherapy",
@@ -77,7 +104,11 @@
   "doi": "10.1038/s41416-024-02617-7",
   "pmid": "38424167",
   "type": "Article",
-  "date": "3 May 2024"
+  "date": "3 May 2024",
+  "members": {
+   "lee-ho": 10,
+   "kang-hr": 5
+  }
  },
  {
   "title": "Unveiling the influence of tumor and immune signatures on immune checkpoint therapy in advanced lung cancer",
@@ -87,7 +118,11 @@
   "doi": "10.7554/eLife.98366",
   "pmid": "39514276",
   "type": "Article",
-  "date": "8 Nov 2024"
+  "date": "8 Nov 2024",
+  "members": {
+   "lee-ho": 19,
+   "kang-hr": 16
+  }
  },
  {
   "title": "CTLA-4 inhibition facilitates follicular T and B cell interaction and the production of tumor-specific antibodies",
@@ -97,7 +132,11 @@
   "doi": "10.1002/ijc.34438",
   "pmid": "36650700",
   "type": "Article",
-  "date": "1 May 2023"
+  "date": "1 May 2023",
+  "members": {
+   "lee-ho": 6,
+   "kang-hr": 5
+  }
  },
  {
   "title": "Perspectives on single-nucleus RNA sequencing in different cell types and tissues",
@@ -107,7 +146,11 @@
   "doi": "10.4132/jptm.2022.12.19",
   "pmid": "36623812",
   "type": "Article",
-  "date": "Jan 2023"
+  "date": "Jan 2023",
+  "members": {
+   "lee-ho": 4,
+   "kang-hr": 1
+  }
  },
  {
   "title": "Single-cell mapping of combinatorial target antigens for CAR switches using logic gates",
@@ -117,7 +160,10 @@
   "doi": "10.1038/s41587-023-01686-y",
   "pmid": "36797491",
   "type": "Article",
-  "date": "Nov 2023"
+  "date": "Nov 2023",
+  "members": {
+   "lee-ho": 13
+  }
  },
  {
   "title": "2′–5′ oligoadenylate synthetase‑like 1 (OASL1) protects against atherosclerosis by maintaining endothelial nitric oxide synthase mRNA stability",
@@ -127,7 +173,10 @@
   "doi": "10.1038/s41467-022-34433-z",
   "pmid": "36333342",
   "type": "Article",
-  "date": "Dec 2022"
+  "date": "Dec 2022",
+  "members": {
+   "lee-ho": 13
+  }
  },
  {
   "title": "Granulocyte Macrophage-Colony Stimulating Factor Produces a Splenic Subset of Monocyte-Derived Dendritic Cells That Efficiently Polarize T Helper Type 2 Cells in Response to Blood-Borne Antigen",
@@ -137,7 +186,10 @@
   "doi": "10.3389/fimmu.2021.767037",
   "pmid": "35069539",
   "type": "Article",
-  "date": "3 Jan 2022"
+  "date": "3 Jan 2022",
+  "members": {
+   "lee-ho": 13
+  }
  },
  {
   "title": "Prescreening of tumor samples for tumor-centric transcriptome analyses of lung adenocarcinoma",
@@ -147,7 +199,10 @@
   "doi": "10.1186/s12885-022-10317-9",
   "pmid": "36397035",
   "type": "Article",
-  "date": "Dec 2022"
+  "date": "Dec 2022",
+  "members": {
+   "lee-ho": 4
+  }
  },
  {
   "title": "Single-cell transcriptomics reveal cellular diversity of aortic valve and the immunomodulation by PPARγ during hyperlipidemia",
@@ -157,7 +212,10 @@
   "doi": "10.1038/s41467-022-33202-2",
   "pmid": "36115863",
   "type": "Article",
-  "date": "Dec 2022"
+  "date": "Dec 2022",
+  "members": {
+   "lee-ho": 28
+  }
  },
  {
   "title": "The regulation of insulin receptor/insulin-like growth factor 1 receptor ratio, an important factor for breast cancer prognosis, by TRIP-Br1",
@@ -167,7 +225,10 @@
   "doi": "10.1186/s13045-022-01303-6",
   "pmid": "35710446",
   "type": "Letter",
-  "date": "Dec 2022"
+  "date": "Dec 2022",
+  "members": {
+   "lee-ho": 7
+  }
  },
  {
   "title": "Chronic lung diseases are associated with gene expression programs favoring SARS-CoV-2 entry and severity",
@@ -177,7 +238,10 @@
   "doi": "10.1038/s41467-021-24467-0",
   "pmid": "33106805",
   "type": "Article",
-  "date": "Dec 2021"
+  "date": "Dec 2021",
+  "members": {
+   "lee-ho": -1
+  }
  },
  {
   "title": "Clinical perspectives of single-cell rna sequencing",
@@ -187,7 +251,10 @@
   "doi": "10.3390/biom11081161",
   "pmid": "34439827",
   "type": "Review article",
-  "date": "Aug 2021"
+  "date": "Aug 2021",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Single Cell Genomics for Tumor Heterogeneity",
@@ -197,7 +264,10 @@
   "doi": "10.1007/978-981-32-9620-6_10",
   "pmid": "33983580",
   "type": "Chapter",
-  "date": null
+  "date": null,
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics",
@@ -207,7 +277,10 @@
   "doi": "10.1038/s41591-020-01227-z",
   "pmid": "33654293",
   "type": "Article",
-  "date": "Mar 2021"
+  "date": "Mar 2021",
+  "members": {
+   "lee-ho": -1
+  }
  },
  {
   "title": "Alterations in the transcriptional programs of myeloma cells and the microenvironment during extramedullary progression affect proliferation and immune evasion",
@@ -217,7 +290,10 @@
   "doi": "10.1158/1078-0432.CCR-19-0694",
   "pmid": "31558476",
   "type": "Article",
-  "date": "15 Feb 2020"
+  "date": "15 Feb 2020",
+  "members": {
+   "lee-ho": 6
+  }
  },
  {
   "title": "Anti-Inflammatory Actions of Soluble Ninjurin-1 Ameliorate Atherosclerosis",
@@ -227,7 +303,10 @@
   "doi": "10.1161/CIRCULATIONAHA.120.046907",
   "pmid": "32883094",
   "type": "Article",
-  "date": "3 Nov 2020"
+  "date": "3 Nov 2020",
+  "members": {
+   "lee-ho": 19
+  }
  },
  {
   "title": "Cancer cells undergoing epigenetic transition show short-term resistance and are transformed into cells with medium-term resistance by drug treatment",
@@ -237,7 +316,10 @@
   "doi": "10.1038/s12276-020-0464-3",
   "pmid": "32661348",
   "type": "Article",
-  "date": "1 Jul 2020"
+  "date": "1 Jul 2020",
+  "members": {
+   "lee-ho": 9
+  }
  },
  {
   "title": "Erratum: Alterations in the transcriptional programs of myeloma cells and the microenvironment during extramedullary progression affect proliferation and immune evasion (Clinical Cancer Research (2020) 26 (935-944) DOI: 10.1158/1078-0432.CCR-19-0694)",
@@ -247,7 +329,10 @@
   "doi": "10.1158/1078-0432.CCR-20-3174",
   "pmid": "32934030",
   "type": "Comment/debate",
-  "date": "15 Sep 2020"
+  "date": "15 Sep 2020",
+  "members": {
+   "lee-ho": 6
+  }
  },
  {
   "title": "Lineage-dependent gene expression programs influence the immune landscape of colorectal cancer",
@@ -257,7 +342,10 @@
   "doi": "10.1038/s41588-020-0636-z",
   "pmid": "32451460",
   "type": "Article",
-  "date": "1 Jun 2020"
+  "date": "1 Jun 2020",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Myocyte-Specific Upregulation of ACE2 in Cardiovascular Disease: Implications for SARS-CoV-2-Mediated Myocarditis",
@@ -267,7 +355,8 @@
   "doi": "10.1161/CIRCULATIONAHA.120.047911",
   "pmid": "32795091",
   "type": "Letter",
-  "date": "18 Aug 2020"
+  "date": "18 Aug 2020",
+  "members": {}
  },
  {
   "title": "SARS-CoV-2 Receptor ACE2 Is an Interferon-Stimulated Gene in Human Airway Epithelial Cells and Is Detected in Specific Cell Subsets across Tissues",
@@ -277,7 +366,10 @@
   "doi": "10.1016/j.cell.2020.04.035",
   "pmid": "32413319",
   "type": "Article",
-  "date": "28 May 2020"
+  "date": "28 May 2020",
+  "members": {
+   "lee-ho": -1
+  }
  },
  {
   "title": "SARS-CoV-2 entry factors are highly expressed in nasal epithelial cells together with innate immune genes",
@@ -287,7 +379,10 @@
   "doi": "10.1038/s41591-020-0868-6",
   "pmid": "32327758",
   "type": "Article",
-  "date": "1 May 2020"
+  "date": "1 May 2020",
+  "members": {
+   "lee-ho": -1
+  }
  },
  {
   "title": "Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma",
@@ -297,7 +392,10 @@
   "doi": "10.1038/s41467-020-16164-1",
   "pmid": "32385277",
   "type": "Article",
-  "date": "1 Dec 2020"
+  "date": "1 Dec 2020",
+  "members": {
+   "lee-ho": 20
+  }
  },
  {
   "title": "Single-cell RNA sequencing reveals the tumor microenvironment and facilitates strategic choices to circumvent treatment failure in a chemorefractory bladder cancer patient",
@@ -307,7 +405,10 @@
   "doi": "10.1186/s13073-020-00741-6",
   "pmid": "32460812",
   "type": "Article",
-  "date": "27 May 2020"
+  "date": "27 May 2020",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Tumor-promoting macrophages prevail in malignant ascites of advanced gastric cancer",
@@ -317,7 +418,10 @@
   "doi": "10.1038/s12276-020-00538-y",
   "pmid": "33277616",
   "type": "Article",
-  "date": "Dec 2020"
+  "date": "Dec 2020",
+  "members": {
+   "lee-ho": 10
+  }
  },
  {
   "title": "Alternative polyadenylation of single cells delineates cell types and serves as a prognostic marker in early stage breast cancer",
@@ -327,7 +431,10 @@
   "doi": "10.1371/journal.pone.0217196",
   "pmid": "31100099",
   "type": "Article",
-  "date": "May 2019"
+  "date": "May 2019",
+  "members": {
+   "lee-ho": 3
+  }
  },
  {
   "title": "Linking transcriptional and genetic tumor heterogeneity through allele analysis of single-cell RNA-seq data",
@@ -337,7 +444,10 @@
   "doi": "10.1101/gr.228080.117",
   "pmid": "29898899",
   "type": "Article",
-  "date": "Aug 2018"
+  "date": "Aug 2018",
+  "members": {
+   "lee-ho": 1
+  }
  },
  {
   "title": "SIDR: simultaneous isolation and parallel sequencing of genomic DNA and total RNA from single cells",
@@ -347,7 +457,10 @@
   "doi": "10.1101/gr.223263.117",
   "pmid": "29208629",
   "type": "Article",
-  "date": "Jan 2018"
+  "date": "Jan 2018",
+  "members": {
+   "lee-ho": 15
+  }
  },
  {
   "title": "HDAC2/3 binding and deacetylation of BubR1 initiates spindle assembly checkpoint silencing",
@@ -357,7 +470,10 @@
   "doi": "10.1111/febs.14286",
   "pmid": "28985013",
   "type": "Article",
-  "date": "Dec 2017"
+  "date": "Dec 2017",
+  "members": {
+   "lee-ho": 4
+  }
  },
  {
   "title": "Nonlinear tumor evolution from dysplastic nodules to hepatocellular carcinoma",
@@ -367,7 +483,10 @@
   "doi": "10.18632/oncotarget.10502",
   "pmid": "27409339",
   "type": "Article",
-  "date": "2017"
+  "date": "2017",
+  "members": {
+   "lee-ho": 5
+  }
  },
  {
   "title": "Single-cell RNA-Seq unveils tumor microenvironment",
@@ -377,7 +496,10 @@
   "doi": "10.5483/BMBRep.2017.50.6.086",
   "pmid": "28539161",
   "type": "Article",
-  "date": "2017"
+  "date": "2017",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Single-cell RNA-seq enables comprehensive tumour and immune cell profiling in primary breast cancer",
@@ -387,7 +509,10 @@
   "doi": "10.1038/ncomms15081",
   "pmid": "28474673",
   "type": "Article",
-  "date": "5 May 2017"
+  "date": "5 May 2017",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Spatiotemporal genomic architecture informs precision oncology in glioblastoma",
@@ -397,7 +522,10 @@
   "doi": "10.1038/ng.3806",
   "pmid": "28263318",
   "type": "Article",
-  "date": "30 Mar 2017"
+  "date": "30 Mar 2017",
+  "members": {
+   "lee-ho": 4
+  }
  },
  {
   "title": "Tumor heterogeneity predicts metastatic potential in colorectal cancer",
@@ -407,7 +535,10 @@
   "doi": "10.1158/1078-0432.CCR-17-0306",
   "pmid": "28939741",
   "type": "Article",
-  "date": "1 Dec 2017"
+  "date": "1 Dec 2017",
+  "members": {
+   "lee-ho": 5
+  }
  },
  {
   "title": "Application of single-cell RNA sequencing in optimizing a combinatorial therapeutic strategy in metastatic renal cell carcinoma",
@@ -417,7 +548,10 @@
   "doi": "10.1186/s13059-016-0945-9",
   "pmid": "27139883",
   "type": "Article",
-  "date": "29 Apr 2016"
+  "date": "29 Apr 2016",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Comprehensive genomic profiling of IgM multiple myeloma identifies IRF4 as a prognostic marker",
@@ -427,7 +561,10 @@
   "doi": "10.18632/oncotarget.9478",
   "pmid": "27223072",
   "type": "Article",
-  "date": "2016"
+  "date": "2016",
+  "members": {
+   "lee-ho": 3
+  }
  },
  {
   "title": "Recurrent mutations of MAPK pathway genes in multiple myeloma but not in amyloid light-chain amyloidosis",
@@ -437,7 +574,10 @@
   "doi": "10.18632/ONCOTARGET.12029",
   "pmid": "27634910",
   "type": "Article",
-  "date": "2016"
+  "date": "2016",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Brca2 deficiency leads to T cell loss and immune dysfunction",
@@ -447,7 +587,10 @@
   "doi": "10.14348/molcells.2015.2302",
   "pmid": "25666348",
   "type": "Article",
-  "date": "4 Feb 2015"
+  "date": "4 Feb 2015",
+  "members": {
+   "lee-ho": 3
+  }
  },
  {
   "title": "Deregulation of retinaldehyde dehydrogenase 2 leads to defective angiogenic function of endothelial colony-forming cells in pediatric moyamoya disease",
@@ -457,7 +600,10 @@
   "doi": "10.1161/ATVBAHA.115.305363",
   "pmid": "26023078",
   "type": "Article",
-  "date": "27 Jul 2015"
+  "date": "27 Jul 2015",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Identification of distinct tumor subpopulations in lung adenocarcinoma via single-cell RNA-seq",
@@ -467,7 +613,10 @@
   "doi": "10.1371/journal.pone.0135817",
   "pmid": "26305796",
   "type": "Article",
-  "date": "25 Aug 2015"
+  "date": "25 Aug 2015",
+  "members": {
+   "lee-ho": 6
+  }
  },
  {
   "title": "Single-cell mRNA sequencing identifies subclonal heterogeneity in anti-cancer drug responses of lung adenocarcinoma cells",
@@ -477,7 +626,10 @@
   "doi": "10.1186/s13059-015-0692-3",
   "pmid": "26084335",
   "type": "Article",
-  "date": "19 Jun 2015"
+  "date": "19 Jun 2015",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Standard immunohistochemistry efficiently screens for anaplastic lymphoma kinase rearrangements in differentiated thyroid cancer",
@@ -487,7 +639,10 @@
   "doi": "10.1530/ERC-14-0467",
   "pmid": "25527510",
   "type": "Article",
-  "date": "1 Feb 2015"
+  "date": "1 Feb 2015",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "The diagnostic application of targeted re-sequencing in Korean patients with retinitis pigmentosa",
@@ -497,7 +652,10 @@
   "doi": "10.1186/s12864-015-1723-x",
   "pmid": "26155838",
   "type": "Article",
-  "date": "9 Jul 2015"
+  "date": "9 Jul 2015",
+  "members": {
+   "lee-ho": 6
+  }
  },
  {
   "title": "The use of FNA samples for whole-exome sequencing and detection of somatic mutations in breast cancer surgical specimens",
@@ -507,7 +665,10 @@
   "doi": "10.1002/cncy.21599",
   "pmid": "26265110",
   "type": "Article",
-  "date": "1 Nov 2015"
+  "date": "1 Nov 2015",
+  "members": {
+   "lee-ho": 5
+  }
  },
  {
   "title": "Loss of BubR1 acetylation causes defects in spindle assembly checkpoint signaling and promotes tumor formation",
@@ -517,7 +678,10 @@
   "doi": "10.1083/jcb.201210099",
   "pmid": "23878276",
   "type": "Article",
-  "date": "Jul 2013"
+  "date": "Jul 2013",
+  "members": {
+   "lee-ho": 1
+  }
  },
  {
   "title": "BRCA2 Fine-Tunes the Spindle Assembly Checkpoint through Reinforcement of BubR1 Acetylation",
@@ -527,7 +691,10 @@
   "doi": "10.1016/j.devcel.2012.01.009",
   "pmid": "22340495",
   "type": "Article",
-  "date": "14 Feb 2012"
+  "date": "14 Feb 2012",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Cell density-dependent acetylation of Δnp63α is associated with p53-dependent cell cycle arrest",
@@ -537,7 +704,10 @@
   "doi": "10.1016/j.febslet.2012.03.021",
   "pmid": "22575646",
   "type": "Article",
-  "date": "24 Apr 2012"
+  "date": "24 Apr 2012",
+  "members": {
+   "lee-ho": 3
+  }
  },
  {
   "title": "Fgfbp1 Is Essential for the Cellular Survival during Zebrafish Embryogenesis",
@@ -547,7 +717,10 @@
   "doi": "10.1007/s10059-010-0062-7",
   "pmid": "20396962",
   "type": "Article",
-  "date": "May 2010"
+  "date": "May 2010",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Inhibition of Plk1 induces mitotic infidelity and embryonic growth defects in developing zebrafish embryos",
@@ -557,7 +730,10 @@
   "doi": "10.1016/j.ydbio.2010.06.004",
   "pmid": "20553902",
   "type": "Article",
-  "date": "Sep 2010"
+  "date": "Sep 2010",
+  "members": {
+   "lee-ho": 2
+  }
  },
  {
   "title": "Control of rapsyn stability by the CUL-3-containing E3 ligase complex",
@@ -567,7 +743,10 @@
   "doi": "10.1074/jbc.M808230200",
   "pmid": "19158078",
   "type": "Article",
-  "date": "20 Mar 2009"
+  "date": "20 Mar 2009",
+  "members": {
+   "lee-ho": 3
+  }
  },
  {
   "title": "Regulation of Δnp63α by tumor necrosis factor-α in epithelial homeostasis",
@@ -577,7 +756,10 @@
   "doi": "10.1111/j.1742-4658.2007.06168.x",
   "pmid": "18028447",
   "type": "Article",
-  "date": "Dec 2007"
+  "date": "Dec 2007",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "SuPr-1-mediated desumoylation regulates the repressor activity of ΔNp63α",
@@ -587,7 +769,10 @@
   "doi": "10.1016/j.febslet.2007.11.013",
   "pmid": "18023281",
   "type": "Article",
-  "date": "11 Dec 2007"
+  "date": "11 Dec 2007",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "A dominant negative form of p63 inhibits apoptosis in a p53-independent manner",
@@ -597,7 +782,10 @@
   "doi": "10.1016/j.bbrc.2006.03.128",
   "pmid": "16616891",
   "type": "Article",
-  "date": "26 May 2006"
+  "date": "26 May 2006",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Biology of FasL",
@@ -607,7 +795,10 @@
   "doi": "10.1016/S1359-6101(03)00028-5",
   "pmid": "12787569",
   "type": "Review article",
-  "date": "2003"
+  "date": "2003",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "P-selectin and P-selectin glycoprotein ligand 1 are major determinants for Th1 cell recruitment to nonlymphoid effector sites in the intestinal lamina propria",
@@ -617,7 +808,10 @@
   "doi": "10.1084/jem.20020691",
   "pmid": "12885868",
   "type": "Article",
-  "date": "4 Aug 2003"
+  "date": "4 Aug 2003",
+  "members": {
+   "lee-ho": 7
+  }
  },
  {
   "title": "TRAIL: A mechanism of tumor surveillance in an immune privileged site1",
@@ -627,7 +821,10 @@
   "doi": "10.4049/jimmunol.169.9.4739",
   "pmid": "12391182",
   "type": "Article",
-  "date": "1 Nov 2002"
+  "date": "1 Nov 2002",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "The state of CD4+ T cell activation is a major factor for determining the kinetics and location of T cell responses to oral antigen",
@@ -637,7 +834,10 @@
   "doi": "10.4049/jimmunol.168.8.3833",
   "pmid": "11937536",
   "type": "Article",
-  "date": "15 Apr 2002"
+  "date": "15 Apr 2002",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Divergent roles for p55 and p75 tumor necrosis factor receptors in the pathogenesis of MOG35-55-induced experimental autoimmune encephalomyelitis",
@@ -647,7 +847,10 @@
   "doi": "10.1006/cimm.2000.1706",
   "pmid": null,
   "type": "Article",
-  "date": "10 Oct 2000"
+  "date": "10 Oct 2000",
+  "members": {
+   "lee-ho": 1
+  }
  },
  {
   "title": "Interferon gamma induction during oral tolerance reduces T-cell migration to sites of inflammation",
@@ -657,7 +860,10 @@
   "doi": "10.1053/gast.2000.8542",
   "pmid": null,
   "type": "Article",
-  "date": "Jul 2000"
+  "date": "Jul 2000",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Oral tolerance therapy in an experimental model of colitis",
@@ -667,7 +873,10 @@
   "doi": "10.1016/S0002-9270(00)00715-2",
   "pmid": null,
   "type": "Editorial",
-  "date": "2000"
+  "date": "2000",
+  "members": {
+   "lee-ho": 0
+  }
  },
  {
   "title": "Effects of oral antigen in T-cell receptor transgenic mice",
@@ -677,6 +886,9 @@
   "doi": "10.1111/j.1749-6632.1996.tb21125.x",
   "pmid": null,
   "type": "Article",
-  "date": "1996"
+  "date": "1996",
+  "members": {
+   "lee-ho": 1
+  }
  }
 ]

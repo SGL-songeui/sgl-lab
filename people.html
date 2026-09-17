@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="site.css?v=12">
+  <link rel="stylesheet" href="site.css?v=21">
   <script>
     /* stamp .vt when a cross-document view transition drives this navigation,
        so the CSS entrance animation yields to the transition (must run pre-render) */
@@ -29,79 +29,21 @@
       if (e.viewTransition) document.documentElement.classList.add("vt");
     });
   </script>
-  <script src="i18n.js?v=11" defer></script>
-  <script src="site.js?v=15" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="i18n.js?v=13" defer></script>
+  <script src="site.js?v=21" defer></script>
 </head>
 <body data-page="people">
 
   <section class="page-hero">
     <div class="inner">
-      <div class="kicker" data-i18n="people.kicker">PEOPLE</div>
       <h1 data-i18n="people.title">Lab Members</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-kicker" data-i18n="people.researchers">RESEARCHERS</div>
-      <div class="people-grid">
-        <div class="person">
-          <div class="avatar" data-name="Jeongseon Lee"></div>
-          <h3 data-i18n="name.jeongseon">Jeongseon Lee</h3>
-          <div class="role" data-i18n="role.researcher">Researcher</div>
-          <div class="email"><a href="mailto:pured23@gmail.com">pured23@gmail.com</a></div>
-        </div>
-        <div class="person">
-          <div class="avatar" data-name="Minhee Kim"></div>
-          <h3 data-i18n="name.minhee">Minhee Kim</h3>
-          <div class="role" data-i18n="role.researcher">Researcher</div>
-          <div class="email"><a href="mailto:moonop12@gmail.com">moonop12@gmail.com</a></div>
-        </div>
-      </div>
-
-      <div class="section-kicker" style="margin-top:44px;" data-i18n="people.phd">PH.D. STUDENTS</div>
-      <div class="people-grid">
-        <div class="person">
-          <div class="avatar" data-name="Huiram Kang"></div>
-          <h3 data-i18n="name.huiram">Huiram Kang</h3>
-          <div class="role" data-i18n="role.phd">Ph.D. Student</div>
-          <div class="email"><a href="mailto:khr1138@gmail.com">khr1138@gmail.com</a></div>
-        </div>
-        <div class="person">
-          <div class="avatar" data-name="GyeongJin Shin"></div>
-          <h3 data-i18n="name.gyeongjin">GyeongJin Shin</h3>
-          <div class="role" data-i18n="role.phd">Ph.D. Student</div>
-          <div class="email"><a href="mailto:tlsrudwls1995@naver.com">tlsrudwls1995@naver.com</a></div>
-        </div>
-        <div class="person">
-          <div class="avatar" data-name="Geunseob Lee"></div>
-          <h3 data-i18n="name.geunseob">Geunseob Lee</h3>
-          <div class="role" data-i18n="role.phd">Ph.D. Student</div>
-          <div class="email"><a href="mailto:dlrmstjq7@gmail.com">dlrmstjq7@gmail.com</a></div>
-        </div>
-        <div class="person">
-          <div class="avatar" data-name="Serim Kim"></div>
-          <h3 data-i18n="name.serim">Serim Kim</h3>
-          <div class="role" data-i18n="role.phd">Ph.D. Student</div>
-          <div class="email"><a href="mailto:rlatpfla1258@gmail.com">rlatpfla1258@gmail.com</a></div>
-        </div>
-        <div class="person">
-          <div class="avatar" data-name="Yeji Kim"></div>
-          <h3 data-i18n="name.yeji">Yeji Kim</h3>
-          <div class="role" data-i18n="role.phd">Ph.D. Student</div>
-          <div class="email"><a href="mailto:rladpwl1022@gmail.com">rladpwl1022@gmail.com</a></div>
-        </div>
-      </div>
-
-      <div class="section-kicker" style="margin-top:44px;" data-i18n="people.ms">M.S. STUDENTS</div>
-      <div class="people-grid">
-        <div class="person">
-          <div class="avatar" data-name="Suhyeon Yoo"></div>
-          <h3 data-i18n="name.suhyeon">Suhyeon Yoo</h3>
-          <div class="role" data-i18n="role.ms">M.S. Student</div>
-          <div class="email"><a href="mailto:deniel0514@gmail.com">deniel0514@gmail.com</a></div>
-        </div>
-      </div>
+      <div class="cluster-canvas" id="cluster-canvas"></div>
     </div>
   </section>
 
@@ -118,6 +60,25 @@
       </div>
     </div>
   </section>
+
+  <!-- member profile modal -->
+  <div class="member-modal-overlay" id="member-modal" hidden>
+    <div class="member-modal">
+      <button class="member-modal-close" aria-label="Close">&times;</button>
+      <div class="member-modal-header">
+        <div class="member-modal-avatar" id="mm-avatar"></div>
+        <div>
+          <h2 id="mm-name"></h2>
+          <div id="mm-roles" class="member-modal-roles"></div>
+          <div id="mm-email" class="member-modal-email"></div>
+        </div>
+      </div>
+      <div class="member-modal-pubs">
+        <h3 id="mm-pub-heading" data-i18n="people.modal.pubs">Publications</h3>
+        <div id="mm-pub-list"></div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

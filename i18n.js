@@ -35,8 +35,7 @@ window.SGL_I18N = {
   "home.pub.viewall": { en: "View all {n} &rarr;", ko: "전체 {n}편 보기 &rarr;" },
 
   /* research takeover */
-  "res.kicker": { en: "RESEARCH", ko: "연구" },
-  "res.title": { en: "Our Research", ko: "연구 분야" },
+  "res.title": { en: "Research", ko: "연구" },
   "res.r1.kicker": { en: "TUMOR MICROENVIRONMENT", ko: "종양미세환경" },
   "res.r1.title": { en: "Cellular ecosystems of cancer, one stage at a time", ko: "병기별로 들여다보는 암의 세포 생태계" },
   "res.r1.body": {
@@ -70,38 +69,25 @@ window.SGL_I18N = {
   },
   "pi.metric.pubs": { en: "Publications", ko: "논문" },
   "pi.metric.cites": { en: "Citations", ko: "인용" },
-  "pi.exp": { en: "Professional Experience", ko: "경력" },
+  "pi.exp": { en: "Employment", ko: "경력" },
   "pi.edu": { en: "Education", ko: "학력" },
   "pi.e1.what": { en: "Professor, Department of Microbiology", ko: "교수, 미생물학교실" },
   "pi.e1.where": { en: "College of Medicine, The Catholic University of Korea", ko: "가톨릭대학교 의과대학" },
-  "pi.e2.what": { en: "Professor, Department of Medical Sciences", ko: "교수, 의생명과학과" },
-  "pi.e2.where": { en: "Graduate School, The Catholic University of Korea", ko: "가톨릭대학교 대학원" },
   "pi.e3.what": { en: "Chief Researcher", ko: "수석연구원" },
   "pi.e3.where": { en: "Samsung Medical Center", ko: "삼성서울병원" },
-  "pi.e4.what": { en: "Research Instructor", ko: "연구강사" },
-  "pi.e4.where": { en: "Korea University", ko: "고려대학교" },
-  "pi.e5.what": { en: "Postdoctoral Fellow / Research Assistant Professor", ko: "박사후연구원 / 연구조교수" },
+  "pi.e5.what": { en: "Research Assistant Professor", ko: "연구조교수" },
   "pi.e5.where": { en: "Seoul National University", ko: "서울대학교" },
-  "pi.e6.what": { en: "Postdoctoral Fellow", ko: "박사후연구원" },
-  "pi.e6.where": { en: "National Cancer Center, Korea", ko: "국립암센터" },
   "pi.e7.what": { en: "Research Associate", ko: "연구원" },
   "pi.e7.where": { en: "Washington University, MO, USA", ko: "워싱턴대학교 (미국 미주리)" },
   "pi.d1.what": { en: "Ph.D., Immunology and Microbial Pathogenesis", ko: "Ph.D., 면역학·미생물병인학" },
-  "pi.d1.where": { en: "Integrated Graduate Program in the Life Sciences, Northwestern University, IL, USA", ko: "노스웨스턴대학교 (미국 일리노이)" },
+  "pi.d1.where": { en: "Northwestern University, IL, USA", ko: "노스웨스턴대학교 (미국 일리노이)" },
   "pi.d2.what": { en: "B.S., Microbiology", ko: "B.S., 미생물학" },
   "pi.d2.where": { en: "Seoul National University, Korea", ko: "서울대학교" },
 
   /* people page */
-  "people.kicker": { en: "PEOPLE", ko: "구성원" },
   "people.title": { en: "Lab Members", ko: "연구실 구성원" },
-  "people.sub": {
-    en: "Medicine, biology, and data science &mdash; different perspectives working on the same cells.",
-    ko: "의학·생물학·데이터과학 — 서로 다른 시선으로 같은 세포를 봅니다."
-  },
-  "people.researchers": { en: "RESEARCHERS", ko: "연구원" },
-  "people.phd": { en: "PH.D. STUDENTS", ko: "박사과정" },
-  "people.ms": { en: "M.S. STUDENTS", ko: "석사과정" },
-  "role.researcher": { en: "Researcher", ko: "연구원" },
+  "people.modal.pubs": { en: "Publications", ko: "논문" },
+  "role.ra": { en: "Research Assistant", ko: "연구조교" },
   "name.jeongseon": { en: "Jeongseon Lee", ko: "이정선" },
   "name.minhee": { en: "Minhee Kim", ko: "김민희" },
   "name.huiram": { en: "Huiram Kang", ko: "강희람" },
@@ -115,7 +101,9 @@ window.SGL_I18N = {
   "name.dasom": { en: "Dasom Jeong", ko: "정다솜" },
   "name.areum": { en: "Areum Jo", ko: "조아름" },
   "name.minsu": { en: "Minsu Na", ko: "나민수" },
-  "role.phd": { en: "Ph.D. Student", ko: "박사과정" },
+  "role.phd": { en: "Combined MS and PhD Student", ko: "석박사통합과정" },
+  "role.phd.only": { en: "PhD Student", ko: "박사과정" },
+  "role.ms.prev": { en: "M.S.", ko: "석사" },
   "role.ms": { en: "M.S. Student", ko: "석사과정" },
   "people.alumni.kicker": { en: "ALUMNI", ko: "동문" },
   "people.alumni.title": { en: "Former Lab Members", ko: "이전 구성원" },
@@ -124,7 +112,6 @@ window.SGL_I18N = {
   "chip.ms": { en: "&middot; M.S. Student", ko: "· 석사과정" },
 
   /* publications page */
-  "pub.kicker": { en: "PUBLICATIONS", ko: "논문" },
   "pub.title": { en: "Publications", ko: "논문" },
   "pub.sub": {
     en: "Peer-reviewed work from the lab and our collaborations, 1996 to present. Click any paper to open it via its DOI.",
@@ -133,8 +120,7 @@ window.SGL_I18N = {
   "pub.search.ph": { en: "Search by title, author, journal, or year…", ko: "제목·저자·저널·연도로 검색…" },
 
   /* contact page */
-  "contact.kicker": { en: "CONTACT", ko: "연락처" },
-  "contact.title": { en: "Get in touch", ko: "연락처 · 오시는 길" },
+  "contact.title": { en: "Contact", ko: "연락처" },
   "contact.sub": {
     en: "Interested in joining the lab or collaborating? We welcome inquiries from prospective graduate students, postdocs, and research partners.",
     ko: "연구실 합류나 공동연구에 관심이 있으신가요? 대학원생·박사후연구원·연구 파트너의 문의를 환영합니다."

@@ -113,21 +113,27 @@
   }
 
   /* ---------- publications ---------- */
-  /* PI + current lab members, matched against the exact initial forms they
-     use in these papers. Surname-comma-initial forms shared with unrelated
-     collaborators (Lee, J. / Kim, M. / Kim, S.) are deliberately NOT listed —
-     every occurrence in the current data is a different person. */
-  var MEMBER_PATTERNS = [
-    /Lee, H\. O\./g,            /* Hae-Ock Lee (PI) */
-    /Kang, H\.(?! ?[A-Z]\.)/g,  /* Huiram Kang */
-    /Shin, G\. J\./g,           /* GyeongJin Shin */
-    /Kim, Y\.(?! ?[A-Z]\.)/g,   /* Yeji Kim */
-    /Lee HO(?![a-z])/g
-  ];
-  function boldPI(authors) {
-    var s = esc(authors);
-    MEMBER_PATTERNS.forEach(function (p) { s = s.replace(p, "<b>$&</b>"); });
-    return s;
+  /* members is { "member-id": authorIndex, ... }.
+     Split the author string into tokens and bold the ones at member positions. */
+  var AUTHOR_RE = /[A-Z][a-zÀ-ž]*(?:\s[A-Z][a-zÀ-ž]*)*, [A-Z]\.(?:\s[A-Z]\.)*/g;
+  function boldMembers(authors, members) {
+    if (!members || typeof members !== "object") return esc(authors);
+    var boldAt = {};
+    Object.keys(members).forEach(function (mid) {
+      var idx = members[mid];
+      if (idx >= 0) boldAt[idx] = true;
+    });
+    if (!Object.keys(boldAt).length) return esc(authors);
+    var idx = 0, last = 0, out = "";
+    authors.replace(AUTHOR_RE, function (match, offset) {
+      out += esc(authors.substring(last, offset));
+      out += boldAt[idx] ? "<b>" + esc(match) + "</b>" : esc(match);
+      last = offset + match.length;
+      idx++;
+      return match;
+    });
+    out += esc(authors.substring(last));
+    return out;
   }
 
   function pubRow(p) {
@@ -140,14 +146,14 @@
     var titleInner = doiUrl
       ? '<a href="' + doiUrl + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>" + typeBadge
       : esc(p.title) + typeBadge;
+    var metaParts = [esc(p.year), esc(p.journal)];
+    if (links.length) metaParts.push(links.join(" &nbsp;&middot;&nbsp; "));
     return (
       '<div class="pub-row"' + (doiUrl ? ' data-doi="' + doiUrl + '"' : "") + ">" +
-      '<span class="pub-badge">' + esc(p.year) + " &middot; " + esc(p.journal) + "</span>" +
-      "<div>" +
       '<div class="pub-title">' + titleInner + "</div>" +
-      '<div class="pub-authors">' + boldPI(p.authors) + "</div>" +
-      '<div class="pub-meta">' + links.join(" &nbsp;&middot;&nbsp; ") + "</div>" +
-      "</div></div>"
+      '<div class="pub-authors">' + boldMembers(p.authors, p.members) + "</div>" +
+      '<div class="pub-meta">' + metaParts.join(" &nbsp;&middot;&nbsp; ") + "</div>" +
+      "</div>"
     );
   }
 
@@ -161,16 +167,27 @@
     window.open(row.getAttribute("data-doi"), "_blank", "noopener");
   });
 
+  var __memberFilter = "";
+  var __yearFilter = "";
   function renderPubs(pubs, query) {
     var host = document.getElementById("pub-container");
     var count = document.getElementById("pub-count");
     var q = (query || "").trim().toLowerCase();
-    var shown = q
-      ? pubs.filter(function (p) {
-          return (p.title + " " + p.authors + " " + p.journal + " " + p.year)
-            .toLowerCase().indexOf(q) !== -1;
-        })
-      : pubs;
+    var shown = pubs;
+    if (__memberFilter) {
+      shown = shown.filter(function (p) {
+        return p.members && typeof p.members === "object" && __memberFilter in p.members;
+      });
+    }
+    if (__yearFilter) {
+      shown = shown.filter(function (p) { return String(p.year) === __yearFilter; });
+    }
+    if (q) {
+      shown = shown.filter(function (p) {
+        return (p.title + " " + p.authors + " " + p.journal + " " + p.year)
+          .toLowerCase().indexOf(q) !== -1;
+      });
+    }
     if (count) {
       count.textContent = getLang() === "ko"
         ? "전체 " + pubs.length + "편 중 " + shown.length + "편"
@@ -189,15 +206,61 @@
     }).join("");
   }
 
+  var MEMBER_NAMES = {
+    "lee-ho": { en: "Hae-Ock Lee", ko: "이혜옥" },
+    "kang-hr": { en: "Huiram Kang", ko: "강희람" },
+    "shin-gj": { en: "GyeongJin Shin", ko: "신경진" },
+    "lee-gs": { en: "Geunseob Lee", ko: "이근섭" },
+    "kim-sr": { en: "Serim Kim", ko: "김세림" },
+    "kim-y":  { en: "Yeji Kim", ko: "김예지" },
+    "lee-js": { en: "Jeongseon Lee", ko: "이정선" },
+    "kim-mh": { en: "Minhee Kim", ko: "김민희" },
+    "yoo-sh": { en: "Suhyeon Yoo", ko: "유수현" }
+  };
+
   function initPublications() {
     var host = document.getElementById("pub-container");
     if (!host) return;
-    fetch("data/publications.json")
+
+    /* read ?member= query param */
+    var params = new URLSearchParams(window.location.search);
+    __memberFilter = params.get("member") || "";
+
+    fetch("data/publications.json?v=18")
       .then(function (r) { return r.json(); })
       .then(function (pubs) {
+        /* show member filter chip if active */
+        if (__memberFilter && MEMBER_NAMES[__memberFilter]) {
+          var chip = document.createElement("div");
+          chip.className = "member-filter-chip";
+          var name = MEMBER_NAMES[__memberFilter][getLang()] || MEMBER_NAMES[__memberFilter].en;
+          chip.innerHTML = '<span>' + esc(name) + '</span><button aria-label="Clear filter">&times;</button>';
+          chip.querySelector("button").addEventListener("click", function () {
+            __memberFilter = "";
+            history.replaceState(null, "", "publications.html");
+            chip.remove();
+            renderPubs(pubs, input ? input.value : "");
+          });
+          var toolbar = document.querySelector(".pub-toolbar");
+          if (toolbar) toolbar.appendChild(chip);
+        }
+
+        var yearSelect = document.getElementById("pub-year-filter");
+        if (yearSelect) {
+          var allYears = {};
+          pubs.forEach(function (p) { allYears[p.year] = true; });
+          Object.keys(allYears).sort(function (a, b) { return b - a; }).forEach(function (y) {
+            var opt = document.createElement("option");
+            opt.value = y; opt.textContent = y;
+            yearSelect.appendChild(opt);
+          });
+          yearSelect.addEventListener("change", function () {
+            __yearFilter = yearSelect.value;
+            renderPubs(pubs, input ? input.value : "");
+          });
+        }
+
         renderPubs(pubs, "");
-        /* reveal treatment only on the initial render — search re-renders
-           show rows instantly so filtering doesn't flicker */
         revealize(host.querySelectorAll(".year-heading, .pub-row"));
         var input = document.getElementById("pub-search");
         if (input) input.addEventListener("input", function () { renderPubs(pubs, input.value); });
@@ -206,18 +269,6 @@
       .catch(function () {
         host.innerHTML = '<p style="margin-top:32px;color:var(--muted);">Could not load the publication list.</p>';
       });
-  }
-
-  /* ---------- avatars ---------- */
-  var AVATAR_COLORS = ["#2b53e0", "#7138ea", "#0e9f6e", "#d9418c", "#e0762b", "#0d94b5"];
-  function initAvatars() {
-    var els = document.querySelectorAll(".avatar[data-name]");
-    Array.prototype.forEach.call(els, function (el, i) {
-      var name = el.getAttribute("data-name").trim().split(/\s+/);
-      var initials = (name[0][0] || "") + (name.length > 1 ? name[name.length - 1][0] : "");
-      el.textContent = initials.toUpperCase();
-      el.style.background = AVATAR_COLORS[i % AVATAR_COLORS.length];
-    });
   }
 
   /* ---------- scroll-reveal ---------- */
@@ -254,7 +305,7 @@
     /* .feature-row is NOT revealized: rows live inside the research overlay and
        animate via CSS when it opens — an observer there can strand the last row
        invisible depending on open/scroll timing */
-    revealize(document.querySelectorAll(".card, .person, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
+    revealize(document.querySelectorAll(".card, .contact-block, .timeline-item, .alumni-chip, .pub-row"));
   }
 
   /* ---------- live metrics ----------
@@ -314,7 +365,7 @@
     [h, c].forEach(function (el) { if (el) skeletonize(el); });
 
     var pubsP = pubEls.length
-      ? fetch("data/publications.json")
+      ? fetch("data/publications.json?v=18")
           .then(function (r) { return r.json(); })
           .then(function (pubs) { window.__pubCount = pubs.length; return pubs.length; })
           .catch(function () { return null; })
@@ -443,14 +494,316 @@
     });
   }
 
+  /* ---------- member profile modal (people page) ---------- */
+  var MEMBER_PROFILES = {
+    "lee-js":  { email: "pured23@gmail.com",   roles: [
+      { i18n: "role.ra", period: "Sep 2023 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "kim-mh":  { email: "mhkim@cmcnu.or.kr",  roles: [
+      { i18n: "role.ra", period: "Oct 2025 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "kang-hr": { email: "khr1138@gmail.com",   roles: [
+      { i18n: "role.ms", period: "Feb 2022 – Feb 2024", where: "Dept. of Microbiology, The Catholic University of Korea" },
+      { i18n: "role.phd", period: "Feb 2024 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "shin-gj": { email: "tlsrudwls789@gmail.com", roles: [
+      { i18n: "role.ms.prev", period: "Sep 2020 – Aug 2022", where: "Dept. of Bioinformatics, Soongsil University" },
+      { i18n: "role.phd.only", period: "Sep 2022 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ], note: { en: "Current Affiliation: Prof. Seung-Hyun Jeong’s Lab (Sep 2026 –)", ko: "현 소속: 정승현 교수 연구실 (Sep 2026 –)" }},
+    "lee-gs":  { email: "dlrmstjq7@gmail.com", roles: [
+      { i18n: "role.ms", period: "Feb 2023 – Feb 2025", where: "Dept. of Microbiology, The Catholic University of Korea" },
+      { i18n: "role.phd", period: "Feb 2025 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "kim-sr":  { email: "rlatpfla1258@gmail.com", roles: [
+      { i18n: "role.ms", period: "Feb 2024 – Feb 2026", where: "Dept. of Microbiology, The Catholic University of Korea" },
+      { i18n: "role.phd", period: "Feb 2026 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "kim-y":   { email: "rladpwl1022@gmail.com", roles: [
+      { i18n: "role.ms", period: "Feb 2024 – Feb 2026", where: "Dept. of Microbiology, The Catholic University of Korea" },
+      { i18n: "role.phd", period: "Feb 2026 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]},
+    "yoo-sh":  { email: "deniel0514@gmail.com", roles: [
+      { i18n: "role.ms", period: "Feb 2025 –", where: "Dept. of Microbiology, The Catholic University of Korea" }
+    ]}
+  };
+
+  /* ---------- force-directed cluster (people page) ---------- */
+  var CLUSTER_MEMBERS = [
+    { mid: "lee-js",  cluster: "ra",  i18n: "name.jeongseon", nameEn: "Jeongseon Lee", roleI18n: "role.ra" },
+    { mid: "kim-mh",  cluster: "ra",  i18n: "name.minhee",    nameEn: "Minhee Kim",    roleI18n: "role.ra" },
+    { mid: "kang-hr", cluster: "phd", i18n: "name.huiram",    nameEn: "Huiram Kang",   roleI18n: "role.phd" },
+    { mid: "shin-gj", cluster: "phd", i18n: "name.gyeongjin", nameEn: "GyeongJin Shin",roleI18n: "role.phd.only" },
+    { mid: "lee-gs",  cluster: "phd", i18n: "name.geunseob",  nameEn: "Geunseob Lee",  roleI18n: "role.phd" },
+    { mid: "kim-sr",  cluster: "phd", i18n: "name.serim",     nameEn: "Serim Kim",     roleI18n: "role.phd" },
+    { mid: "kim-y",   cluster: "phd", i18n: "name.yeji",      nameEn: "Yeji Kim",      roleI18n: "role.phd" },
+    { mid: "yoo-sh",  cluster: "ms",  i18n: "name.suhyeon",   nameEn: "Suhyeon Yoo",   roleI18n: "role.ms" }
+  ];
+  var CLUSTER_COLORS = { ra: "#0e9f6e", phd: "#2b53e0", ms: "#7138ea" };
+
+  function initCluster() {
+    var canvas = document.getElementById("cluster-canvas");
+    if (!canvas || typeof d3 === "undefined") return;
+    var isStudent = function (c) { return c === "phd" || c === "ms"; };
+    var w = canvas.offsetWidth;
+    var h = Math.max(620, w * 0.66);
+    canvas.style.height = h + "px";
+
+    var R = Math.min(46, w / 16);
+
+    /* fixed layout: students cluster right of centre, researchers on the left */
+    var target = {
+      students:    { x: w * 0.6,  y: h * 0.5 },
+      researchers: { x: w * 0.17, y: h * 0.5 }
+    };
+
+    /* nodes: deterministic ring around each cluster centre */
+    var counts = { students: 0, researchers: 0 };
+    var nodes = CLUSTER_MEMBERS.map(function (m) {
+      var key = isStudent(m.cluster) ? "students" : "researchers";
+      var c = target[key], i = counts[key]++;
+      var a = i * 2.4, d = R * 1.6 * Math.sqrt(i);
+      return {
+        mid: m.mid, cluster: m.cluster, nameEn: m.nameEn,
+        i18n: m.i18n, roleI18n: m.roleI18n, r: R,
+        x: c.x + Math.cos(a) * d, y: c.y + Math.sin(a) * d
+      };
+    });
+
+    /* cluster halos (drawn behind nodes) */
+    var GROUPS = {
+      students:    { test: function (n) { return isStudent(n.cluster); },  color: "#2b53e0" },
+      researchers: { test: function (n) { return !isStudent(n.cluster); }, color: "#0e9f6e" }
+    };
+    Object.keys(GROUPS).forEach(function (key) {
+      var g = GROUPS[key];
+      var halo = document.createElement("div");
+      halo.className = "cluster-halo";
+      halo.style.setProperty("--halo", g.color);
+      canvas.appendChild(halo);
+      g.el = halo;
+    });
+
+    /* DOM nodes */
+    nodes.forEach(function (n) {
+      var el = document.createElement("div");
+      el.className = "cluster-node";
+      el.setAttribute("data-member", n.mid);
+      var names = n.nameEn.trim().split(/\s+/);
+      var initials = (names[0][0] || "") + (names.length > 1 ? names[names.length - 1][0] : "");
+      var prof = MEMBER_PROFILES[n.mid];
+      var email = prof ? prof.email : "";
+      el.innerHTML =
+        '<div class="avatar" style="width:' + (R * 2) + 'px;height:' + (R * 2) + 'px;border-radius:50%;' +
+        'display:flex;align-items:center;justify-content:center;font-weight:700;font-size:' + (R * 0.7) + 'px;' +
+        'color:#fff;background:' + CLUSTER_COLORS[n.cluster] + ';">' + initials.toUpperCase() + '</div>' +
+        '<h3 data-i18n="' + n.i18n + '">' + n.nameEn + '</h3>' +
+        '<div class="role" data-i18n="' + n.roleI18n + '">' + (t(n.roleI18n) || n.roleI18n) + '</div>' +
+        (email ? '<div class="email">' + esc(email) + '</div>' : '');
+      canvas.appendChild(el);
+      n.el = el;
+    });
+
+    function updateHalos() {
+      Object.keys(GROUPS).forEach(function (key) {
+        var g = GROUPS[key];
+        var members = nodes.filter(g.test);
+        if (!members.length) return;
+        var cx = 0, cy = 0;
+        members.forEach(function (n) { cx += n.x; cy += n.y; });
+        cx /= members.length; cy /= members.length;
+        var rad = 0;
+        members.forEach(function (n) {
+          var d = Math.sqrt((n.x - cx) * (n.x - cx) + (n.y - cy) * (n.y - cy));
+          rad = Math.max(rad, d);
+        });
+        rad += R + 62;
+        g.el.style.left = (cx - rad) + "px";
+        g.el.style.top = (cy - rad) + "px";
+        g.el.style.width = g.el.style.height = (rad * 2) + "px";
+      });
+    }
+
+    /* students cluster center, researchers flank left/right */
+    var sim = d3.forceSimulation(nodes)
+      .force("charge", d3.forceManyBody().strength(-350))
+      .force("collide", d3.forceCollide(function (d) { return d.r + 62; }).iterations(3).strength(1))
+      .force("x", d3.forceX(function (d) {
+        return isStudent(d.cluster) ? target.students.x : target.researchers.x;
+      }).strength(function (d) { return isStudent(d.cluster) ? 0.03 : 0.06; }))
+      .force("y", d3.forceY(function (d) {
+        return isStudent(d.cluster) ? target.students.y : target.researchers.y;
+      }).strength(0.025))
+      .alphaDecay(0.03)
+      .alphaMin(0.001);
+
+    var minX = R + 20, maxX = w - R - 20, minY = R + 50, maxY = h - R - 40;
+    var BOUNCE = 0.45;
+    function render() {
+      nodes.forEach(function (n) {
+        if (n.x < minX) { n.x = minX; if (n.vx < 0) n.vx = -n.vx * BOUNCE; }
+        else if (n.x > maxX) { n.x = maxX; if (n.vx > 0) n.vx = -n.vx * BOUNCE; }
+        if (n.y < minY) { n.y = minY; if (n.vy < 0) n.vy = -n.vy * BOUNCE; }
+        else if (n.y > maxY) { n.y = maxY; if (n.vy > 0) n.vy = -n.vy * BOUNCE; }
+        n.el.style.left = (n.x - R - 20) + "px";
+        n.el.style.top = (n.y - R - 5) + "px";
+        n.el.style.width = (R * 2 + 40) + "px";
+      });
+      updateHalos();
+    }
+    sim.on("tick", render);
+
+    /* settle synchronously so the page opens on the final layout,
+       then drop the clustering forces so nodes stay wherever they are put */
+    sim.stop();
+    sim.tick(400);
+    render();
+    sim.force("x", null).force("y", null).force("charge", null);
+
+    /* drag to move, release with momentum to throw */
+    var drag = d3.drag()
+      .on("start", function (event, d) {
+        d.el.classList.add("is-dragging");
+        d.moved = false;
+        d.fx = d.x; d.fy = d.y;
+        d.px = event.x; d.py = event.y; d.pt = performance.now();
+        d.tvx = 0; d.tvy = 0;
+        sim.alphaTarget(0.12).restart();
+      })
+      .on("drag", function (event, d) {
+        var now = performance.now(), dt = Math.max(1, now - d.pt);
+        var dx = event.x - d.px, dy = event.y - d.py;
+        if (Math.abs(dx) + Math.abs(dy) > 0) d.moved = true;
+        /* smoothed pointer velocity, px per frame (~16ms) */
+        d.tvx = d.tvx * 0.5 + (dx / dt * 16) * 0.5;
+        d.tvy = d.tvy * 0.5 + (dy / dt * 16) * 0.5;
+        d.px = event.x; d.py = event.y; d.pt = now;
+        d.fx = event.x; d.fy = event.y;
+      })
+      .on("end", function (event, d) {
+        d.el.classList.remove("is-dragging");
+        d.fx = null; d.fy = null;
+        /* stale pointer velocity means the user paused before releasing */
+        var idle = performance.now() - d.pt > 80;
+        d.vx = idle ? 0 : d.tvx;
+        d.vy = idle ? 0 : d.tvy;
+        /* low friction while a throw is in flight, then back to normal damping */
+        if (Math.abs(d.vx) + Math.abs(d.vy) > 6) {
+          sim.velocityDecay(0.08);
+          clearTimeout(initCluster._flight);
+          initCluster._flight = setTimeout(function () { sim.velocityDecay(0.4); }, 1200);
+        }
+        sim.alphaTarget(0).alpha(0.8).restart();
+        if (d.moved) {
+          d.el.dataset.dragged = "1";
+          setTimeout(function () { delete d.el.dataset.dragged; }, 0);
+        }
+      });
+    nodes.forEach(function (n) { d3.select(n.el).datum(n).call(drag); });
+
+    if (typeof applyLang === "function") applyLang();
+  }
+
+  var __memberPubs = null;
+  function initMemberModal() {
+    var overlay = document.getElementById("member-modal");
+    if (!overlay) return;
+
+    function openModal(mid) {
+      var prof = MEMBER_PROFILES[mid];
+      var nameObj = MEMBER_NAMES[mid];
+      if (!prof || !nameObj) return;
+      var lang = getLang();
+      document.getElementById("mm-name").textContent = nameObj[lang] || nameObj.en;
+      var avatarEl = document.getElementById("mm-avatar");
+      var cardAvatar = document.querySelector('.cluster-node[data-member="' + mid + '"] .avatar');
+      if (cardAvatar) {
+        avatarEl.textContent = cardAvatar.textContent;
+        avatarEl.style.background = cardAvatar.style.background;
+      } else {
+        var fullName = nameObj.en.trim().split(/\s+/);
+        var initials = (fullName[0][0] || "") + (fullName.length > 1 ? fullName[fullName.length - 1][0] : "");
+        avatarEl.textContent = initials.toUpperCase();
+      }
+      var rolesHtml = prof.roles.map(function (r) {
+        var label = t(r.i18n) || r.i18n;
+        var line = '<div class="mm-role-row"><span>' + esc(label) + '</span><span class="mm-period">' + esc(r.period) + '</span></div>';
+        if (r.where) line += '<div class="mm-role-where">' + esc(r.where) + '</div>';
+        return line;
+      }).join("");
+      if (prof.note) {
+        var noteText = prof.note[lang] || prof.note.en;
+        rolesHtml += '<div class="mm-role-note">' + esc(noteText) + '</div>';
+      }
+      document.getElementById("mm-roles").innerHTML = rolesHtml;
+      document.getElementById("mm-email").innerHTML = '<a href="mailto:' + esc(prof.email) + '">' + esc(prof.email) + '</a>';
+      var pubHeading = document.getElementById("mm-pub-heading");
+      pubHeading.innerHTML = t("people.modal.pubs") || "Publications";
+      var pubList = document.getElementById("mm-pub-list");
+      if (__memberPubs) {
+        renderModalPubs(pubList, mid);
+      } else {
+        pubList.innerHTML = '<p class="mm-loading">' + (lang === "ko" ? "불러오는 중…" : "Loading…") + '</p>';
+        fetch("data/publications.json?v=18")
+          .then(function (r) { return r.json(); })
+          .then(function (pubs) { __memberPubs = pubs; renderModalPubs(pubList, mid); })
+          .catch(function () { pubList.innerHTML = '<p class="mm-empty">—</p>'; });
+      }
+      overlay.hidden = false;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { overlay.classList.add("is-visible"); });
+      });
+      document.body.classList.add("modal-open");
+      overlay.querySelector(".member-modal-close").focus();
+    }
+
+    function renderModalPubs(container, mid) {
+      var lang = getLang();
+      var filtered = __memberPubs.filter(function (p) {
+        return p.members && typeof p.members === "object" && mid in p.members;
+      });
+      if (!filtered.length) {
+        container.innerHTML = '<p class="mm-empty">' + (lang === "ko" ? "등록된 논문이 없습니다." : "No publications yet.") + '</p>';
+        return;
+      }
+      container.innerHTML = filtered.map(function (p) {
+        var doiUrl = p.doi ? "https://doi.org/" + encodeURI(p.doi) : null;
+        var title = doiUrl
+          ? '<a href="' + doiUrl + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>'
+          : esc(p.title);
+        return '<div class="mm-pub">' +
+          '<div class="mm-pub-title">' + title + '</div>' +
+          '<div class="mm-pub-authors">' + boldMembers(p.authors, p.members) + '</div>' +
+          '<div class="mm-pub-meta">' + esc(p.year) + ' · ' + esc(p.journal) + '</div>' +
+          '</div>';
+      }).join("");
+    }
+
+    function closeModal() {
+      overlay.classList.remove("is-visible");
+      setTimeout(function () { overlay.hidden = true; }, 300);
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("click", function (e) {
+      var card = e.target.closest ? e.target.closest(".cluster-node[data-member]") : null;
+      if (card) { if (!card.dataset.dragged) openModal(card.getAttribute("data-member")); return; }
+      if (e.target.closest(".member-modal-close")) { closeModal(); return; }
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !overlay.hidden) closeModal();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     buildHeader();
     buildFooter();
     initPublications();
-    initAvatars();
     initReveal();
     initPaperModals();
     initLiveStats();
+    initCluster();
+    initMemberModal();
     applyLang();
   });
 })();

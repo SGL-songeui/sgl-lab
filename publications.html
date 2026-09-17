@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="site.css?v=12">
+  <link rel="stylesheet" href="site.css?v=21">
   <script>
     /* stamp .vt when a cross-document view transition drives this navigation,
        so the CSS entrance animation yields to the transition (must run pre-render) */
@@ -29,19 +29,20 @@
       if (e.viewTransition) document.documentElement.classList.add("vt");
     });
   </script>
-  <script src="i18n.js?v=11" defer></script>
-  <script src="site.js?v=15" defer></script>
+  <script src="i18n.js?v=13" defer></script>
+  <script src="site.js?v=21" defer></script>
 </head>
 <body data-page="publications">
 
   <section class="page-hero">
     <div class="inner">
-      <div class="kicker" data-i18n="pub.kicker">PUBLICATIONS</div>
       <h1 data-i18n="pub.title">Publications</h1>
       <div class="pub-toolbar">
         <input class="pub-search" id="pub-search" type="search"
                placeholder="Search by title, author, journal, or year&hellip;" data-i18n-placeholder="pub.search.ph" aria-label="Search publications">
-        <span class="pub-count" id="pub-count"></span>
+        <select class="pub-year-filter" id="pub-year-filter" aria-label="Filter by year">
+          <option value="">All Years</option>
+        </select>
       </div>
     </div>
   </section>
