@@ -526,11 +526,13 @@ body.modal-open { overflow: hidden; }
   position: relative; width: 100%; min-height: 480px;
   margin: 0 auto;
 }
-.cluster-halo {
-  position: absolute; border-radius: 50%; z-index: 1; pointer-events: none;
-  background: radial-gradient(circle, color-mix(in srgb, var(--halo) 11%, transparent) 0%, color-mix(in srgb, var(--halo) 5%, transparent) 60%, transparent 72%);
-  transition: left .12s linear, top .12s linear, width .12s linear, height .12s linear;
+.cluster-edges {
+  position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;
 }
+.cluster-edges line { stroke-width: 1.5; stroke-opacity: .28; }
+.cluster-node.is-pi { z-index: 4; }
+.cluster-node.is-pi h3 { font-size: 14.5px; }
+.cluster-node.is-pi .avatar { box-shadow: 0 0 0 4px #fff, 0 0 0 6px #d9418c, 0 8px 20px rgba(15,23,42,.18); }
 .cluster-node {
   position: absolute; text-align: center; cursor: grab;
   transition: transform .18s; z-index: 3; user-select: none; touch-action: none;

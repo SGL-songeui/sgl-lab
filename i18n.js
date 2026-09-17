@@ -88,6 +88,7 @@ window.SGL_I18N = {
   "people.title": { en: "Lab Members", ko: "연구실 구성원" },
   "people.modal.pubs": { en: "Publications", ko: "논문" },
   "role.ra": { en: "Research Assistant", ko: "연구조교" },
+  "name.haeock": { en: "Hae-Ock Lee", ko: "이혜옥" },
   "name.jeongseon": { en: "Jeongseon Lee", ko: "이정선" },
   "name.minhee": { en: "Minhee Kim", ko: "김민희" },
   "name.huiram": { en: "Huiram Kang", ko: "강희람" },

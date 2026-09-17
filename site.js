@@ -538,7 +538,7 @@
     { mid: "kim-y",   cluster: "phd", i18n: "name.yeji",      nameEn: "Yeji Kim",      roleI18n: "role.phd" },
     { mid: "yoo-sh",  cluster: "ms",  i18n: "name.suhyeon",   nameEn: "Suhyeon Yoo",   roleI18n: "role.ms" }
   ];
-  var CLUSTER_COLORS = { ra: "#0e9f6e", phd: "#2b53e0", ms: "#7138ea" };
+  var CLUSTER_COLORS = { ra: "#0e9f6e", phd: "#2b53e0", ms: "#7138ea", pi: "#d9418c" };
 
   function initCluster() {
     var canvas = document.getElementById("cluster-canvas");
@@ -550,10 +550,11 @@
 
     var R = Math.min(46, w / 16);
 
-    /* fixed layout: students cluster right of centre, researchers on the left */
+    /* fixed layout: PI in the middle, students to the right, researchers to the left */
     var target = {
-      students:    { x: w * 0.6,  y: h * 0.5 },
-      researchers: { x: w * 0.17, y: h * 0.5 }
+      pi:          { x: w * 0.4,  y: h * 0.5 },
+      students:    { x: w * 0.68, y: h * 0.5 },
+      researchers: { x: w * 0.13, y: h * 0.5 }
     };
 
     /* nodes: deterministic ring around each cluster centre */
@@ -568,33 +569,40 @@
         x: c.x + Math.cos(a) * d, y: c.y + Math.sin(a) * d
       };
     });
-
-    /* cluster halos (drawn behind nodes) */
-    var GROUPS = {
-      students:    { test: function (n) { return isStudent(n.cluster); },  color: "#2b53e0" },
-      researchers: { test: function (n) { return !isStudent(n.cluster); }, color: "#0e9f6e" }
+    var pi = {
+      mid: "lee-ho", cluster: "pi", isPI: true, nameEn: "Hae-Ock Lee",
+      i18n: "name.haeock", roleI18n: "nav.pi", r: R * 1.3,
+      x: target.pi.x, y: target.pi.y, fx: target.pi.x, fy: target.pi.y
     };
-    Object.keys(GROUPS).forEach(function (key) {
-      var g = GROUPS[key];
-      var halo = document.createElement("div");
-      halo.className = "cluster-halo";
-      halo.style.setProperty("--halo", g.color);
-      canvas.appendChild(halo);
-      g.el = halo;
+    nodes.push(pi);
+
+    /* edge layer: every member is linked to the PI */
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "cluster-edges");
+    svg.setAttribute("width", w);
+    svg.setAttribute("height", h);
+    canvas.appendChild(svg);
+    var edges = nodes.filter(function (n) { return !n.isPI; }).map(function (n) {
+      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("stroke", CLUSTER_COLORS[n.cluster]);
+      svg.appendChild(line);
+      return { node: n, el: line };
     });
 
     /* DOM nodes */
     nodes.forEach(function (n) {
       var el = document.createElement("div");
-      el.className = "cluster-node";
-      el.setAttribute("data-member", n.mid);
+      el.className = "cluster-node" + (n.isPI ? " is-pi" : "");
+      if (n.isPI) el.setAttribute("data-href", "principal-investigator.html");
+      else el.setAttribute("data-member", n.mid);
       var names = n.nameEn.trim().split(/\s+/);
       var initials = (names[0][0] || "") + (names.length > 1 ? names[names.length - 1][0] : "");
       var prof = MEMBER_PROFILES[n.mid];
-      var email = prof ? prof.email : "";
+      var email = n.isPI ? "haeocklee@catholic.ac.kr" : (prof ? prof.email : "");
+      var rr = n.r;
       el.innerHTML =
-        '<div class="avatar" style="width:' + (R * 2) + 'px;height:' + (R * 2) + 'px;border-radius:50%;' +
-        'display:flex;align-items:center;justify-content:center;font-weight:700;font-size:' + (R * 0.7) + 'px;' +
+        '<div class="avatar" style="width:' + (rr * 2) + 'px;height:' + (rr * 2) + 'px;border-radius:50%;' +
+        'display:flex;align-items:center;justify-content:center;font-weight:700;font-size:' + (rr * 0.7) + 'px;' +
         'color:#fff;background:' + CLUSTER_COLORS[n.cluster] + ';">' + initials.toUpperCase() + '</div>' +
         '<h3 data-i18n="' + n.i18n + '">' + n.nameEn + '</h3>' +
         '<div class="role" data-i18n="' + n.roleI18n + '">' + (t(n.roleI18n) || n.roleI18n) + '</div>' +
@@ -602,36 +610,19 @@
       canvas.appendChild(el);
       n.el = el;
     });
-
-    function updateHalos() {
-      Object.keys(GROUPS).forEach(function (key) {
-        var g = GROUPS[key];
-        var members = nodes.filter(g.test);
-        if (!members.length) return;
-        var cx = 0, cy = 0;
-        members.forEach(function (n) { cx += n.x; cy += n.y; });
-        cx /= members.length; cy /= members.length;
-        var rad = 0;
-        members.forEach(function (n) {
-          var d = Math.sqrt((n.x - cx) * (n.x - cx) + (n.y - cy) * (n.y - cy));
-          rad = Math.max(rad, d);
-        });
-        rad += R + 62;
-        g.el.style.left = (cx - rad) + "px";
-        g.el.style.top = (cy - rad) + "px";
-        g.el.style.width = g.el.style.height = (rad * 2) + "px";
-      });
-    }
+    pi.el.addEventListener("click", function () {
+      if (!pi.el.dataset.dragged) window.location.href = pi.el.getAttribute("data-href");
+    });
 
     /* students cluster center, researchers flank left/right */
     var sim = d3.forceSimulation(nodes)
       .force("charge", d3.forceManyBody().strength(-350))
       .force("collide", d3.forceCollide(function (d) { return d.r + 62; }).iterations(3).strength(1))
       .force("x", d3.forceX(function (d) {
-        return isStudent(d.cluster) ? target.students.x : target.researchers.x;
+        return d.isPI ? target.pi.x : isStudent(d.cluster) ? target.students.x : target.researchers.x;
       }).strength(function (d) { return isStudent(d.cluster) ? 0.03 : 0.06; }))
       .force("y", d3.forceY(function (d) {
-        return isStudent(d.cluster) ? target.students.y : target.researchers.y;
+        return d.isPI ? target.pi.y : isStudent(d.cluster) ? target.students.y : target.researchers.y;
       }).strength(0.025))
       .alphaDecay(0.03)
       .alphaMin(0.001);
@@ -644,11 +635,14 @@
         else if (n.x > maxX) { n.x = maxX; if (n.vx > 0) n.vx = -n.vx * BOUNCE; }
         if (n.y < minY) { n.y = minY; if (n.vy < 0) n.vy = -n.vy * BOUNCE; }
         else if (n.y > maxY) { n.y = maxY; if (n.vy > 0) n.vy = -n.vy * BOUNCE; }
-        n.el.style.left = (n.x - R - 20) + "px";
-        n.el.style.top = (n.y - R - 5) + "px";
-        n.el.style.width = (R * 2 + 40) + "px";
+        n.el.style.left = (n.x - n.r - 20) + "px";
+        n.el.style.top = (n.y - n.r - 5) + "px";
+        n.el.style.width = (n.r * 2 + 40) + "px";
       });
-      updateHalos();
+      edges.forEach(function (e) {
+        e.el.setAttribute("x1", pi.x); e.el.setAttribute("y1", pi.y);
+        e.el.setAttribute("x2", e.node.x); e.el.setAttribute("y2", e.node.y);
+      });
     }
     sim.on("tick", render);
 
@@ -658,6 +652,7 @@
     sim.tick(400);
     render();
     sim.force("x", null).force("y", null).force("charge", null);
+    pi.fx = null; pi.fy = null;
 
     /* drag to move, release with momentum to throw */
     var drag = d3.drag()
@@ -667,7 +662,18 @@
         d.fx = d.x; d.fy = d.y;
         d.px = event.x; d.py = event.y; d.pt = performance.now();
         d.tvx = 0; d.tvy = 0;
-        sim.alphaTarget(0.12).restart();
+        if (d.isPI) {
+          /* tether every member to the PI at its current distance, so the lab
+             trails behind the PI wherever it goes */
+          clearTimeout(initCluster._tether);
+          var tether = nodes.filter(function (n) { return !n.isPI; }).map(function (n) {
+            return { source: pi, target: n, dist: Math.hypot(n.x - pi.x, n.y - pi.y) };
+          });
+          sim.force("lead", d3.forceLink(tether).distance(function (l) { return l.dist; }).strength(0.6));
+          sim.alphaTarget(0.3).restart();
+        } else {
+          sim.alphaTarget(0.12).restart();
+        }
       })
       .on("drag", function (event, d) {
         var now = performance.now(), dt = Math.max(1, now - d.pt);
@@ -681,11 +687,13 @@
       })
       .on("end", function (event, d) {
         d.el.classList.remove("is-dragging");
-        d.fx = null; d.fy = null;
         /* stale pointer velocity means the user paused before releasing */
         var idle = performance.now() - d.pt > 80;
+        d.fx = null; d.fy = null;
         d.vx = idle ? 0 : d.tvx;
         d.vy = idle ? 0 : d.tvy;
+        /* keep the tether while a thrown PI is in flight, then let the lab rest where it lands */
+        if (d.isPI) initCluster._tether = setTimeout(function () { sim.force("lead", null); }, 1800);
         /* low friction while a throw is in flight, then back to normal damping */
         if (Math.abs(d.vx) + Math.abs(d.vy) > 6) {
           sim.velocityDecay(0.08);
