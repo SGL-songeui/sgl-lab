@@ -1,0 +1,2 @@
+# DOIs or PMIDs that scripts/check_publications.py should never report
+# (e.g. a same-name author, or a record that is not a lab paper). One per line.

@@ -1,0 +1,42 @@
+name: Check for new publications
+
+# Weekly: compare PubMed / OpenAlex / Crossref with data/publications.json and keep
+# one open issue listing what is missing (with draft JSON entries to paste in).
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # Mondays 00:00 UTC (09:00 KST)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Look for missing publications
+        run: python3 scripts/check_publications.py report.md
+
+      - name: Open, update or close the review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: New publications to review
+          CC: "@${{ github.repository_owner }}"
+        run: |
+          num=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+                --jq "map(select(.title == \"$TITLE\")) | .[0].number // empty")
+          if [ -s report.md ]; then
+            # first line is a digest of the findings; only notify when it changes
+            new=$(head -1 report.md)
+            if [ -z "$num" ]; then
+              gh issue create --title "$TITLE" --body "$(cat report.md; printf '\n\ncc %s\n' "$CC")"
+            elif [ "$(gh issue view "$num" --json body --jq .body | head -1 | tr -d '\r')" != "$new" ]; then
+              gh issue edit "$num" --body-file report.md
+              gh issue comment "$num" --body "The list changed — see the updated description. cc $CC"
+            fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "Everything found is now in data/publications.json."
+          fi
