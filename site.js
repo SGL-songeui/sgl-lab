@@ -206,6 +206,37 @@
     }).join("");
   }
 
+  /* home "Recent work": the newest lab-led papers (PI is the last author), from the JSON.
+     The rows baked into index.html are the no-JS fallback and stay put when they already match. */
+  function initRecentPubs() {
+    var host = document.getElementById("recent-pubs");
+    if (!host) return;
+    fetch("data/publications.json?v=19")
+      .then(function (r) { return r.json(); })
+      .then(function (pubs) {
+        var recent = pubs.filter(function (p) {
+          var tokens = p.authors.match(AUTHOR_RE) || [];
+          return tokens[tokens.length - 1] === "Lee, H. O.";
+        }).slice(0, 3);
+        var dois = recent.map(function (p) { return "https://doi.org/" + encodeURI(p.doi); });
+        var shown = Array.prototype.map.call(host.querySelectorAll(".pub-row"), function (row) {
+          return row.getAttribute("data-doi");
+        });
+        if (!recent.length || dois.join() === shown.join()) return;
+        host.innerHTML = recent.map(function (p, i) {
+          return (
+            '<div class="pub-row" data-doi="' + dois[i] + '">' +
+            '<div class="pub-title"><a href="' + dois[i] + '" target="_blank" rel="noopener">' + esc(p.title) + "</a></div>" +
+            '<div class="pub-authors">' + boldMembers(p.authors, p.members) + "</div>" +
+            '<div class="pub-meta">' + esc(p.year) + " &middot; " + esc(p.journal) + "</div>" +
+            "</div>"
+          );
+        }).join("");
+        revealize(host.querySelectorAll(".pub-row"));
+      })
+      .catch(function () { /* keep the baked-in rows */ });
+  }
+
   var MEMBER_NAMES = {
     "lee-ho": { en: "Hae-Ock Lee", ko: "이혜옥" },
     "kang-hr": { en: "Huiram Kang", ko: "강희람" },
@@ -812,6 +843,7 @@
     buildFooter();
     initPublications();
     initReveal();
+    initRecentPubs();
     initPaperModals();
     initLiveStats();
     initCluster();
