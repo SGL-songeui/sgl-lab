@@ -89,7 +89,7 @@ img { max-width: 100%; display: block; }
 .logo { color: var(--ink); display: flex; align-items: center; }
 .logo-svg { height: 27px; width: auto; display: block; }
 .logo-full { font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); margin-left: 9px; white-space: nowrap; }
-@media (max-width: 400px) { .logo-full { display: none; } }
+@media (max-width: 440px) { .logo-full { display: none; } }
 .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #3c4258; margin-left: auto; }
 .header-actions { display: flex; align-items: center; gap: 10px; margin-left: 18px; }
 .lang-switch {
@@ -505,7 +505,7 @@ body.modal-open { overflow: hidden; }
   .pi-card { position: static; }
   .hero-umap { display: none; }
 }
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     margin-left: 0;
@@ -515,6 +515,8 @@ body.modal-open { overflow: hidden; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 10px 0; }
   .nav-toggle { display: block; }
+}
+@media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
   .hero .inner { padding: 64px 24px 52px; }
@@ -558,6 +560,7 @@ body.modal-open { overflow: hidden; }
   font-size: 10.5px; color: var(--muted); margin-top: 1px;
   white-space: nowrap;
 }
+@media (max-width: 640px) { .cluster-node .role { white-space: normal; } }
 
 
 /* member profile modal */

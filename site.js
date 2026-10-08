@@ -226,7 +226,7 @@
     var params = new URLSearchParams(window.location.search);
     __memberFilter = params.get("member") || "";
 
-    fetch("data/publications.json?v=18")
+    fetch("data/publications.json?v=19")
       .then(function (r) { return r.json(); })
       .then(function (pubs) {
         /* show member filter chip if active */
@@ -365,7 +365,7 @@
     [h, c].forEach(function (el) { if (el) skeletonize(el); });
 
     var pubsP = pubEls.length
-      ? fetch("data/publications.json?v=18")
+      ? fetch("data/publications.json?v=19")
           .then(function (r) { return r.json(); })
           .then(function (pubs) { window.__pubCount = pubs.length; return pubs.length; })
           .catch(function () { return null; })
@@ -481,10 +481,7 @@
       if (e.key === "Escape") {
         /* detail modal first, then the full-screen overlay */
         if (document.querySelector(".modal-overlay:not([hidden])")) { closeAll(); return; }
-        if (closeMega()) {
-          document.body.classList.remove("modal-open");
-          if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
-        }
+        dismissMega();
         return;
       }
       if ((e.key === "Enter" || e.key === " ") && e.target.hasAttribute && e.target.hasAttribute("data-paper")) {
@@ -609,6 +606,9 @@
         (email ? '<div class="email">' + esc(email) + '</div>' : '');
       canvas.appendChild(el);
       n.el = el;
+      /* half-width wide enough for the name/role/email labels, so they stay inside the canvas */
+      el.style.width = (n.r * 2 + 40) + "px";
+      n.hw = Math.max(n.r + 20, Math.ceil(el.scrollWidth / 2));
     });
     pi.el.addEventListener("click", function () {
       if (!pi.el.dataset.dragged) window.location.href = pi.el.getAttribute("data-href");
@@ -627,17 +627,18 @@
       .alphaDecay(0.03)
       .alphaMin(0.001);
 
-    var minX = R + 20, maxX = w - R - 20, minY = R + 50, maxY = h - R - 40;
+    var minY = R + 50, maxY = h - R - 40;
     var BOUNCE = 0.45;
     function render() {
       nodes.forEach(function (n) {
+        var minX = n.hw, maxX = w - n.hw;
         if (n.x < minX) { n.x = minX; if (n.vx < 0) n.vx = -n.vx * BOUNCE; }
         else if (n.x > maxX) { n.x = maxX; if (n.vx > 0) n.vx = -n.vx * BOUNCE; }
         if (n.y < minY) { n.y = minY; if (n.vy < 0) n.vy = -n.vy * BOUNCE; }
         else if (n.y > maxY) { n.y = maxY; if (n.vy > 0) n.vy = -n.vy * BOUNCE; }
-        n.el.style.left = (n.x - n.r - 20) + "px";
+        n.el.style.left = (n.x - n.hw) + "px";
         n.el.style.top = (n.y - n.r - 5) + "px";
-        n.el.style.width = (n.r * 2 + 40) + "px";
+        n.el.style.width = (n.hw * 2) + "px";
       });
       edges.forEach(function (e) {
         e.el.setAttribute("x1", pi.x); e.el.setAttribute("y1", pi.y);
@@ -754,7 +755,7 @@
         renderModalPubs(pubList, mid);
       } else {
         pubList.innerHTML = '<p class="mm-loading">' + (lang === "ko" ? "불러오는 중…" : "Loading…") + '</p>';
-        fetch("data/publications.json?v=18")
+        fetch("data/publications.json?v=19")
           .then(function (r) { return r.json(); })
           .then(function (pubs) { __memberPubs = pubs; renderModalPubs(pubList, mid); })
           .catch(function () { pubList.innerHTML = '<p class="mm-empty">—</p>'; });
