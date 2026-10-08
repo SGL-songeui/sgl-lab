@@ -20,7 +20,7 @@
     var entry = (window.SGL_I18N || {})[key];
     if (!entry) return null;
     var v = entry[getLang()] || entry.en;
-    return v.replace(/\{n\}/g, window.__pubCount || 68);
+    return v.replace(/\{n\}/g, window.__pubCount || 70);
   }
   function applyLang() {
     var lang = getLang();

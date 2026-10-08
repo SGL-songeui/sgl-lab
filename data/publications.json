@@ -1,5 +1,33 @@
 [
  {
+  "title": "Complementary single-nucleus and single-cell RNA sequencing reveal tumor state evolution and microenvironmental rewiring in NSCLC",
+  "authors": "Shin, G. J., Kang, H., Jo, A., Kim, N., Ku, B. M., Ahn, M. J., Lee, H. O.",
+  "journal": "Communications Biology",
+  "year": 2026,
+  "doi": "10.1038/s42003-026-11040-y",
+  "pmid": null,
+  "type": "Article",
+  "date": "2 Oct 2026",
+  "members": {
+   "lee-ho": 6,
+   "kang-hr": 1,
+   "shin-gj": 0
+  }
+ },
+ {
+  "title": "Transcriptomic analysis of colorectal carcinoma tissues from a Korean population",
+  "authors": "Chu, H. B. K., Choi, J. H., Jeon, J., Joe, S., Shim, H., Kang, J., Cho, S., Lee, H. S., Bang, Y. H., Lim, J., Joo, E. H., Park, K., Moon, J. H., Han, K. Y., Lee, W. Y., Kim, H. C., Yun, S. H., Cho, Y. B., Park, Y. A., Huh, J. W., Shin, J. K., Pyo, D. H., Hong, H., Hong, Y., Lee, H. O., Kim, J. H., Yoo, J., Jung, J., Yang, J. O., Park, W. Y., Kim, Y. J.",
+  "journal": "BMB Reports",
+  "year": 2026,
+  "doi": "10.5483/BMBRep.2024-0190",
+  "pmid": "41261790",
+  "type": "Article",
+  "date": "2026",
+  "members": {
+   "lee-ho": 24
+  }
+ },
+ {
   "title": "Selective inhibition of long isoforms of phosphodiesterase 4D mitigates liver fibrosis in mouse models",
   "authors": "Kim, J., Yoon, H., Joe, S. C., Smith, A., Park, J., Hong, G., Ha, J. M., Kim, E. B., Seki, E., Kim, M. K., Lee, H. O., Kim, H. S., Chung, J. H.",
   "journal": "Journal of Clinical Investigation",
