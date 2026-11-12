@@ -58,7 +58,7 @@ window.SGL_I18N = {
 
   /* PI page */
   "pi.kicker": { en: "PRINCIPAL INVESTIGATOR", ko: "연구책임자" },
-  "pi.name": { en: "Hae-Ock Lee, Ph.D.", ko: "이혜옥, Ph.D." },
+  "pi.name": { en: "Hae-Ock Lee", ko: "이혜옥" },
   "pi.sub": {
     en: "Professor of Microbiology leading single-cell genomics research on cancer and immunity.",
     ko: "암과 면역의 단일세포 유전체 연구를 이끄는 미생물학교실 교수입니다."
